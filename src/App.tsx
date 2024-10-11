@@ -29,7 +29,7 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.tsx</code> and save to reload.
+        Edit <code>src/App.tsx</code> and save to reload Jasmyn-JayNavarro.
         </p>
         <a
           className="App-link"
@@ -41,7 +41,7 @@ function App() {
         </a>
       </header>
       <h1>Karanvir Singh</h1>
-      
+      <h1>Suchi Patel</h1>
       <h1> Alyssa Sanchez</h1>
       <Form>
         <Form.Label>API Key:</Form.Label>
