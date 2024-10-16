@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./App.css";
 import { Button, Form } from "react-bootstrap";
-import { Link, HashRouter as Router, Routes, Route } from "react-router-dom";
+import {HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
 import DetailedQuestions from "./Pages/HomePage/DetailedQuestionPage/DetailedQuestion";
