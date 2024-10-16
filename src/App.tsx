@@ -1,51 +1,64 @@
 import React, { useState } from "react";
-import logo from "./logo.svg";
 import "./App.css";
 import { Button, Form } from "react-bootstrap";
+import { Link, HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
 
-//local storage and API Key: key should be entered in by the user and will be stored in local storage (NOT session storage)
-let keyData = "";
-const saveKeyData = "MYKEY";
-const prevKey = localStorage.getItem(saveKeyData); //so it'll look like: MYKEY: <api_key_value here> in the local storage when you inspect
+// Local storage and API Key
+let keyData: string = ""; // Declare keyData as a string
+const saveKeyData = "MYKEY"; // Key for local storage
+const prevKey = localStorage.getItem(saveKeyData); // Fetch previous key from local storage
+
+// Check if a previous key exists and parse it if it does
 if (prevKey !== null) {
   keyData = JSON.parse(prevKey);
 }
 
 function App() {
-  const [key, setKey] = useState<string>(keyData); //for api key input
+  // State for the API key input
+  const [key, setKey] = useState<string>(keyData); // Type state as string
 
-  //sets the local storage item to the api key the user inputed
+  // Function to handle form submission
   function handleSubmit() {
-    localStorage.setItem(saveKeyData, JSON.stringify(key));
-    window.location.reload(); //when making a mistake and changing the key again, I found that I have to reload the whole site before openai refreshes what it has stores for the local storage variable
+    localStorage.setItem(saveKeyData, JSON.stringify(key)); // Store key in local storage
+    window.location.reload(); // Reload to refresh local storage
   }
 
-  //whenever there's a change it'll store the api key in a local state called key but it won't be set in the local storage until the user clicks the submit button
+  // Function to handle input changes
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
-    setKey(event.target.value);
+    setKey(event.target.value); // Update state with input value
   }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <HomePage></HomePage>
-        <AboutMe></AboutMe>
-      </header>
-      <Form>
-        <Form.Label>API Key:</Form.Label>
-        <Form.Control
-          type="password"
-          placeholder="Insert API Key Here"
-          onChange={changeKey}
-        ></Form.Control>
-        <br></br>
-        <Button className="Submit-Button" onClick={handleSubmit}>
-          Submit
-        </Button>
-      </Form>
-    </div>
+    <Router>
+      <div className="App">
+        <header className="App-header">
+          {/* Navigation Links */}
+          <nav>
+            <Link to="/" style={{ margin: "0 10px", color: "white" }}>Home</Link>
+            <Link to="/AboutMe" style={{ margin: "0 10px", color: "white" }}>About Us</Link>
+          </nav>
+          <Routes>
+            <Route path="/" element={<HomePage />} /> {/* HomePage route */}
+            <Route path="/AboutMe" element={<AboutMe />} /> {/* AboutMe route */}
+          </Routes>
+        </header>
+        <Form>
+          <Form.Label>API Key:</Form.Label>
+          <Form.Control
+            type="password"
+            placeholder="Insert API Key Here"
+            onChange={changeKey} // Event handler for input change
+          />
+          <br />
+          <Button className="Submit-Button" onClick={handleSubmit}>
+            Submit
+          </Button>
+        </Form>
+      </div>
+    </Router>
   );
 }
 
-export default App;
+export default App; // Export the App component
