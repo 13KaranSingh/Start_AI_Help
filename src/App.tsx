@@ -7,6 +7,7 @@ import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
 import DetailedQuestions from "./Pages/HomePage/DetailedQuestionPage/DetailedQuestion";
 import BasicQuestions from "./Pages/HomePage/BasicQuestionPage/BasicQuestion";
 import NavBar from "./Components/NavBar";
+import Footer from "./Components/Footer";
 
 // Local storage and API Key
 let keyData: string = ""; // Declare keyData as a string
@@ -58,6 +59,7 @@ function App() {
           </Button>
         </Form>
       </div>
+      <Footer/>
     </Router>
   );
 }
