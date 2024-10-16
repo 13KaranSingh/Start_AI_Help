@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (57 ms)
+  ✕ renders learn react link (58 ms)
 
   ● renders learn react link
 
@@ -29,7 +29,7 @@ FAIL src/App.test.tsx
                 [33mhref[39m=[32m"#/AboutMe"[39m
                 [33mstyle[39m=[32m"margin: 0px 10px; color: white;"[39m
               [36m>[39m
-                [0mAbout Us[0m
+                [0mAbout Me[0m
               [36m</a>[39m
             [36m</nav>[39m
             [36m<main[39m
@@ -50,10 +50,11 @@ FAIL src/App.test.tsx
                 [36m<ul>[39m
                   [36m<li>[39m
                     [36m<a[39m
-                      [33mhref[39m=[32m"#about"[39m
+                      [33mhref[39m=[32m"#/AboutMe"[39m
                     [36m>[39m
                       [0mAbout[0m
                     [36m</a>[39m
+                    [0m [0m
                   [36m</li>[39m
                   [36m<li>[39m
                     [36m<a[39m
@@ -172,18 +173,18 @@ File                        | % Stmts | % Branch | % Funcs | % Lines | Uncovered
 ----------------------------|---------|----------|---------|---------|-------------------
 All files                   |      36 |    16.66 |   28.57 |      36 |                   
  src                        |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx                   |      60 |       50 |   33.33 |      60 | 15,24-30          
+  App.tsx                   |      60 |       50 |   33.33 |      60 | 14,23-29          
   index.tsx                 |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts        |       0 |        0 |       0 |       0 | 3-10              
  src/Pages/HomePage         |     100 |      100 |     100 |     100 |                   
   HomePage.tsx              |     100 |      100 |     100 |     100 |                   
  src/Pages/HomePage/AboutMe |      50 |      100 |       0 |      50 |                   
-  AboutMe.tsx               |      50 |      100 |       0 |      50 | 6                 
+  AboutMe.tsx               |      50 |      100 |       0 |      50 | 5                 
 ----------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.796 s
+Time:        2.768 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
