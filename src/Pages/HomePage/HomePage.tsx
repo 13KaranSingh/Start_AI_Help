@@ -17,7 +17,7 @@ const HomePage = () => {
             <a href="#dashboard">Dashboard</a>
           </li>
           <li>
-            <a href="#basic-questions">Basic Questions</a>
+            <Link to ="BasicQuestions">Basic Questions</Link>
           </li>
           <li>
             <Link to="DetailedQuestions">Detailed Questions</Link>

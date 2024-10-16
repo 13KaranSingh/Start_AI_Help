@@ -5,6 +5,7 @@ import { Link, HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
 import DetailedQuestions from "./Pages/HomePage/DetailedQuestionPage/DetailedQuestion";
+import BasicQuestions from "./Pages/HomePage/BasicQuestionPage/BasicQuestion"
 // Local storage and API Key
 let keyData: string = ""; // Declare keyData as a string
 const saveKeyData = "MYKEY"; // Key for local storage
@@ -38,11 +39,15 @@ function App() {
           <nav>
             <Link to="/" style={{ margin: "0 10px", color: "white" }}>Home</Link>
             <Link to="/AboutMe" style={{ margin: "0 10px", color: "white" }}>About Me</Link>
+            <Link to="/DetailedQuestions" style={{ margin: "0 10px", color: "white" }}>DetailedQuestion</Link>
+            <Link to="/BasicQuestions" style={{ margin: "0 10px", color: "white" }}>BasicQuestion</Link>
+
           </nav>
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* HomePage route */}
             <Route path="/AboutMe" element={<AboutMe />} /> {/* AboutMe route */}
             <Route path="/DetailedQuestions" element={<DetailedQuestions/>} /> {/* DetailedQuestions route */}
+            <Route path="/BasicQuestions" element={<BasicQuestions/>} /> {/* BasicQuestions route */}
           </Routes>
         </header>
         <Form>
