@@ -20,7 +20,7 @@ const HomePage = () => {
             <a href="#basic-questions">Basic Questions</a>
           </li>
           <li>
-            <a href="#detailed-questions">Detailed Questions</a>
+            <Link to="DetailedQuestions">Detailed Questions</Link>
           </li>
         </ul>
       </nav>
