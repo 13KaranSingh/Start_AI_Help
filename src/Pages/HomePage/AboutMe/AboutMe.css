@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 .about-us {
     max-width: 800px;
     margin: 0 auto;
@@ -38,4 +39,23 @@ p {
 
 .founders-list li:last-child {
     border-bottom: none; /* Remove divider for last item */
+=======
+
+.about-us {
+    text-align: center;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+}
+
+.about-us h1 {
+    color: #6687d8;
+}
+
+.about-us p {
+    color: #000000;
+    font-size: 18px;
+>>>>>>> 5874d44 (changes to about me)
 }
