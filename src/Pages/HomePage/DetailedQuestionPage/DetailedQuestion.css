@@ -69,3 +69,10 @@
   background-color: #007bff;
   transition: width 0.3s ease;
 }
+
+.rating-description {
+  font-size: 1.1em;
+  margin: 10px 0 20px;
+  color: #333; /* Adjust as needed */
+  text-align: center;
+}

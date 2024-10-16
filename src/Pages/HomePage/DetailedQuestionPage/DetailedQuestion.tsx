@@ -31,6 +31,13 @@ const DetailedQuestions = () => {
   return (
     <div className="detailed-questions-container">
       <h1 className="page-title">Detailed Questions</h1>
+      
+      <p className="rating-description">
+        Please rate each statement on a scale of 1 to 5, where:
+        <br />
+        <strong>1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
+      </p>
+
       {/* Progress Bar */}
       <div className="progress-bar-container">
         <div
