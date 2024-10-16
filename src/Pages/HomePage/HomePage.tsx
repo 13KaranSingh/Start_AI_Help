@@ -8,22 +8,20 @@ const HomePage = () => {
       <header className="header">
         <h1 className="logo">Logo</h1>
       </header>
-      <nav className="nav">
-        <ul>
-          <li>
-            <Link to="/AboutMe">About</Link> {/* Link to AboutMe page */}
-          </li>
-          <li>
-            <a href="#dashboard">Dashboard</a>
-          </li>
-          <li>
-            <Link to ="BasicQuestions">Basic Questions</Link>
-          </li>
-          <li>
-            <Link to="DetailedQuestions">Detailed Questions</Link>
-          </li>
-        </ul>
-      </nav>
+      <ul>
+        <li>
+          <Link to="/AboutMe">About</Link> {/* Link to AboutMe page */}
+        </li>
+        <li>
+          <a href="#dashboard">Dashboard</a>
+        </li>
+        <li>
+          <Link to="BasicQuestions">Basic Questions</Link>
+        </li>
+        <li>
+          <Link to="DetailedQuestions">Detailed Questions</Link>
+        </li>
+      </ul>
       <section id="about" className="section">
         <h2>About</h2>
         <p>This section provides information about our website.</p>

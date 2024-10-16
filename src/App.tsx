@@ -5,7 +5,9 @@ import { Link, HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
 import DetailedQuestions from "./Pages/HomePage/DetailedQuestionPage/DetailedQuestion";
-import BasicQuestions from "./Pages/HomePage/BasicQuestionPage/BasicQuestion"
+import BasicQuestions from "./Pages/HomePage/BasicQuestionPage/BasicQuestion";
+import NavBar from "./Components/NavBar";
+
 // Local storage and API Key
 let keyData: string = ""; // Declare keyData as a string
 const saveKeyData = "MYKEY"; // Key for local storage
@@ -33,21 +35,14 @@ function App() {
 
   return (
     <Router>
+      <NavBar />
       <div className="App">
         <header className="App-header">
-          {/* Navigation Links */}
-          <nav>
-            <Link to="/" style={{ margin: "0 10px", color: "white" }}>Home</Link>
-            <Link to="/AboutMe" style={{ margin: "0 10px", color: "white" }}>About Me</Link>
-            <Link to="/DetailedQuestions" style={{ margin: "0 10px", color: "white" }}>DetailedQuestion</Link>
-            <Link to="/BasicQuestions" style={{ margin: "0 10px", color: "white" }}>BasicQuestion</Link>
-
-          </nav>
           <Routes>
-            <Route path="/" element={<HomePage />} /> {/* HomePage route */}
-            <Route path="/AboutMe" element={<AboutMe />} /> {/* AboutMe route */}
-            <Route path="/DetailedQuestions" element={<DetailedQuestions/>} /> {/* DetailedQuestions route */}
-            <Route path="/BasicQuestions" element={<BasicQuestions/>} /> {/* BasicQuestions route */}
+            <Route path="/" element={<HomePage />} />
+            <Route path="/AboutMe" element={<AboutMe />} />
+            <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
+            <Route path="/BasicQuestions" element={<BasicQuestions />} />
           </Routes>
         </header>
         <Form>
@@ -67,4 +62,4 @@ function App() {
   );
 }
 
-export default App; // Export the App component
+export default App;
