@@ -4,7 +4,6 @@ import { Button, Form } from "react-bootstrap";
 import { Link, HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
-
 // Local storage and API Key
 let keyData: string = ""; // Declare keyData as a string
 const saveKeyData = "MYKEY"; // Key for local storage
@@ -37,7 +36,7 @@ function App() {
           {/* Navigation Links */}
           <nav>
             <Link to="/" style={{ margin: "0 10px", color: "white" }}>Home</Link>
-            <Link to="/AboutMe" style={{ margin: "0 10px", color: "white" }}>About Us</Link>
+            <Link to="/AboutMe" style={{ margin: "0 10px", color: "white" }}>About Me</Link>
           </nav>
           <Routes>
             <Route path="/" element={<HomePage />} /> {/* HomePage route */}

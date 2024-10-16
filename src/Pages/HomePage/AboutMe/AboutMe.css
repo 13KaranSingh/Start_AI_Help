@@ -1,0 +1,41 @@
+.about-us {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #4CAF50; /* Primary color */
+}
+
+h2 {
+    font-size: 1.5rem;
+    margin: 20px 0 10px;
+    color: #333;
+}
+
+p {
+    line-height: 1.6; /* Improve readability */
+    margin-bottom: 20px;
+}
+
+.founders-list {
+    list-style-type: none; /* Remove default bullet points */
+    padding: 0;
+}
+
+.founders-list li {
+    padding: 10px 0;
+    border-bottom: 1px solid #ddd; /* Divider between founders */
+}
+
+.founders-list li:last-child {
+    border-bottom: none; /* Remove divider for last item */
+}

@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "./HomePage.css";
 
 const HomePage = () => {
@@ -10,7 +11,7 @@ const HomePage = () => {
       <nav className="nav">
         <ul>
           <li>
-            <a href="#about">About</a>
+            <Link to="/AboutMe">About</Link> {/* Link to AboutMe page */}
           </li>
           <li>
             <a href="#dashboard">Dashboard</a>
