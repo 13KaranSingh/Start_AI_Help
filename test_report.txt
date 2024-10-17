@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (59 ms)
+  ✕ renders learn react link (62 ms)
 
   ● renders learn react link
 
@@ -12,67 +12,139 @@ FAIL src/App.test.tsx
     Ignored nodes: comments, script, style
     [36m<body>[39m
       [36m<div>[39m
+        [36m<nav[39m
+          [33mclass[39m=[32m"navbar"[39m
+        [36m>[39m
+          [36m<ul[39m
+            [33mclass[39m=[32m"navbar-list"[39m
+          [36m>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"navbar-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mhref[39m=[32m"#/"[39m
+              [36m>[39m
+                [0mHome[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"navbar-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mhref[39m=[32m"#/DetailedQuestions"[39m
+              [36m>[39m
+                [0mDetailed Questions[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"navbar-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mhref[39m=[32m"#/BasicQuestions"[39m
+              [36m>[39m
+                [0mBasic Questions[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"navbar-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mhref[39m=[32m"#/AboutMe"[39m
+              [36m>[39m
+                [0mAbout Us[0m
+              [36m</a>[39m
+            [36m</li>[39m
+          [36m</ul>[39m
+        [36m</nav>[39m
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
           [36m<header[39m
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
-            [36m<nav>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/"[39m
-                [33mstyle[39m=[32m"margin: 0px 10px; color: white;"[39m
-              [36m>[39m
-                [0mHome[0m
-              [36m</a>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/AboutMe"[39m
-                [33mstyle[39m=[32m"margin: 0px 10px; color: white;"[39m
-              [36m>[39m
-                [0mAbout Me[0m
-              [36m</a>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/DetailedQuestions"[39m
-                [33mstyle[39m=[32m"margin: 0px 10px; color: white;"[39m
-              [36m>[39m
-                [0mDetailedQuestion[0m
-              [36m</a>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/BasicQuestions"[39m
-                [33mstyle[39m=[32m"margin: 0px 10px; color: white;"[39m
-              [36m>[39m
-                [0mBasicQuestion[0m
-              [36m</a>[39m
-            [36m</nav>[39m
             [36m<main[39m
               [33mclass[39m=[32m"container"[39m
             [36m>[39m
               [36m<header[39m
-                [33mclass[39m=[32m"header"[39m
+                [33mclass[39m=[32m"hero"[39m
               [36m>[39m
                 [36m<h1[39m
                   [33mclass[39m=[32m"logo"[39m
                 [36m>[39m
-                  [0mLogo[0m
+                  [0mThe Career Helper AI[0m
                 [36m</h1>[39m
+                [36m<p[39m
+                  [33mclass[39m=[32m"tagline"[39m
+                [36m>[39m
+                  [0mDiscover Your Ideal Career Path![0m
+                [36m</p>[39m
+                [36m<a[39m
+                  [33mclass[39m=[32m"cta-button"[39m
+                  [33mhref[39m=[32m"#/BasicQuestions"[39m
+                [36m>[39m
+                  [0mStart Your Quiz[0m
+                [36m</a>[39m
               [36m</header>[39m
+              [36m<section[39m
+                [33mclass[39m=[32m"introduction"[39m
+              [36m>[39m
+                [36m<h2>[39m
+                  [0mWhat is The Career Helper AI?[0m
+                [36m</h2>[39m
+                [36m<p>[39m
+                  [0mOur quiz analyzes your skills, preferences, and interests to suggest the best career paths for you. Whether you're a student, a professional seeking a career change, or just curious, we can help you find your perfect fit.[0m
+                [36m</p>[39m
+              [36m</section>[39m
+              [36m<section[39m
+                [33mclass[39m=[32m"how-it-works"[39m
+              [36m>[39m
+                [36m<h2>[39m
+                  [0mHow It Works[0m
+                [36m</h2>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"steps"[39m
+                [36m>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"step"[39m
+                  [36m>[39m
+                    [36m<h3>[39m
+                      [0mStep 1[0m
+                    [36m</h3>[39m
+                    [36m<p>[39m
+                      [0mAnswer a few simple questions about your preferences and skills.[0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"step"[39m
+                  [36m>[39m
+                    [36m<h3>[39m
+                      [0mStep 2[0m
+                    [36m</h3>[39m
+                    [36m<p>[39m
+                      [0mOur AI analyzes your responses to match you with suitable careers.[0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"step"[39m
+                  [36m>[39m
+                    [36m<h3>[39m
+                      [0mStep 3[0m
+                    [36m</h3>[39m
+                    [36m<p>[39m
+                      [0mGet a personalized report with career suggestions and resources.[0m
+                    [36m</p>[39m
+                  [36m</div>[39m
+                [36m</div>[39m
+              [36m</section>[39m
               [36m<nav[39m
-                [33mclass[39m=[32m"nav"[39m
+                [33mclass[39m=[32m"home-nav"[39m
               [36m>[39m
                 [36m<ul>[39m
                   [36m<li>[39m
                     [36m<a[39m
                       [33mhref[39m=[32m"#/AboutMe"[39m
                     [36m>[39m
-                      [0mAbout[0m
-                    [36m</a>[39m
-                    [0m [0m
-                  [36m</li>[39m
-                  [36m<li>[39m
-                    [36m<a[39m
-                      [33mhref[39m=[32m"#dashboard"[39m
-                    [36m>[39m
-                      [0mDashboard[0m
+                      [0mAbout Us[0m
                     [36m</a>[39m
                   [36m</li>[39m
                   [36m<li>[39m
@@ -91,50 +163,6 @@ FAIL src/App.test.tsx
                   [36m</li>[39m
                 [36m</ul>[39m
               [36m</nav>[39m
-              [36m<section[39m
-                [33mclass[39m=[32m"section"[39m
-                [33mid[39m=[32m"about"[39m
-              [36m>[39m
-                [36m<h2>[39m
-                  [0mAbout[0m
-                [36m</h2>[39m
-                [36m<p>[39m
-                  [0mThis section provides information about our website.[0m
-                [36m</p>[39m
-              [36m</section>[39m
-              [36m<section[39m
-                [33mclass[39m=[32m"section"[39m
-                [33mid[39m=[32m"dashboard"[39m
-              [36m>[39m
-                [36m<h2>[39m
-                  [0mDashboard[0m
-                [36m</h2>[39m
-                [36m<p>[39m
-                  [0mThis section contains dashboard information.[0m
-                [36m</p>[39m
-              [36m</section>[39m
-              [36m<section[39m
-                [33mclass[39m=[32m"section"[39m
-                [33mid[39m=[32m"basic-questions"[39m
-              [36m>[39m
-                [36m<h2>[39m
-                  [0mBasic Questions[0m
-                [36m</h2>[39m
-                [36m<p>[39m
-                  [0mThis section lists basic questions.[0m
-                [36m</p>[39m
-              [36m</section>[39m
-              [36m<section[39m
-                [33mclass[39m=[32m"section"[39m
-                [33mid[39m=[32m"detailed-questions"[39m
-              [36m>[39m
-                [36m<h2>[39m
-                  [0mDetailed Questions[0m
-                [36m</h2>[39m
-                [36m<p>[39m
-                  [0mThis section lists detailed questions.[0m
-                [36m</p>[39m
-              [36m</section>[39m
             [36m</main>[39m
           [36m</header>[39m
           [36m<form[39m
@@ -159,6 +187,33 @@ FAIL src/App.test.tsx
             [36m</button>[39m
           [36m</form>[39m
         [36m</div>[39m
+        [36m<footer[39m
+          [33mclass[39m=[32m"footer"[39m
+        [36m>[39m
+          [36m<div[39m
+            [33mclass[39m=[32m"footer-content"[39m
+          [36m>[39m
+            [36m<p>[39m
+              [0mContact Us[0m
+            [36m</p>[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"contact-info"[39m
+            [36m>[39m
+              [36m<li>[39m
+                [0mEmail: group@example.com[0m
+              [36m</li>[39m
+              [36m<li>[39m
+                [0mPhone: (123) 456-7890[0m
+              [36m</li>[39m
+              [36m<li>[39m
+                [0mAddress: 123 Career Helper St, Quizville[0m
+              [36m</li>[39m
+            [36m</ul>[39m
+            [36m<p>[39m
+              [0m© 2024 The Career Helper AI. All rights reserved.[0m
+            [36m</p>[39m
+          [36m</div>[39m
+        [36m</footer>[39m
       [36m</div>[39m
     [36m</body>[39m
 
@@ -180,28 +235,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------------------------|---------|----------|---------|---------|-------------------
-File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
------------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |   24.52 |    16.66 |   10.52 |   25.49 |                   
- src                                     |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx                                |      60 |       50 |   33.33 |      60 | 16,25-31          
-  index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
- src/Pages/HomePage                      |     100 |      100 |     100 |     100 |                   
-  HomePage.tsx                           |     100 |      100 |     100 |     100 |                   
- src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
-  AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
- src/Pages/HomePage/BasicQuestionPage    |   14.28 |      100 |       0 |   15.38 |                   
-  BasicQuestion.tsx                      |   14.28 |      100 |       0 |   15.38 | 13-58             
- src/Pages/HomePage/DetailedQuestionPage |   14.28 |      100 |       0 |   15.38 |                   
-  DetailedQuestion.tsx                   |   14.28 |      100 |       0 |   15.38 | 18-63             
------------------------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        2.876 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -214,3 +247,28 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+-----------------------------------------|---------|----------|---------|---------|-------------------
+File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------------------------|---------|----------|---------|---------|-------------------
+All files                                |   29.82 |    16.66 |   19.04 |    30.9 |                   
+ src                                     |   28.57 |    16.66 |      20 |   28.57 |                   
+  App.tsx                                |      60 |       50 |   33.33 |      60 | 19,28-34          
+  index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
+ src/Components                          |     100 |      100 |     100 |     100 |                   
+  Footer.tsx                             |     100 |      100 |     100 |     100 |                   
+  NavBar.tsx                             |     100 |      100 |     100 |     100 |                   
+ src/Pages/HomePage                      |     100 |      100 |     100 |     100 |                   
+  HomePage.tsx                           |     100 |      100 |     100 |     100 |                   
+ src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
+  AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
+ src/Pages/HomePage/BasicQuestionPage    |   14.28 |      100 |       0 |   15.38 |                   
+  BasicQuestion.tsx                      |   14.28 |      100 |       0 |   15.38 | 13-58             
+ src/Pages/HomePage/DetailedQuestionPage |   14.28 |      100 |       0 |   15.38 |                   
+  DetailedQuestion.tsx                   |   14.28 |      100 |       0 |   15.38 | 18-63             
+-----------------------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.327 s
+Ran all test suites.
