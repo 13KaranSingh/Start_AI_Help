@@ -25,7 +25,8 @@
 }
 
 /* Styling introduction and steps */
-.introduction, .how-it-works {
+.introduction,
+.how-it-works {
   padding: 40px;
   text-align: center;
 }
@@ -45,26 +46,4 @@
 
 .step h3 {
   margin-top: 0;
-}
-
-/* Basic Navigation Styling */
-.home-nav {
-  padding: 20px;
-  text-align: center;
-}
-
-.home-nav ul {
-  list-style-type: none;
-  padding: 0;
-}
-
-.home-nav li {
-  display: inline;
-  margin: 0 15px;
-}
-
-.home-nav a {
-  text-decoration: none;
-  color: #3498db;
-  font-weight: bold;
 }
