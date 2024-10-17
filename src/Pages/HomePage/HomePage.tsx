@@ -18,7 +18,10 @@ const HomePage = () => {
       <section className="introduction">
         <h2>What is The Career Helper AI?</h2>
         <p>
-          Our quiz analyzes your skills, preferences, and interests to suggest the best career paths for you. Whether you're a student, a professional seeking a career change, or just curious, we can help you find your perfect fit.
+          Our quiz analyzes your skills, preferences, and interests to suggest
+          the best career paths for you. Whether you're a student, a
+          professional seeking a career change, or just curious, we can help you
+          find your perfect fit.
         </p>
       </section>
 
@@ -28,33 +31,24 @@ const HomePage = () => {
         <div className="steps">
           <div className="step">
             <h3>Step 1</h3>
-            <p>Answer a few simple questions about your preferences and skills.</p>
+            <p>
+              Answer a few simple questions about your preferences and skills.
+            </p>
           </div>
           <div className="step">
             <h3>Step 2</h3>
-            <p>Our AI analyzes your responses to match you with suitable careers.</p>
+            <p>
+              Our AI analyzes your responses to match you with suitable careers.
+            </p>
           </div>
           <div className="step">
             <h3>Step 3</h3>
-            <p>Get a personalized report with career suggestions and resources.</p>
+            <p>
+              Get a personalized report with career suggestions and resources.
+            </p>
           </div>
         </div>
       </section>
-
-      {/* Navigation Links */}
-      <nav className="home-nav">
-        <ul>
-          <li>
-            <Link to="/AboutMe">About Us</Link>
-          </li>
-          <li>
-            <Link to="/BasicQuestions">Basic Questions</Link>
-          </li>
-          <li>
-            <Link to="/DetailedQuestions">Detailed Questions</Link>
-          </li>
-        </ul>
-      </nav>
     </main>
   );
 };
