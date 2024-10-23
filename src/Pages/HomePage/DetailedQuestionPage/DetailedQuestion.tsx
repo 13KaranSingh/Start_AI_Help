@@ -28,15 +28,13 @@ const DetailedQuestions = () => {
     setAnswers(newAnswers);
   };
 
+  // Handle form submission
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault(); // Prevent page refresh
     console.log("Submitting detailed answers:", answers); // Log answers
     localStorage.setItem("detailedAnswers", JSON.stringify(answers)); // Store answers in localStorage
-    navigate("/results"); // Navigate to Results page
+    navigate("/Results"); // Redirect to the Results page
   };
-  
-  
-  
 
   const progressPercentage = (completedQuestions / questions.length) * 100;
 
@@ -60,7 +58,7 @@ const DetailedQuestions = () => {
       <p>
         {completedQuestions} out of {questions.length} questions completed
       </p>
-      <form className="questions-form">
+      <form className="questions-form" onSubmit={handleSubmit}>
         {questions.map((question, index) => (
           <div key={index} className="question-item">
             <p>{question}</p>
