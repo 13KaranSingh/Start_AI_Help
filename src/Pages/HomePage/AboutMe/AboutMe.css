@@ -1,7 +1,19 @@
-<<<<<<< HEAD
+.about-us-container {
+    display: flex;
+    justify-content: flex-start; /* Align to the left */
+    padding: 20px;
+}
+.about-us-box{
+    width: 250px;
+    padding: 20px;
+    border: 1px solid #ccc; 
+    background-color: #f9f9f9; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .about-us {
     max-width: 800px;
-    margin: 0 auto;
+    margin-left: 0 auto;
     padding: 20px;
     font-family: 'Arial', sans-serif;
     color: #333;
@@ -39,23 +51,4 @@ p {
 
 .founders-list li:last-child {
     border-bottom: none; /* Remove divider for last item */
-=======
-
-.about-us {
-    text-align: center;
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    background-color: #f9f9f9;
-}
-
-.about-us h1 {
-    color: #6687d8;
-}
-
-.about-us p {
-    color: #000000;
-    font-size: 18px;
->>>>>>> 5874d44 (changes to about me)
 }
