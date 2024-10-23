@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./BasicQuestion.css";
+import { useNavigate } from "react-router-dom";
 
 const questions = [
   "I like working with others.",
@@ -14,12 +15,23 @@ const BasicQuestion = () => {
     Array(questions.length).fill(0)
   );
   const completedQuestions = answers.filter((answer) => answer !== 0).length; // Count completed answers
+  const navigate= useNavigate();
 
   const handleAnswerChange = (index: number, value: number) => {
     const newAnswers = [...answers];
     newAnswers[index] = value;
     setAnswers(newAnswers);
   };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent page refresh
+    console.log("Submitting answers:", answers); // Log answers
+    localStorage.setItem("basicAnswers", JSON.stringify(answers)); // Store answers in localStorage
+    navigate("/results"); // Navigate to Results page
+  };
+  
+  
+  
 
   const progressPercentage = (completedQuestions / questions.length) * 100;
 
