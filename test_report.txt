@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (70 ms)
+  ✕ renders learn react link (68 ms)
 
   ● renders learn react link
 
@@ -52,6 +52,15 @@ FAIL src/App.test.tsx
                 [33mhref[39m=[32m"#/AboutMe"[39m
               [36m>[39m
                 [0mAbout Us[0m
+              [36m</a>[39m
+            [36m</li>[39m
+            [36m<li[39m
+              [33mclass[39m=[32m"navbar-item"[39m
+            [36m>[39m
+              [36m<a[39m
+                [33mhref[39m=[32m"#/Results"[39m
+              [36m>[39m
+                [0mResults[0m
               [36m</a>[39m
             [36m</li>[39m
           [36m</ul>[39m
@@ -211,9 +220,9 @@ FAIL src/App.test.tsx
 -----------------------------------------|---------|----------|---------|---------|-------------------
 File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |   29.82 |    16.66 |   19.04 |    30.9 |                   
+All files                                |   23.37 |     12.5 |   14.81 |   24.32 |                   
  src                                     |   28.57 |    16.66 |      20 |   28.57 |                   
-  App.tsx                                |      60 |       50 |   33.33 |      60 | 19,28-34          
+  App.tsx                                |      60 |       50 |   33.33 |      60 | 20,29-35          
   index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
  src/Components                          |     100 |      100 |     100 |     100 |                   
@@ -223,15 +232,17 @@ All files                                |   29.82 |    16.66 |   19.04 |    30.
   HomePage.tsx                           |     100 |      100 |     100 |     100 |                   
  src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
   AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
- src/Pages/HomePage/BasicQuestionPage    |   14.28 |      100 |       0 |   15.38 |                   
-  BasicQuestion.tsx                      |   14.28 |      100 |       0 |   15.38 | 13-58             
- src/Pages/HomePage/DetailedQuestionPage |   14.28 |      100 |       0 |   15.38 |                   
-  DetailedQuestion.tsx                   |   14.28 |      100 |       0 |   15.38 | 18-63             
+ src/Pages/HomePage/BasicQuestionPage    |      10 |      100 |       0 |   10.52 |                   
+  BasicQuestion.tsx                      |      10 |      100 |       0 |   10.52 | 14-68             
+ src/Pages/HomePage/DetailedQuestionPage |      10 |      100 |       0 |   10.52 |                   
+  DetailedQuestion.tsx                   |      10 |      100 |       0 |   10.52 | 19-73             
+ src/Pages/HomePage/Results              |    12.5 |        0 |       0 |   14.28 |                   
+  Results.tsx                            |    12.5 |        0 |       0 |   14.28 | 6-19              
 -----------------------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        2.952 s
+Time:        3.012 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
