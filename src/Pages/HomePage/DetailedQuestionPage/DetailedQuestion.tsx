@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./DetailedQuestion.css";
+import { useNavigate } from "react-router-dom";
 
 const questions = [
   "I enjoy working in a team environment.",
@@ -19,6 +20,7 @@ const DetailedQuestions = () => {
     Array(questions.length).fill(0)
   );
   const completedQuestions = answers.filter((answer) => answer !== 0).length; // Count completed answers
+  const navigate = useNavigate();
 
   const handleAnswerChange = (index: number, value: number) => {
     const newAnswers = [...answers];
@@ -26,12 +28,22 @@ const DetailedQuestions = () => {
     setAnswers(newAnswers);
   };
 
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault(); // Prevent page refresh
+    console.log("Submitting detailed answers:", answers); // Log answers
+    localStorage.setItem("detailedAnswers", JSON.stringify(answers)); // Store answers in localStorage
+    navigate("/results"); // Navigate to Results page
+  };
+  
+  
+  
+
   const progressPercentage = (completedQuestions / questions.length) * 100;
 
   return (
     <div className="detailed-questions-container">
       <h1 className="page-title">Detailed Questions</h1>
-      
+
       <p className="rating-description">
         Please rate each statement on a scale of 1 to 5, where:
         <br />

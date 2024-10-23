@@ -8,6 +8,7 @@ import DetailedQuestions from "./Pages/HomePage/DetailedQuestionPage/DetailedQue
 import BasicQuestions from "./Pages/HomePage/BasicQuestionPage/BasicQuestion";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
+import Results from "./Pages/HomePage/Results/Results";
 
 // Local storage and API Key
 let keyData: string = ""; // Declare keyData as a string
@@ -44,6 +45,7 @@ function App() {
             <Route path="/AboutMe" element={<AboutMe />} />
             <Route path="/DetailedQuestions" element={<DetailedQuestions />} />
             <Route path="/BasicQuestions" element={<BasicQuestions />} />
+            <Route path="/Results" element={<Results />} />
           </Routes>
         </header>
         <Form>
