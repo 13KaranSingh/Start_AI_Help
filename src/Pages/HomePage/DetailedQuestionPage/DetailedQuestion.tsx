@@ -3,16 +3,15 @@ import "./DetailedQuestion.css";
 import { useNavigate } from "react-router-dom";
 
 const questions = [
-  "I enjoy working in a team environment.",
-  "I am comfortable with public speaking.",
-  "I like to solve complex problems.",
-  "I am detail-oriented.",
-  "I prefer hands-on activities.",
-  "I enjoy learning new technologies.",
-  "I am comfortable with repetitive tasks.",
-  "I like to help others with their problems.",
-  "I can adapt to new situations easily.",
-  "I am able to work independently without supervision.",
+  "How would you rate your leadership or management skills?",
+  "What's your strongest problem-solving ability?",
+  "Which industry or field are you most passionate about working in?",
+  "What kind of career growth do you aspire to?",
+  "What kind of company culture do you prefer?",
+  "How do you incoperate creativity into your work?",
+  "Which ceative medium do you enjoy working with the most?",
+  "What's your approach to working through challenges?",
+  "What motivates you most in your career?",
 ];
 
 const DetailedQuestions = () => {
