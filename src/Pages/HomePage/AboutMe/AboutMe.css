@@ -1,54 +1,49 @@
-.about-us-container {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.about-container {
     display: flex;
-    justify-content: flex-start; /* Align to the left */
-    padding: 20px;
-}
-.about-us-box{
-    width: 250px;
-    padding: 20px;
-    border: 1px solid #ccc; 
-    background-color: #f9f9f9; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1600px; /* Increased max-width for a wider container */
+    margin: 0 auto;
+    width: 100%; /* Ensures the container takes full width */
 }
 
-.about-us {
-    max-width: 800px;
-    margin-left: 0 auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+.founder-box {
+    width: 48%; /* Adjusted width to allow for more content */
+    padding: 30px; /* Increased padding inside the box */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for a stronger effect */
+    text-align: center;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #4CAF50; /* Primary color */
-}
-
-h2 {
-    font-size: 1.5rem;
-    margin: 20px 0 10px;
-    color: #333;
-}
-
-p {
-    line-height: 1.6; /* Improve readability */
+.founder-box h2 {
     margin-bottom: 20px;
 }
 
-.founders-list {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0;
+.founder-square {
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    padding: 20px; /* Increased padding inside each box */
+    margin: 15px 0; /* Increased margin between boxes */
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
 
-.founders-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd; /* Divider between founders */
+.founder-square:hover {
+    background-color: #d1d1d1;
 }
 
-.founders-list li:last-child {
-    border-bottom: none; /* Remove divider for last item */
+.about-us {
+    width: 48%; /* Adjusted width to match founder box */
+    padding: 30px; /* Increased padding for a larger area */
+    background-color: #f9f9f9;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Enhanced shadow for depth */
 }
