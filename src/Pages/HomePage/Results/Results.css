@@ -24,3 +24,43 @@
     transform: rotate(360deg);
   }
 }
+
+.result-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.result-box:hover {
+  background-color: lightslategrey;
+}
+
+.result-title {
+  font-weight: bold;
+  font-size: large;
+  color: #333;
+}
+
+/* Initially hides the content */
+.result-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: scaleY(0.95);
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* Reveals the content when you hover */
+.result-box:hover .result-content {
+  max-height: 100px;
+  opacity: 1;
+  transform: scaleY(1);
+  padding-top: 10px;
+}
