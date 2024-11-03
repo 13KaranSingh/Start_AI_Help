@@ -1,8 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './NavBar.css'; 
 
 const Navbar: React.FC = () => {
+    // Define the theme state as a boolean
+    const [isDarkMode, setIsDarkMode] = useState<boolean>(false);
+
+    // Define the toggle function
+    const toggleTheme = (): void => {
+        setIsDarkMode(prevMode => !prevMode);
+        document.body.classList.toggle('dark-mode', !isDarkMode);
+    };
+
     return (
         <nav className="navbar">
             <ul className="navbar-list">
@@ -22,6 +31,9 @@ const Navbar: React.FC = () => {
                     <Link to= "/Results">Results</Link>
                 </li>
             </ul>
+            <button onClick={toggleTheme} className="theme-toggle">
+                {isDarkMode ? '🌞 Light Mode' : '🌜 Dark Mode'}
+            </button>
         </nav>
     );
 };
