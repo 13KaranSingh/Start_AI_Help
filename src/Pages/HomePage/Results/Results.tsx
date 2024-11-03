@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
-import './Results.css'; // Make sure to add CSS for styling
+import './Results.css'; 
 import { OpenAI } from 'openai';
 
 const ResultsPage = () => {
-  const [resultData, setResultData] = useState<string | null>(null);
+  const [resultData, setResultData] = useState<any | null>(null);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -57,9 +57,16 @@ Format your response as a JSON object like this:
           model: "gpt-4-turbo",
         });
 
-        // Update result data and loading state
-        console.log(completion.choices[0].message.content);
-        setResultData(completion.choices[0].message.content);
+        // Check if the content is not null before parsing
+        const messageContent = completion.choices[0].message.content;
+        if (typeof messageContent === 'string') {
+          const parsedData = JSON.parse(messageContent);
+          console.log(parsedData);
+          setResultData(parsedData);
+        } else {
+          console.error("Unexpected message content:", messageContent);
+          setResultData(null);
+        }
         setIsLoading(false);
       } catch (error) {
         console.error("OpenAI API Error:", error);
@@ -68,7 +75,7 @@ Format your response as a JSON object like this:
     }
 
     main();
-  }, []); // Empty dependency array, so it runs only once when the component mounts
+  }, []);
 
   return (
     <div className="results-container">
@@ -82,8 +89,13 @@ Format your response as a JSON object like this:
           <h2>Results are ready!</h2>
           {resultData ? (
             <div>
-              {/* Display the result data here */}
-              <pre>{resultData}</pre>
+              <h3>Suggested Career Path: {resultData.careerPath}</h3>
+              <p><strong>Description:</strong> {resultData.careerDescription}</p>
+              <p><strong>Required Education:</strong> {resultData.schoolingRequired}</p>
+              <p><strong>Estimated Time to Qualify:</strong> {resultData.timeToQualify}</p>
+              <p><strong>Salary Information:</strong> {resultData.salaryInfo}</p>
+              <p><strong>Job Demand:</strong> {resultData.jobDemand}</p>
+              <p><strong>Why This Job Suits You:</strong> {resultData.reasonForSuitability}</p>
             </div>
           ) : (
             <p>No results available.</p>
