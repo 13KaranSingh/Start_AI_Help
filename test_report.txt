@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (61 ms)
+  ✕ renders learn react link (68 ms)
 
   ● renders learn react link
 
@@ -157,7 +157,7 @@ FAIL src/App.test.tsx
             [36m</label>[39m
             [36m<input[39m
               [33mclass[39m=[32m"form-control"[39m
-              [33mplaceholder[39m=[32m"Insert API Key Here"[39m
+              [33mplaceholder[39m=[32m"API_KEY"[39m
               [33mtype[39m=[32m"password"[39m
             [36m/>[39m
             [36m<br />[39m
@@ -220,7 +220,7 @@ FAIL src/App.test.tsx
 -----------------------------------------|---------|----------|---------|---------|-------------------
 File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |   20.43 |     6.25 |   13.79 |   21.11 |                   
+All files                                |   19.38 |     5.55 |   13.79 |      20 |                   
  src                                     |   28.57 |    16.66 |      20 |   28.57 |                   
   App.tsx                                |      60 |       50 |   33.33 |      60 | 20,29-35          
   index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
@@ -236,13 +236,13 @@ All files                                |   20.43 |     6.25 |   13.79 |   21.1
   BasicQuestion.tsx                      |      10 |      100 |       0 |   10.52 | 14-68             
  src/Pages/HomePage/DetailedQuestionPage |   11.11 |        0 |       0 |      12 |                   
   DetailedQuestion.tsx                   |   11.11 |        0 |       0 |      12 | 38-98             
- src/Pages/HomePage/Results              |    5.88 |        0 |       0 |    5.88 |                   
-  Results.tsx                            |    5.88 |        0 |       0 |    5.88 | 6-73              
+ src/Pages/HomePage/Results              |    4.54 |        0 |       0 |    4.54 |                   
+  Results.tsx                            |    4.54 |        0 |       0 |    4.54 | 6-80              
 -----------------------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.133 s
+Time:        3.199 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
