@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from 'react';
-import './Results.css'; 
-import { OpenAI } from 'openai';
+import React, { useEffect, useState } from "react";
+import "./Results.css";
+import { OpenAI } from "openai";
 
 const ResultsPage = () => {
   const [resultData, setResultData] = useState<any | null>(null);
@@ -8,7 +8,8 @@ const ResultsPage = () => {
 
   useEffect(() => {
     async function main() {
-      const apiKeyFromStorage = (localStorage.getItem("MYKEY") ?? "").slice(1, -1) ?? "";
+      const apiKeyFromStorage =
+        (localStorage.getItem("MYKEY") ?? "").slice(1, -1) ?? "";
       console.log("API Key from Storage:", apiKeyFromStorage);
 
       const openai = new OpenAI({
@@ -47,7 +48,8 @@ Format your response as a JSON object like this:
           messages: [
             {
               role: "system",
-              content: "As a career advisor, analyze the user's preferences and skills to suggest personalized career options. Focus on their interests and strengths to provide relevant career paths.",
+              content:
+                "As a career advisor, analyze the user's preferences and skills to suggest personalized career options. Focus on their interests and strengths to provide relevant career paths.",
             },
             {
               role: "user",
@@ -59,7 +61,7 @@ Format your response as a JSON object like this:
 
         // Check if the content is not null before parsing
         const messageContent = completion.choices[0].message.content;
-        if (typeof messageContent === 'string') {
+        if (typeof messageContent === "string") {
           const parsedData = JSON.parse(messageContent);
           console.log(parsedData);
           setResultData(parsedData);
@@ -89,13 +91,32 @@ Format your response as a JSON object like this:
           <h2>Results are ready!</h2>
           {resultData ? (
             <div>
-              <h3>Suggested Career Path: {resultData.careerPath}</h3>
-              <p><strong>Description:</strong> {resultData.careerDescription}</p>
-              <p><strong>Required Education:</strong> {resultData.schoolingRequired}</p>
-              <p><strong>Estimated Time to Qualify:</strong> {resultData.timeToQualify}</p>
-              <p><strong>Salary Information:</strong> {resultData.salaryInfo}</p>
-              <p><strong>Job Demand:</strong> {resultData.jobDemand}</p>
-              <p><strong>Why This Job Suits You:</strong> {resultData.reasonForSuitability}</p>
+              {[
+                {
+                  title: "Suggested Career Path",
+                  content: resultData.careerPath,
+                },
+                { title: "Description", content: resultData.careerDescription },
+                {
+                  title: "Required Education",
+                  content: resultData.schoolingRequired,
+                },
+                {
+                  title: "Estimated Time to Qualify",
+                  content: resultData.timeToQualify,
+                },
+                { title: "Salary Information", content: resultData.salaryInfo },
+                { title: "Job Demand", content: resultData.jobDemand },
+                {
+                  title: "Why This Job Suits You",
+                  content: resultData.reasonForSuitability,
+                },
+              ].map((item, index) => (
+                <div className="result-box" key={index}>
+                  <div className="result-title">{item.title}</div>
+                  <div className="result-content">{item.content}</div>
+                </div>
+              ))}
             </div>
           ) : (
             <p>No results available.</p>
