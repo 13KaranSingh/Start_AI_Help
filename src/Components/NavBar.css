@@ -1,5 +1,6 @@
+/* Navbar Styles */
 .navbar {
-  background-color: #333;
+  background-color: #333; /* Light mode navbar background */
   padding: 10px;
 }
 
@@ -11,7 +12,7 @@
 }
 
 .navbar-item a {
-  color: #fff;
+  color: #fff; /* Light mode link color */
   text-decoration: none;
   font-weight: bold;
   padding: 10px 15px;
@@ -19,5 +20,41 @@
 }
 
 .navbar-item a:hover {
-  background-color: #555;
+  background-color: #555; /* Light mode hover color */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .navbar {
+  background-color: #444; /* Dark mode navbar background */
+}
+
+body.dark-mode .navbar-item a {
+  color: #e0e0e0; /* Dark mode link color */
+}
+
+body.dark-mode .navbar-item a:hover {
+  background-color: #555; /* Dark mode hover color */
+}
+
+/* Global Dark Mode Styles */
+body.dark-mode {
+  background-color: #2e2e2e; /* Dark gray background */
+  color: #e0e0e0; /* Light gray text for better readability */
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-left: auto; /* Align to the right */
+  padding: 10px 15px;
+  background-color: #666; /* Softer background color for the button */
+  color: white;
+  border: none;
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Smooth transitions */
+}
+
+.theme-toggle:hover {
+  background-color: #777; /* Lighter hover background for button */
+  transform: scale(1.05); /* Slightly enlarge on hover */
 }

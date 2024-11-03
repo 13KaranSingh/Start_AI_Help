@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Button, Form } from "react-bootstrap";
 import {HashRouter as Router, Routes, Route } from "react-router-dom";
@@ -34,6 +34,13 @@ function App() {
   function changeKey(event: React.ChangeEvent<HTMLInputElement>) {
     setKey(event.target.value); // Update state with input value
   }
+
+
+  //Dark/light mode
+  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  useEffect(() => {
+    document.body.classList.toggle('dark-mode', darkTheme);
+  }, [darkTheme]);
 
   return (
     <Router>
