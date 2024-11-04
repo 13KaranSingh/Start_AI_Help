@@ -44,8 +44,8 @@ function App() {
 
   return (
     <Router>
-      <NavBar />
-      <div className="App">
+      <NavBar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+      <div className={`App ${darkTheme ? "dark" : ""}`}>
         <header className="App-header">
           <Routes>
             <Route path="/" element={<HomePage />} />
