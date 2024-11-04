@@ -33,7 +33,15 @@
   padding: 5px 10px;
   border-radius: 5px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Style for the active (clicked) state */
+.rating label.active {
+  background-color: #007bff; /* Highlight color */
+  color: white; /* Text color when selected */
+  font-weight: bold;
+  border: 1px solid #0056b3; /* Optional border for emphasis */
 }
 
 .rating input[type="radio"]:checked + label {
@@ -41,6 +49,7 @@
   color: white;
 }
 
+/* Submit button styling */
 .submit-button {
   background-color: #007bff;
   color: white;
@@ -56,6 +65,7 @@
   background-color: #0056b3;
 }
 
+/* Progress bar styling */
 .progress-bar-container {
   width: 100%;
   background-color: #e0e0e0;
@@ -70,9 +80,10 @@
   transition: width 0.3s ease;
 }
 
+/* Rating description */
 .rating-description {
   font-size: 1.1em;
   margin: 10px 0 20px;
-  color: #333; 
+  color: #333;
   text-align: center;
 }
