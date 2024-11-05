@@ -1,4 +1,4 @@
-/* Centering content and styling the hero */
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 50px;
@@ -15,35 +15,50 @@
   margin-bottom: 20px;
 }
 
-.cta-button {
-  padding: 10px 20px;
+/* Cards Section */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+}
+
+.card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 30px;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px; /* Add margin for spacing in wrap mode */
+}
+
+.card h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+}
+
+.card p {
+  font-size: 1.1em;
+  color: #666;
+  margin-bottom: 25px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 12px 20px;
   background-color: #3498db;
-  color: #fff;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease;
 }
 
-/* Styling introduction and steps */
-.introduction,
-.how-it-works {
-  padding: 40px;
-  text-align: center;
-}
-
-.steps {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
-}
-
-.step {
-  width: 30%;
-  background-color: #e0e0e0;
-  padding: 10px;
-  border-radius: 8px;
-}
-
-.step h3 {
-  margin-top: 0;
+.card-button:hover {
+  background-color: #2980b9;
 }
