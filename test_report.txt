@@ -3,7 +3,7 @@
 > react-scripts test --coverage
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (59 ms)
+  ✕ renders learn react link (56 ms)
 
   ● renders learn react link
 
@@ -92,62 +92,41 @@ FAIL src/App.test.tsx
                 [36m>[39m
                   [0mDiscover Your Ideal Career Path![0m
                 [36m</p>[39m
-                [36m<a[39m
-                  [33mclass[39m=[32m"cta-button"[39m
-                  [33mhref[39m=[32m"#/BasicQuestions"[39m
-                [36m>[39m
-                  [0mStart Your Quiz[0m
-                [36m</a>[39m
               [36m</header>[39m
               [36m<section[39m
-                [33mclass[39m=[32m"introduction"[39m
+                [33mclass[39m=[32m"cards-section"[39m
               [36m>[39m
-                [36m<h2>[39m
-                  [0mWhat is The Career Helper AI?[0m
-                [36m</h2>[39m
-                [36m<p>[39m
-                  [0mOur quiz analyzes your skills, preferences, and interests to suggest the best career paths for you. Whether you're a student, a professional seeking a career change, or just curious, we can help you find your perfect fit.[0m
-                [36m</p>[39m
-              [36m</section>[39m
-              [36m<section[39m
-                [33mclass[39m=[32m"how-it-works"[39m
-              [36m>[39m
-                [36m<h2>[39m
-                  [0mHow It Works[0m
-                [36m</h2>[39m
                 [36m<div[39m
-                  [33mclass[39m=[32m"steps"[39m
+                  [33mclass[39m=[32m"card"[39m
                 [36m>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"step"[39m
+                  [36m<h2>[39m
+                    [0mDetailed Questions[0m
+                  [36m</h2>[39m
+                  [36m<p>[39m
+                    [0mDive deeper into your preferences, skills, and experiences to receive tailored career advice and insights.[0m
+                  [36m</p>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"card-button"[39m
+                    [33mhref[39m=[32m"#/DetailedQuestions"[39m
                   [36m>[39m
-                    [36m<h3>[39m
-                      [0mStep 1[0m
-                    [36m</h3>[39m
-                    [36m<p>[39m
-                      [0mAnswer a few simple questions about your preferences and skills.[0m
-                    [36m</p>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"step"[39m
+                    [0mGo to Detailed Questions[0m
+                  [36m</a>[39m
+                [36m</div>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"card"[39m
+                [36m>[39m
+                  [36m<h2>[39m
+                    [0mBasic Questions[0m
+                  [36m</h2>[39m
+                  [36m<p>[39m
+                    [0mAnswer quick and simple questions to receive general career suggestions based on your preferences.[0m
+                  [36m</p>[39m
+                  [36m<a[39m
+                    [33mclass[39m=[32m"card-button"[39m
+                    [33mhref[39m=[32m"#/BasicQuestions"[39m
                   [36m>[39m
-                    [36m<h3>[39m
-                      [0mStep 2[0m
-                    [36m</h3>[39m
-                    [36m<p>[39m
-                      [0mOur AI analyzes your responses to match you with suitable careers.[0m
-                    [36m</p>[39m
-                  [36m</div>[39m
-                  [36m<div[39m
-                    [33mclass[39m=[32m"step"[39m
-                  [36m>[39m
-                    [36m<h3>[39m
-                      [0mStep 3[0m
-                    [36m</h3>[39m
-                    [36m<p>[39m
-                      [0mGet a personalized report with career suggestions and resources.[0m
-                    [36m</p>[39m
-                  [36m</div>[39m
+                    [0mGo to Basic Questions[0m
+                  [36m</a>[39m
                 [36m</div>[39m
               [36m</section>[39m
             [36m</main>[39m
@@ -247,7 +226,7 @@ All files                                |   22.11 |    13.63 |   15.62 |   22.3
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.318 s
+Time:        3.231 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
