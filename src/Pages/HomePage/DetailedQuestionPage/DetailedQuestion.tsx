@@ -16,88 +16,74 @@ const questions = [
 
 const options = [
   [
-    "Strong - I enjoy guiding and motivating teams",
-    "Moderate - I like managing projects but prefer not to lead",
-    "Developing - I'd like to improve my leadership skills",
-    "Minimal - I prefer being a team member rather than a leader",
+    " Strong - I enjoy guiding and motivating teams",
+    " Moderate - I like managing projects but prefer not to lead",
+    " Developing - I'd like to improve my leadership skills",
+    " Minimal - I prefer being a team member rather than a leader",
   ],
   [
-    "Thinking outside the box and finding innovative solutions",
-    "Breaking down complex technical issues",
-    "Identifying needs and helping others",
-    "Streamlining processes to make things more efficient",
+    " Thinking outside the box and finding innovative solutions",
+    " Breaking down complex technical issues",
+    " Identifying needs and helping others",
+    " Streamlining processes to make things more efficient",
   ],
   [
-    "Technology and innovation",
-    "Arts, media, or entertainment",
-    "Healthcare or education",
-    "Business, finance, or entrepreneurship",
+    " Technology and innovation",
+    " Arts, media, or entertainment",
+    " Healthcare or education",
+    " Business, finance, or entrepreneurship",
   ],
   [
-    "Becoming a creative director or leading visionary projects",
-    "Gaining expertise as a senior engineer or technical expert",
-    "Being a trusted mentor or advocate in my community",
-    "Running my own business or leading a company",
+    " Becoming a creative director or leading visionary projects",
+    " Gaining expertise as a senior engineer or technical expert",
+    " Being a trusted mentor or advocate in my community",
+    " Running my own business or leading a company",
   ],
   [
-    "Open, creative, and collaborative",
-    "Structured with clear goal and innovation",
-    "Mission-focused, emphasizing empathy and social impact",
-    "Competitive and performance-driven with a focus on growth",
+    " Open, creative, and collaborative",
+    " Structured with clear goal and innovation",
+    " Mission-focused, emphasizing empathy and social impact",
+    " Competitive and performance-driven with a focus on growth",
   ],
   [
-    "By constantly brainstorming new ideas and designs",
-    "By finding new ways to improve technical systems",
-    "Through storytelling, writing, or teaching",
-    "By developing innovative business strategies or marketing plans",
+    " By constantly brainstorming new ideas and designs",
+    " By finding new ways to improve technical systems",
+    " Through storytelling, writing, or teaching",
+    " By developing innovative business strategies or marketing plans",
   ],
   [
-    "Visual arts, like design or photography",
-    "Digital creation, like coding or interactive media",
-    "Writing or speaking to convey ideas",
-    "Event planning, networking, or marketing campaigns",
+    " Visual arts, like design or photography",
+    " Digital creation, like coding or interactive media",
+    " Writing or speaking to convey ideas",
+    " Event planning, networking, or marketing campaigns",
   ],
   [
-    "I rely on creativity to explore different solutions",
-    "I stay focused and methodical until the problem is solved",
-    "I seek advice from others and work collaboratively",
-    "I take a strategic view and find the most efficient way to tackle it",
+    " I rely on creativity to explore different solutions",
+    " I stay focused and methodical until the problem is solved",
+    " I seek advice from others and work collaboratively",
+    " I take a strategic view and find the most efficient way to tackle it",
   ],
   [
-    "Freedom to be creative and express my ideas",
-    "Mastery of skills and achieving technical issues",
-    "Helping people and making a positive impact",
-    "Gaining leadership roles and achieving measurable success",
+    " Freedom to be creative and express my ideas",
+    " Mastery of skills and achieving technical issues",
+    " Helping people and making a positive impact",
+    " Gaining leadership roles and achieving measurable success",
   ],
 ];
 
 const DetailedQuestions = () => {
-  const [answers, setAnswers] = useState<string[][]>(
-    Array(questions.length)
-      .fill([])
-      .map(() => [])
-  );
+  const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(""));
   const navigate = useNavigate();
 
   const handleAnswerChange = (questionIndex: number, value: string) => {
     setAnswers((prevAnswers) => {
       const newAnswers = [...prevAnswers];
-      const selectedOptions = newAnswers[questionIndex];
-
-      if (selectedOptions.includes(value)) {
-        newAnswers[questionIndex] = selectedOptions.filter(
-          (option) => option !== value
-        );
-      } else {
-        newAnswers[questionIndex] = [...selectedOptions, value];
-      }
+      newAnswers[questionIndex] = value;
       return newAnswers;
     });
   };
 
-  const completedQuestions = answers.filter(
-    (answer) => answer.length > 0
-  ).length;
+  const completedQuestions = answers.filter((answer) => answer !== "").length;
   const progressPercentage = (completedQuestions / questions.length) * 100;
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -112,7 +98,7 @@ const DetailedQuestions = () => {
       <h1 className="page-title">Detailed Questions</h1>
 
       <p className="rating-description">
-        Select all applicable answers for each question.
+        Select one answer for each question.
       </p>
 
       {/* Progress Bar */}
@@ -134,10 +120,10 @@ const DetailedQuestions = () => {
               {options[index].map((option) => (
                 <label key={option} className="option-label">
                   <input
-                    type="checkbox"
+                    type="radio"
                     name={`question-${index}`}
                     value={option}
-                    checked={answers[index].includes(option)}
+                    checked={answers[index] === option}
                     onChange={() => handleAnswerChange(index, option)}
                   />
                   {option}
