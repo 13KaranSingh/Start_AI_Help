@@ -6,7 +6,7 @@ const AboutMe = () => {
         <div className="about-container">
             <div className="founder-box">
                 <h2>Founders</h2>
-                <div className="founder-square">
+                <div className="founder-square karan">
                     <strong>Karan Singh</strong> <span className="designation">Team Manager</span>
                     <div>
                         <a 
@@ -24,9 +24,18 @@ const AboutMe = () => {
                         >
                             Email
                         </a>
+                        <span className="separator">|</span>
+                        <a 
+                            href="https://github.com/13KaranSingh" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="github-link"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </div>
-                <div className="founder-square">
+                <div className="founder-square suchi">
                     <strong>Suchi Patel</strong> <span className="designation">Team Member</span>
                     <div>
                         <a 
@@ -44,9 +53,18 @@ const AboutMe = () => {
                         >
                             Email
                         </a>
+                        <span className="separator">|</span>
+                        <a 
+                            href="https://github.com/suchipatel13" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="github-link"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </div>
-                <div className="founder-square">
+                <div className="founder-square alyssa">
                     <strong>Alyssa Sanchez</strong> <span className="designation">Team Member</span>
                     <div>
                         <a 
@@ -64,9 +82,18 @@ const AboutMe = () => {
                         >
                             Email
                         </a>
+                        <span className="separator">|</span>
+                        <a 
+                            href="https://github.com/alyssasanchez1" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="github-link"
+                        >
+                            GitHub
+                        </a>
                     </div>
                 </div>
-                <div className="founder-square">
+                <div className="founder-square jasmyn">
                     <strong>Jasmyn Navarro</strong> <span className="designation">Team Member</span>
                     <div>
                         <a 
@@ -83,6 +110,15 @@ const AboutMe = () => {
                             className="email-link"
                         >
                             Email
+                        </a>
+                        <span className="separator">|</span>
+                        <a 
+                            href="https://github.com/JayNavarro" 
+                            target="_blank" 
+                            rel="noopener noreferrer" 
+                            className="github-link"
+                        >
+                            GitHub
                         </a>
                     </div>
                 </div>
