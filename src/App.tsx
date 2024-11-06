@@ -1,7 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 import { Button, Form } from "react-bootstrap";
-import {HashRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import HomePage from "./Pages/HomePage/HomePage";
 import AboutMe from "./Pages/HomePage/AboutMe/AboutMe";
 import DetailedQuestions from "./Pages/HomePage/DetailedQuestionPage/DetailedQuestion";
@@ -35,10 +35,16 @@ function App() {
     setKey(event.target.value); // Update state with input value
   }
 
+  //Dark/light mode
+  const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  useEffect(() => {
+    document.body.classList.toggle("dark-mode", darkTheme);
+  }, [darkTheme]);
+
   return (
     <Router>
-      <NavBar />
-      <div className="App">
+      <NavBar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
+      <div className={`App ${darkTheme ? "dark" : ""}`}>
         <header className="App-header">
           <Routes>
             <Route path="/" element={<HomePage />} />
@@ -52,7 +58,7 @@ function App() {
           <Form.Label>API Key:</Form.Label>
           <Form.Control
             type="password"
-            placeholder="Insert API Key Here"
+            placeholder="API_KEY"
             onChange={changeKey} // Event handler for input change
           />
           <br />
@@ -61,7 +67,7 @@ function App() {
           </Button>
         </Form>
       </div>
-      <Footer/>
+      <Footer />
     </Router>
   );
 }

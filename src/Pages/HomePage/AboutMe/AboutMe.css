@@ -1,54 +1,134 @@
-.about-us-container {
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.about-container {
     display: flex;
-    justify-content: flex-start; /* Align to the left */
-    padding: 20px;
-}
-.about-us-box{
-    width: 250px;
-    padding: 20px;
-    border: 1px solid #ccc; 
-    background-color: #f9f9f9; 
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    justify-content: space-between;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    gap: 20px;
 }
 
+/* Founder box styling */
+.founder-box {
+    width: 45%;
+    padding: 30px;
+    background: #FFFFFF; /* White background for a clean look */
+    border: 1px solid #D1D5DB; /* Light border for a minimalistic feel */
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+    text-align: center;
+    color: #374151; /* Darker text for readability */
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.founder-box:hover {
+    transform: translateY(-6px); /* Slight lift effect */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+}
+
+/* Header styling */
+.founder-box h2 {
+    margin-bottom: 16px;
+    font-size: 28px;
+    color: #4B5563; /* Dark gray for contrast */
+    transition: color 0.3s;
+}
+
+.founder-box:hover h2 {
+    color: #3B82F6; /* Soft blue accent on hover */
+}
+
+/* Founder item styling */
+.founder-square {
+    background-color: #E5E7EB; /* Light gray */
+    border: 1px solid #CBD5E1; /* Very light border */
+    padding: 15px;
+    margin: 12px 0;
+    border-radius: 8px;
+    color: #374151; /* Dark gray */
+    transition: background-color 0.3s, transform 0.3s;
+    font-size: 18px;
+}
+
+.founder-square:hover {
+    background-color: #D1D5DB; /* Darker gray on hover */
+    transform: scale(1.02); /* Slight scale effect */
+}
+
+/* About us box styling */
 .about-us {
-    max-width: 800px;
-    margin-left: 0 auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 45%;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-size: 18px;
+    color: #374151;
+    transition: transform 0.3s;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #4CAF50; /* Primary color */
+.about-us:hover {
+    transform: translateY(-6px);
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin: 20px 0 10px;
-    color: #333;
+/* About us header styling */
+.about-us h1 {
+    font-size: 34px;
+    color: #4B5563;
 }
 
-p {
-    line-height: 1.6; /* Improve readability */
-    margin-bottom: 20px;
+/* About us paragraph styling */
+.about-us p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin: 10px 0;
+    color: #6B7280; /* Medium gray */
 }
 
-.founders-list {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0;
+/* Designation styling */
+.designation {
+    font-size: 15px;
+    color: #6B7280;
 }
 
-.founders-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd; /* Divider between founders */
+/* Link styling */
+.linkedin-link, .email-link {
+    font-size: 14px;
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 0 6px;
+    display: inline-block;
+    padding: 8px 16px;
+    border-radius: 8px;
+    background-color: #3B82F6; /* Blue for an appealing accent */
+    transition: background-color 0.3s, transform 0.3s;
 }
 
-.founders-list li:last-child {
-    border-bottom: none; /* Remove divider for last item */
+.linkedin-link:hover, .email-link:hover {
+    background-color: #2563EB; /* Slightly darker blue on hover */
+    transform: scale(1.05);
+}
+
+/* Separator styling */
+.separator {
+    margin: 0 6px;
+    display: inline;
+    color: #9CA3AF; /* Muted gray */
+    font-size: 14px;
+}
+
+/* Fun effects for header text */
+h2, h1 {
+    transition: text-shadow 0.3s;
+}
+
+h2:hover, h1:hover {
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 12px rgba(59, 130, 246, 0.5); /* Soft blue glow effect */
 }

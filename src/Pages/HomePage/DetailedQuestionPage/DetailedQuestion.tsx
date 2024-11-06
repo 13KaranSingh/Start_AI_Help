@@ -3,49 +3,116 @@ import "./DetailedQuestion.css";
 import { useNavigate } from "react-router-dom";
 
 const questions = [
-  "I enjoy working in a team environment.",
-  "I am comfortable with public speaking.",
-  "I like to solve complex problems.",
-  "I am detail-oriented.",
-  "I prefer hands-on activities.",
-  "I enjoy learning new technologies.",
-  "I am comfortable with repetitive tasks.",
-  "I like to help others with their problems.",
-  "I can adapt to new situations easily.",
-  "I am able to work independently without supervision.",
+  "How would you rate your leadership or management skills?",
+  "What's your strongest problem-solving ability?",
+  "Which industry or field are you most passionate about working in?",
+  "What kind of career growth do you aspire to?",
+  "What kind of company culture do you prefer?",
+  "How do you incorporate creativity into your work?",
+  "Which creative medium do you enjoy working with the most?",
+  "What's your approach to working through challenges?",
+  "What motivates you most in your career?",
+];
+
+const options = [
+  [
+    "Strong - I enjoy guiding and motivating teams",
+    "Moderate - I like managing projects but prefer not to lead",
+    "Developing - I'd like to improve my leadership skills",
+    "Minimal - I prefer being a team member rather than a leader",
+  ],
+  [
+    "Thinking outside the box and finding innovative solutions",
+    "Breaking down complex technical issues",
+    "Identifying needs and helping others",
+    "Streamlining processes to make things more efficient",
+  ],
+  [
+    "Technology and innovation",
+    "Arts, media, or entertainment",
+    "Healthcare or education",
+    "Business, finance, or entrepreneurship",
+  ],
+  [
+    "Becoming a creative director or leading visionary projects",
+    "Gaining expertise as a senior engineer or technical expert",
+    "Being a trusted mentor or advocate in my community",
+    "Running my own business or leading a company",
+  ],
+  [
+    "Open, creative, and collaborative",
+    "Structured with clear goal and innovation",
+    "Mission-focused, emphasizing empathy and social impact",
+    "Competitive and performance-driven with a focus on growth",
+  ],
+  [
+    "By constantly brainstorming new ideas and designs",
+    "By finding new ways to improve technical systems",
+    "Through storytelling, writing, or teaching",
+    "By developing innovative business strategies or marketing plans",
+  ],
+  [
+    "Visual arts, like design or photography",
+    "Digital creation, like coding or interactive media",
+    "Writing or speaking to convey ideas",
+    "Event planning, networking, or marketing campaigns",
+  ],
+  [
+    "I rely on creativity to explore different solutions",
+    "I stay focused and methodical until the problem is solved",
+    "I seek advice from others and work collaboratively",
+    "I take a strategic view and find the most efficient way to tackle it",
+  ],
+  [
+    "Freedom to be creative and express my ideas",
+    "Mastery of skills and achieving technical issues",
+    "Helping people and making a positive impact",
+    "Gaining leadership roles and achieving measurable success",
+  ],
 ];
 
 const DetailedQuestions = () => {
-  const [answers, setAnswers] = useState<number[]>(
-    Array(questions.length).fill(0)
+  const [answers, setAnswers] = useState<string[][]>(
+    Array(questions.length)
+      .fill([])
+      .map(() => [])
   );
-  const completedQuestions = answers.filter((answer) => answer !== 0).length; // Count completed answers
   const navigate = useNavigate();
 
-  const handleAnswerChange = (index: number, value: number) => {
-    const newAnswers = [...answers];
-    newAnswers[index] = value;
-    setAnswers(newAnswers);
+  const handleAnswerChange = (questionIndex: number, value: string) => {
+    setAnswers((prevAnswers) => {
+      const newAnswers = [...prevAnswers];
+      const selectedOptions = newAnswers[questionIndex];
+
+      if (selectedOptions.includes(value)) {
+        newAnswers[questionIndex] = selectedOptions.filter(
+          (option) => option !== value
+        );
+      } else {
+        newAnswers[questionIndex] = [...selectedOptions, value];
+      }
+      return newAnswers;
+    });
   };
 
-  // Handle form submission
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault(); // Prevent page refresh
-    console.log("Submitting detailed answers:", answers); // Log answers
-    localStorage.setItem("detailedAnswers", JSON.stringify(answers)); // Store answers in localStorage
-    navigate("/Results"); // Redirect to the Results page
-  };
-
+  const completedQuestions = answers.filter(
+    (answer) => answer.length > 0
+  ).length;
   const progressPercentage = (completedQuestions / questions.length) * 100;
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    console.log("Submitting detailed answers:", answers);
+    localStorage.setItem("detailedAnswers", JSON.stringify(answers));
+    navigate("/Results");
+  };
 
   return (
     <div className="detailed-questions-container">
       <h1 className="page-title">Detailed Questions</h1>
 
       <p className="rating-description">
-        Please rate each statement on a scale of 1 to 5, where:
-        <br />
-        <strong>1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
+        Select all applicable answers for each question.
       </p>
 
       {/* Progress Bar */}
@@ -58,21 +125,22 @@ const DetailedQuestions = () => {
       <p>
         {completedQuestions} out of {questions.length} questions completed
       </p>
+
       <form className="questions-form" onSubmit={handleSubmit}>
         {questions.map((question, index) => (
           <div key={index} className="question-item">
             <p>{question}</p>
-            <div className="rating">
-              {[1, 2, 3, 4, 5].map((num) => (
-                <label key={num}>
+            <div className="options-vertical">
+              {options[index].map((option) => (
+                <label key={option} className="option-label">
                   <input
-                    type="radio"
+                    type="checkbox"
                     name={`question-${index}`}
-                    value={num}
-                    checked={answers[index] === num}
-                    onChange={() => handleAnswerChange(index, num)}
+                    value={option}
+                    checked={answers[index].includes(option)}
+                    onChange={() => handleAnswerChange(index, option)}
                   />
-                  {num}
+                  {option}
                 </label>
               ))}
             </div>
