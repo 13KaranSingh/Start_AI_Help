@@ -2,11 +2,17 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
+  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 .page-title {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 30px;
+  font-size: 2em;
+  font-weight: 700;
+  color: #007bff;
 }
 
 .questions-form {
@@ -14,46 +20,26 @@
   flex-direction: column;
 }
 
-.question-item {
-  margin-bottom: 20px;
-}
-
-.rating {
+.question-header {
   display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
+  align-items: center;
+  font-size: 1.1em;
 }
 
-.rating input[type="radio"] {
-  display: none;
-}
-
-.rating label {
-  background: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 5px;
+.hint-icon {
+  margin-left: 10px;
   cursor: pointer;
-  transition: background 0.3s ease;
+  color: #007bff;
+  font-size: 1.2em;
 }
 
-.rating input[type="radio"]:checked + label {
-  background: #007bff;
-  color: white;
-}
-
-.submit-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  align-self: center;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
+.hint-text {
+  font-size: 0.9em;
+  color: #666;
+  margin: 8px 0;
+  padding: 8px;
+  background-color: #f9f9f9;
+  border-left: 3px solid #007bff;
 }
 
 .progress-bar-container {
@@ -61,18 +47,55 @@
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .progress-bar {
-  height: 10px;
+  height: 15px;
   background-color: #007bff;
   transition: width 0.3s ease;
 }
 
-.rating-description {
-  font-size: 1.1em;
-  margin: 10px 0 20px;
-  color: #333;
-  text-align: center;
+.options-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.option-label {
+  display: block;
+  margin: 8px 0;
+  padding: 12px 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+  font-size: 1em;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.option-label.selected {
+  background-color: #dbeafe;
+  border: 2px solid #007bff;
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+  transform: scale(1.05);
+}
+
+.option-label:hover {
+  background-color: #f1f1f1;
+}
+
+.submit-button {
+  background-color: #007bff;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  align-self: center;
+  font-size: 1.2em;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px);
 }
