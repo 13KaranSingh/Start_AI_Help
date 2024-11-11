@@ -32,6 +32,7 @@ const DetailedQuestions = () => {
   const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(""));
   const [showHint, setShowHint] = useState<number | null>(null);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [hasShownConfetti, setHasShownConfetti] = useState(false); // New state to track confetti trigger
   const navigate = useNavigate();
 
   const handleAnswerChange = (questionIndex: number, value: string) => {
@@ -43,11 +44,14 @@ const DetailedQuestions = () => {
   };
 
   useEffect(() => {
-    if (answers.every(answer => answer !== "")) {
+    if (answers.every((answer) => answer !== "") && !hasShownConfetti) {
+      // Show confetti only when all questions are answered and confetti hasn't shown before
       setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Confetti lasts for 5 seconds
+      setHasShownConfetti(true); // Set this to true to prevent re-triggering
+      const timer = setTimeout(() => setShowConfetti(false), 3000); // Confetti lasts for 3 seconds
+      return () => clearTimeout(timer);
     }
-  }, [answers]);
+  }, [answers, hasShownConfetti]);
 
   const completedQuestions = answers.filter((answer) => answer !== "").length;
   const progressPercentage = (completedQuestions / questions.length) * 100;
