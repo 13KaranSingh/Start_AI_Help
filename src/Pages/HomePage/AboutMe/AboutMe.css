@@ -1,8 +1,12 @@
+/* Import Noto Serif Display font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&display=swap');
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
 }
 
+/* Apply Noto Serif Display font to Founder Box and About Us */
 .about-container {
     display: flex;
     justify-content: space-between;
@@ -17,47 +21,79 @@ body {
 .founder-box {
     width: 45%;
     padding: 30px;
-    background: #FFFFFF; /* White background for a clean look */
-    border: 1px solid #D1D5DB; /* Light border for a minimalistic feel */
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
     border-radius: 12px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08); /* Soft shadow for depth */
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
     text-align: center;
-    color: #374151; /* Darker text for readability */
+    color: #374151;
     transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Serif Display', serif; /* Applying the font to founder box */
 }
 
 .founder-box:hover {
-    transform: translateY(-6px); /* Slight lift effect */
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12); /* Enhanced shadow on hover */
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
 }
 
-/* Header styling */
+/* Header styling for Founder Box */
 .founder-box h2 {
     margin-bottom: 16px;
     font-size: 28px;
-    color: #4B5563; /* Dark gray for contrast */
+    color: #4B5563;
     transition: color 0.3s;
 }
 
 .founder-box:hover h2 {
-    color: #3B82F6; /* Soft blue accent on hover */
+    color: #3B82F6;
 }
 
-/* Founder item styling */
+/* Founder item styling with glow effect */
 .founder-square {
-    background-color: #E5E7EB; /* Light gray */
-    border: 1px solid #CBD5E1; /* Very light border */
+    background: linear-gradient(135deg, #E5E7EB, #F3F4F6);
+    border: 2px solid transparent;
+    border-radius: 8px;
     padding: 15px;
     margin: 12px 0;
-    border-radius: 8px;
-    color: #374151; /* Dark gray */
-    transition: background-color 0.3s, transform 0.3s;
+    color: #374151;
     font-size: 18px;
+    position: relative;
+    transition: background 0.3s, transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+    overflow: hidden;
 }
 
-.founder-square:hover {
-    background-color: #D1D5DB; /* Darker gray on hover */
-    transform: scale(1.02); /* Slight scale effect */
+/* Apply Noto Serif Display font to founder names */
+.founder-square strong {
+    font-family: 'Noto Serif Display', serif;
+    font-weight: bold;
+    font-size: 20px; /* Adjust size as needed */
+}
+
+/* Unique glow effects for each founder */
+.founder-square.karan:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #A3C585; /* New color for Karan: Light Green */
+    box-shadow: 0 0 15px 5px rgba(163, 197, 133, 0.6); /* Light green glow */
+}
+
+.founder-square.suchi:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #74b3ce; /* New color for Suchi: Blue */
+    box-shadow: 0 0 15px 5px rgba(116, 179, 206, 0.6); /* Blue glow */
+}
+
+.founder-square.alyssa:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #FF69B4; /* Hot pink */
+    box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.6);
+}
+
+.founder-square.jasmyn:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #9370DB; /* Medium purple */
+    box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.6);
 }
 
 /* About us box styling */
@@ -72,6 +108,9 @@ body {
     font-size: 18px;
     color: #374151;
     transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Serif Display', serif; /* Applying the font to About Us box */
 }
 
 .about-us:hover {
@@ -86,20 +125,20 @@ body {
 
 /* About us paragraph styling */
 .about-us p {
-    font-size: 16px;
-    line-height: 1.6;
-    margin: 10px 0;
-    color: #6B7280; /* Medium gray */
+    font-size: 16px;  /* Adjust font size as needed */
+    line-height: 1.8;  /* Increase line height for better readability */
+    margin: 20px 0;  /* Add more space above and below the paragraph */
+    color: #6B7280;
+    letter-spacing: 1.5px;  /* Slightly reduce letter-spacing for readability */
 }
-
 /* Designation styling */
 .designation {
     font-size: 15px;
     color: #6B7280;
 }
 
-/* Link styling */
-.linkedin-link, .email-link {
+/* Link styling for LinkedIn, Email, and GitHub */
+.linkedin-link, .email-link, .github-link {
     font-size: 14px;
     color: #FFFFFF;
     text-decoration: none;
@@ -107,21 +146,44 @@ body {
     display: inline-block;
     padding: 8px 16px;
     border-radius: 8px;
-    background-color: #3B82F6; /* Blue for an appealing accent */
     transition: background-color 0.3s, transform 0.3s;
+    position: relative;
+    overflow: hidden;
 }
 
-.linkedin-link:hover, .email-link:hover {
-    background-color: #2563EB; /* Slightly darker blue on hover */
-    transform: scale(1.05);
+/* Updated colors for LinkedIn and GitHub to match */
+.linkedin-link, .github-link {
+    background-color: #333333;
 }
 
-/* Separator styling */
-.separator {
-    margin: 0 6px;
-    display: inline;
-    color: #9CA3AF; /* Muted gray */
-    font-size: 14px;
+.linkedin-link:hover, .github-link:hover {
+    background-color: #000000;
+}
+
+.email-link {
+    background-color: #6ab7e4;
+}
+
+.email-link:hover {
+    background-color: #25a2eb;
+}
+
+/* Hover effect for all links */
+.linkedin-link::before, .email-link::before, .github-link::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: transform 0.6s ease;
+}
+
+.linkedin-link:hover::before, .email-link:hover::before, .github-link:hover::before {
+    transform: translate(-50%, -50%) scale(1);
 }
 
 /* Fun effects for header text */
@@ -130,5 +192,5 @@ h2, h1 {
 }
 
 h2:hover, h1:hover {
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 12px rgba(59, 130, 246, 0.5); /* Soft blue glow effect */
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 12px rgba(59, 130, 246, 0.5);
 }
