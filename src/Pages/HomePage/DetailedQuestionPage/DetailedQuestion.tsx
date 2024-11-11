@@ -30,37 +30,49 @@ const options = [
 
 const DetailedQuestions = () => {
   const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(""));
-  const [showHint, setShowHint] = useState<number | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showHint, setShowHint] = useState<boolean>(false);
   const [showConfetti, setShowConfetti] = useState(false);
-  const [hasShownConfetti, setHasShownConfetti] = useState(false); // New state to track confetti trigger
+  const [hasShownConfetti, setHasShownConfetti] = useState(false);
   const navigate = useNavigate();
 
-  const handleAnswerChange = (questionIndex: number, value: string) => {
+  const handleAnswerChange = (value: string) => {
     setAnswers((prevAnswers) => {
       const newAnswers = [...prevAnswers];
-      newAnswers[questionIndex] = value;
+      newAnswers[currentQuestion] = value;
       return newAnswers;
     });
   };
 
   useEffect(() => {
     if (answers.every((answer) => answer !== "") && !hasShownConfetti) {
-      // Show confetti only when all questions are answered and confetti hasn't shown before
       setShowConfetti(true);
-      setHasShownConfetti(true); // Set this to true to prevent re-triggering
-      const timer = setTimeout(() => setShowConfetti(false), 3000); // Confetti lasts for 3 seconds
+      setHasShownConfetti(true);
+      const timer = setTimeout(() => setShowConfetti(false), 2000);
       return () => clearTimeout(timer);
     }
   }, [answers, hasShownConfetti]);
 
-  const completedQuestions = answers.filter((answer) => answer !== "").length;
-  const progressPercentage = (completedQuestions / questions.length) * 100;
+  const handleNext = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
+      setShowHint(false);
+    }
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleBack = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion((prev) => prev - 1);
+      setShowHint(false);
+    }
+  };
+
+  const handleSubmit = () => {
     localStorage.setItem("detailedAnswers", JSON.stringify(answers));
     navigate("/Results");
   };
+
+  const progressPercentage = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
     <div className="detailed-questions-container">
@@ -68,44 +80,55 @@ const DetailedQuestions = () => {
       <h1 className="page-title">Detailed Questions</h1>
       <p className="rating-description">Select one answer for each question.</p>
 
+      {/* Progress bar */}
       <div className="progress-bar-container">
         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
       </div>
-      <p>{completedQuestions} out of {questions.length} questions completed</p>
+      <p>{currentQuestion + 1} out of {questions.length} questions completed</p>
 
-      <form className="questions-form" onSubmit={handleSubmit}>
-        {questions.map((question, index) => (
-          <div key={index} className="question-item">
-            <div className="question-header">
-              <p>{question.text}</p>
-              <FaQuestionCircle
-                onClick={() => setShowHint(showHint === index ? null : index)}
-                className="hint-icon"
-              />
-            </div>
-            {showHint === index && <p className="hint-text">{question.hint}</p>}
-            <div className="options-list">
-              {options[index].map((option) => (
-                <label
-                  key={option}
-                  className={`option-label ${answers[index] === option ? "selected" : ""}`}
-                >
-                  <input
-                    type="radio"
-                    name={`question-${index}`}
-                    value={option}
-                    checked={answers[index] === option}
-                    onChange={() => handleAnswerChange(index, option)}
-                  />
-                  {option}
-                </label>
-              ))}
-            </div>
+      <form className="questions-form" onSubmit={(e) => e.preventDefault()}>
+        <div className="question-item">
+          <div className="question-header">
+            <p>{questions[currentQuestion].text}</p>
+            <FaQuestionCircle
+              onClick={() => setShowHint(!showHint)}
+              className="hint-icon"
+            />
           </div>
-        ))}
-        <button type="submit" className="submit-button">
-          Submit Answers
-        </button>
+          {showHint && <p className="hint-text">{questions[currentQuestion].hint}</p>}
+          <div className="options-list">
+            {options[currentQuestion].map((option) => (
+              <label
+                key={option}
+                className={`option-label ${answers[currentQuestion] === option ? "selected" : ""}`}
+              >
+                <input
+                  type="radio"
+                  name={`question-${currentQuestion}`}
+                  value={option}
+                  checked={answers[currentQuestion] === option}
+                  onChange={() => handleAnswerChange(option)}
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="navigation-buttons">
+          <button type="button" onClick={handleBack} disabled={currentQuestion === 0}>
+            Back
+          </button>
+          {currentQuestion < questions.length - 1 ? (
+            <button type="button" onClick={handleNext}>
+              Next
+            </button>
+          ) : (
+            <button type="button" onClick={handleSubmit} className="submit-button">
+              Get Answer
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );
