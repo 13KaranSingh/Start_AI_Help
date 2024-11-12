@@ -1,10 +1,12 @@
+/* Base styles for light mode */
 .detailed-questions-container {
   max-width: 800px;
   margin: auto;
   padding: 20px;
-  background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
+  background-color: #f4f4f4; /* Light mode background */
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
 }
 
 .page-title {
@@ -12,7 +14,8 @@
   margin-bottom: 30px;
   font-size: 2em;
   font-weight: 700;
-  color: #007bff;
+  color: #007bff; /* Light mode text color */
+  transition: color 0.3s ease;
 }
 
 .questions-form {
@@ -24,6 +27,8 @@
   display: flex;
   align-items: center;
   font-size: 1.1em;
+  color: #333; /* Light mode text color */
+  transition: color 0.3s ease;
 }
 
 .hint-icon {
@@ -35,19 +40,21 @@
 
 .hint-text {
   font-size: 0.9em;
-  color: #666;
+  color: #666; /* Light mode hint text color */
   margin: 8px 0;
   padding: 8px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light mode hint background */
   border-left: 3px solid #007bff;
+  transition: background 0.3s ease, color 0.3s ease;
 }
 
 .progress-bar-container {
   width: 100%;
-  background-color: #e0e0e0;
+  background-color: #e0e0e0; /* Light mode progress bar background */
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 20px;
+  transition: background-color 0.3s ease;
 }
 
 .progress-bar {
@@ -65,10 +72,10 @@
   display: block;
   margin: 8px 0;
   padding: 12px 20px;
-  background-color: #f9f9f9;
+  background-color: #f9f9f9; /* Light mode option background */
   border-radius: 8px;
   font-size: 1em;
-  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  transition: background 0.3s ease, transform 0.2s ease-in-out, color 0.3s ease;
   cursor: pointer;
 }
 
@@ -80,7 +87,7 @@
 }
 
 .option-label:hover {
-  background-color: #f1f1f1;
+  background-color: #f1f1f1; /* Light mode hover background */
 }
 
 .submit-button {
@@ -98,4 +105,50 @@
 .submit-button:hover {
   background-color: #0056b3;
   transform: translateY(-3px);
+}
+
+/* Dark mode styles */
+body.dark .detailed-questions-container {
+  background-color: #222 !important; /* Dark mode background for container */
+  color: #fff; /* Light text for dark mode */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+}
+
+body.dark .page-title {
+  color: #f1f1f1; /* Dark mode text color */
+}
+
+body.dark .question-header {
+  color: #f1f1f1; /* Dark mode text color for headers */
+}
+
+body.dark .hint-text {
+  background-color: #444; /* Dark mode hint background */
+  color: #ddd; /* Light text for dark mode hints */
+}
+
+body.dark .progress-bar-container {
+  background-color: #666; /* Dark mode progress bar background */
+}
+
+body.dark .option-label {
+  background-color: #555; /* Dark mode option background */
+  color: #fff; /* Light text for dark mode options */
+}
+
+body.dark .option-label.selected {
+  background-color: #2d74d0; /* Dark mode selected option background */
+  box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
+}
+
+body.dark .option-label:hover {
+  background-color: #666; /* Dark mode hover background */
+}
+
+body.dark .submit-button {
+  background-color: #007bff;
+}
+
+body.dark .submit-button:hover {
+  background-color: #0056b3;
 }
