@@ -7,7 +7,7 @@ const HomePage = () => {
     <main className="container">
       {/* Hero Section */}
       <header className="hero">
-        <h1 className="logo">The Career Helper AI</h1>
+        <h1 className="logo">PathFinder Pro</h1>
         <p className="tagline">Discover Your Ideal Career Path!</p>
       </header>
 

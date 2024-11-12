@@ -1,16 +1,36 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./NavBar.css";
 
 interface NavBarProps {
   darkTheme: boolean;
-  setDarkTheme: (theme: boolean) => void;
+  setDarkTheme: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
 const NavBar: React.FC<NavBarProps> = ({ darkTheme, setDarkTheme }) => {
+  // Toggle the theme state and apply the dark class to the body
   const toggleTheme = (): void => {
-    setDarkTheme(!darkTheme);
+    setDarkTheme((prevTheme) => {
+      const newTheme = !prevTheme;
+      // Add or remove the 'dark' class on the body based on newTheme
+      if (newTheme) {
+        document.body.classList.add("dark");
+      } else {
+        document.body.classList.remove("dark");
+      }
+      return newTheme;
+    });
   };
+
+  // Ensure the dark class is applied when darkTheme changes
+  useEffect(() => {
+    if (darkTheme) {
+      document.body.classList.add("dark");
+    } else {
+      document.body.classList.remove("dark");
+    }
+  }, [darkTheme]);
+
   return (
     <nav className="navbar">
       <ul className="navbar-list">
