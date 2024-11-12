@@ -19,7 +19,7 @@ const questions = [
 const options = [
   [" Strong - I enjoy guiding and motivating teams", " Moderate - I like managing projects but prefer not to lead", " Developing - I'd like to improve my leadership skills", " Minimal - I prefer being a team member rather than a leader"],
   [" Thinking outside the box and finding innovative solutions", " Breaking down complex technical issues", " Identifying needs and helping others", " Streamlining processes to make things more efficient"],
-  [" Technology and innovation", " Arts, media, or entertainment", " Healthcare or education", " Business, finance, or entrepreneurship"],
+  [" Technology and innovation", " Creative Arts and Media", " Healthcare and Life Sciences", " Education and Teaching", " Business and Entrepreneurship"],
   [" Becoming a creative director or leading visionary projects", " Gaining expertise as a senior engineer or technical expert", " Being a trusted mentor or advocate in my community", " Running my own business or leading a company"],
   [" Open, creative, and collaborative", " Structured with clear goal and innovation", " Mission-focused, emphasizing empathy and social impact", " Competitive and performance-driven with a focus on growth"],
   [" By constantly brainstorming new ideas and designs", " By finding new ways to improve technical systems", " Through storytelling, writing, or teaching", " By developing innovative business strategies or marketing plans"],
@@ -30,33 +30,49 @@ const options = [
 
 const DetailedQuestions = () => {
   const [answers, setAnswers] = useState<string[]>(Array(questions.length).fill(""));
-  const [showHint, setShowHint] = useState<number | null>(null);
+  const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showHint, setShowHint] = useState<boolean>(false);
   const [showConfetti, setShowConfetti] = useState(false);
+  const [hasShownConfetti, setHasShownConfetti] = useState(false);
   const navigate = useNavigate();
 
-  const handleAnswerChange = (questionIndex: number, value: string) => {
+  const handleAnswerChange = (value: string) => {
     setAnswers((prevAnswers) => {
       const newAnswers = [...prevAnswers];
-      newAnswers[questionIndex] = value;
+      newAnswers[currentQuestion] = value;
       return newAnswers;
     });
   };
 
   useEffect(() => {
-    if (answers.every(answer => answer !== "")) {
+    if (answers.every((answer) => answer !== "") && !hasShownConfetti) {
       setShowConfetti(true);
-      setTimeout(() => setShowConfetti(false), 5000); // Confetti lasts for 5 seconds
+      setHasShownConfetti(true);
+      const timer = setTimeout(() => setShowConfetti(false), 2000);
+      return () => clearTimeout(timer);
     }
-  }, [answers]);
+  }, [answers, hasShownConfetti]);
 
-  const completedQuestions = answers.filter((answer) => answer !== "").length;
-  const progressPercentage = (completedQuestions / questions.length) * 100;
+  const handleNext = () => {
+    if (currentQuestion < questions.length - 1) {
+      setCurrentQuestion((prev) => prev + 1);
+      setShowHint(false);
+    }
+  };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
+  const handleBack = () => {
+    if (currentQuestion > 0) {
+      setCurrentQuestion((prev) => prev - 1);
+      setShowHint(false);
+    }
+  };
+
+  const handleSubmit = () => {
     localStorage.setItem("detailedAnswers", JSON.stringify(answers));
     navigate("/Results");
   };
+
+  const progressPercentage = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
     <div className="detailed-questions-container">
@@ -64,44 +80,64 @@ const DetailedQuestions = () => {
       <h1 className="page-title">Detailed Questions</h1>
       <p className="rating-description">Select one answer for each question.</p>
 
+      {/* Progress bar */}
       <div className="progress-bar-container">
         <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
       </div>
-      <p>{completedQuestions} out of {questions.length} questions completed</p>
+      <p>{currentQuestion + 1} out of {questions.length} questions completed</p>
 
-      <form className="questions-form" onSubmit={handleSubmit}>
-        {questions.map((question, index) => (
-          <div key={index} className="question-item">
-            <div className="question-header">
-              <p>{question.text}</p>
-              <FaQuestionCircle
-                onClick={() => setShowHint(showHint === index ? null : index)}
-                className="hint-icon"
-              />
-            </div>
-            {showHint === index && <p className="hint-text">{question.hint}</p>}
-            <div className="options-list">
-              {options[index].map((option) => (
-                <label
-                  key={option}
-                  className={`option-label ${answers[index] === option ? "selected" : ""}`}
-                >
-                  <input
-                    type="radio"
-                    name={`question-${index}`}
-                    value={option}
-                    checked={answers[index] === option}
-                    onChange={() => handleAnswerChange(index, option)}
-                  />
-                  {option}
-                </label>
-              ))}
-            </div>
+      <form className="questions-form" onSubmit={(e) => e.preventDefault()}>
+        <div className="question-item">
+          <div className="question-header">
+            <p>{questions[currentQuestion].text}</p>
+            <FaQuestionCircle
+              onClick={() => setShowHint(!showHint)}
+              className="hint-icon"
+            />
           </div>
-        ))}
-        <button type="submit" className="submit-button">
-          Submit Answers
-        </button>
+          {showHint && <p className="hint-text">{questions[currentQuestion].hint}</p>}
+          <div className="options-list">
+            {options[currentQuestion].map((option) => (
+              <label
+                key={option}
+                className={`option-label ${answers[currentQuestion] === option ? "selected" : ""}`}
+              >
+                <input
+                  type="radio"
+                  name={`question-${currentQuestion}`}
+                  value={option}
+                  checked={answers[currentQuestion] === option}
+                  onChange={() => handleAnswerChange(option)}
+                />
+                {option}
+              </label>
+            ))}
+          </div>
+        </div>
+
+        <div className="navigation-buttons">
+          <button type="button" onClick={handleBack} disabled={currentQuestion === 0}>
+            Back
+          </button>
+          {currentQuestion < questions.length - 1 ? (
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={!answers[currentQuestion]}  // Disabled if no answer selected
+            >
+              Next
+            </button>
+          ) : (
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="submit-button"
+              disabled={!answers[currentQuestion]}  // Disabled if no answer selected
+            >
+              Get Answer
+            </button>
+          )}
+        </div>
       </form>
     </div>
   );
