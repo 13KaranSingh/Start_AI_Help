@@ -19,7 +19,7 @@ const questions = [
 const options = [
   [" Strong - I enjoy guiding and motivating teams", " Moderate - I like managing projects but prefer not to lead", " Developing - I'd like to improve my leadership skills", " Minimal - I prefer being a team member rather than a leader"],
   [" Thinking outside the box and finding innovative solutions", " Breaking down complex technical issues", " Identifying needs and helping others", " Streamlining processes to make things more efficient"],
-  [" Technology and innovation", " Arts, media, or entertainment", " Healthcare or education", " Business, finance, or entrepreneurship"],
+  [" Technology and innovation", " Creative Arts and Media", " Healthcare and Life Sciences", " Education and Teaching", " Business and Entrepreneurship"],
   [" Becoming a creative director or leading visionary projects", " Gaining expertise as a senior engineer or technical expert", " Being a trusted mentor or advocate in my community", " Running my own business or leading a company"],
   [" Open, creative, and collaborative", " Structured with clear goal and innovation", " Mission-focused, emphasizing empathy and social impact", " Competitive and performance-driven with a focus on growth"],
   [" By constantly brainstorming new ideas and designs", " By finding new ways to improve technical systems", " Through storytelling, writing, or teaching", " By developing innovative business strategies or marketing plans"],
@@ -120,11 +120,20 @@ const DetailedQuestions = () => {
             Back
           </button>
           {currentQuestion < questions.length - 1 ? (
-            <button type="button" onClick={handleNext}>
+            <button
+              type="button"
+              onClick={handleNext}
+              disabled={!answers[currentQuestion]}  // Disabled if no answer selected
+            >
               Next
             </button>
           ) : (
-            <button type="button" onClick={handleSubmit} className="submit-button">
+            <button
+              type="button"
+              onClick={handleSubmit}
+              className="submit-button"
+              disabled={!answers[currentQuestion]}  // Disabled if no answer selected
+            >
               Get Answer
             </button>
           )}
