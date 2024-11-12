@@ -9,6 +9,7 @@ import BasicQuestions from "./Pages/HomePage/BasicQuestionPage/BasicQuestion";
 import NavBar from "./Components/NavBar";
 import Footer from "./Components/Footer";
 import Results from "./Pages/HomePage/Results/Results";
+import './index.css'; // Importing the global styles
 
 // Local storage and API Key
 let keyData: string = ""; // Declare keyData as a string
@@ -35,8 +36,10 @@ function App() {
     setKey(event.target.value); // Update state with input value
   }
 
-  //Dark/light mode
+  // Dark/light mode toggle
   const [darkTheme, setDarkTheme] = useState<boolean>(false);
+  
+  // Effect to toggle dark mode class on the body element
   useEffect(() => {
     document.body.classList.toggle("dark-mode", darkTheme);
   }, [darkTheme]);
@@ -44,7 +47,7 @@ function App() {
   return (
     <Router>
       <NavBar darkTheme={darkTheme} setDarkTheme={setDarkTheme} />
-      <div className={`App ${darkTheme ? "dark" : ""}`}>
+      <div className="App">
         <header className="App-header">
           <Routes>
             <Route path="/" element={<HomePage />} />
