@@ -1,121 +1,121 @@
-/* Base styling for the page */
-.detailed-questions-container {
+/* Base styling */
+.basic-questions-container {
   max-width: 800px;
   margin: auto;
   padding: 20px;
+  background-color: #f4f4f4;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .page-title {
   text-align: center;
+  font-size: 2em;
+  font-weight: 700;
+  color: #007bff;
   margin-bottom: 20px;
 }
 
-.questions-form {
-  display: flex;
-  flex-direction: column;
+.rating-description {
+  font-size: 1.1em;
+  text-align: center;
+  margin: 20px 0;
+  color: #333;
 }
 
-.question-item {
-  margin-bottom: 20px;
-}
-
-.rating {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.rating input[type="radio"] {
-  display: none;
-}
-
-.rating label {
-  background: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease, color 0.3s ease;
-}
-
-/* Style for the active (clicked) state */
-.rating label.active {
-  background-color: #007bff; /* Highlight color */
-  color: white; /* Text color when selected */
-  font-weight: bold;
-  border: 1px solid #0056b3; /* Optional border for emphasis */
-}
-
-.rating input[type="radio"]:checked + label {
-  background: #007bff;
-  color: white;
-}
-
-/* Submit button styling */
-.submit-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  align-self: center;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-/* Progress bar styling */
 .progress-bar-container {
   width: 100%;
   background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
 .progress-bar {
-  height: 10px;
+  height: 15px;
   background-color: #007bff;
   transition: width 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
 }
 
-/* Rating description */
-.rating-description {
-  font-size: 1.1em;
-  margin: 10px 0 20px;
-  color: #333;
-  text-align: center;
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
+  50% { box-shadow: 0 0 20px rgba(0, 123, 255, 0.7); }
+  100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
 }
 
-/* Dark mode styles */
-.dark .detailed-questions-container {
-  background-color: #333;
+.question-item {
+  margin: 20px 0;
+  font-size: 1.2em;
+}
+
+.rating-options {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.option-label {
+  background-color: #f9f9f9;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 1em;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease-in-out, color 0.3s ease;
+}
+
+.option-label:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.option-label.selected {
+  background-color: #dbeafe;
+  border: 2px solid #007bff;
+  transform: scale(1.05);
+}
+
+.submit-button {
+  background-color: #007bff;
   color: white;
+  padding: 12px 25px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 1.2em;
+  align-self: center;
+  transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
 }
 
-.dark .rating label {
-  background: #555;
+.submit-button:hover {
+  background-color: #0056b3;
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
 }
 
-.dark .rating input[type="radio"]:checked + label {
-  background: #3b82f6;
+.navigation-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
 }
 
-.dark .submit-button {
-  background-color: #3b82f6;
+.navigation-buttons button {
+  padding: 10px 20px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-.dark .submit-button:hover {
-  background-color: #1e40af;
+.navigation-buttons button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
 }
 
-.dark .progress-bar {
-  background-color: #3b82f6;
-}
-
-.dark .progress-bar-container {
-  background-color: #444;
+.navigation-buttons button:hover:not(:disabled) {
+  background-color: #0056b3;
 }
