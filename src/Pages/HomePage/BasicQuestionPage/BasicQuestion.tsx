@@ -3,11 +3,13 @@ import "./BasicQuestion.css";
 import { useNavigate } from "react-router-dom";
 
 const questions = [
-  "I like working with others.",
-  "I enjoy helping people.",
-  "I prefer routine tasks.",
-  "I like learning new things.",
-  "I work well alone.",
+  "I find purpose in creating something new and innovative.",
+  "I feel motivated when solving complex problems.",
+  "I am drawn to careers where I can make a positive impact on society.",
+  "I enjoy tasks that require attention to detail and precision.",
+  "I am excited by opportunities to lead and influence others.",
+  "I thrive in environments that challenge me to adapt and think on my feet.",
+  "I prefer work that allows me to see tangible results from my efforts.",
 ];
 
 const BasicQuestion = () => {
@@ -42,7 +44,7 @@ const BasicQuestion = () => {
 
   return (
     <div className="basic-questions-container">
-      <h1 className="page-title">Basic Questions</h1>
+      <h1 className="page-title">Career Reflection Questions</h1>
       <p className="rating-description">
         Please rate each statement on a scale of 1 to 5, where:
         <strong> 1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
