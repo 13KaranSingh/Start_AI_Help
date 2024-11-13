@@ -1,4 +1,3 @@
-/* Import Noto Serif Display font */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&display=swap');
 
 body {
@@ -7,7 +6,7 @@ body {
   transition: background-color 0.3s, color 0.3s; /* Smooth transition */
 }
 
-/* Light mode styles */
+/* Apply Noto Serif Display font to Founder Box and About Us */
 .about-container {
   display: flex;
   justify-content: space-between;
@@ -19,18 +18,18 @@ body {
 }
 
 .founder-box {
-  width: 45%;
-  padding: 30px;
-  background: #FFFFFF;
-  border: 1px solid #D1D5DB;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  color: #374151;
-  transition: transform 0.3s, box-shadow 0.3s;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Noto Serif Display', serif;
+    width: 45%;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    color: #374151;
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Serif Display', serif; /* Applying the font to founder box */
 }
 
 .founder-box:hover {
@@ -61,25 +60,51 @@ body {
 }
 
 .founder-square strong {
-  font-family: 'Noto Serif Display', serif;
-  font-weight: bold;
-  font-size: 20px;
+    font-family: 'Noto Serif Display', serif;
+    font-weight: bold;
+    font-size: 20px; /* Adjust size as needed */
 }
 
+/* Unique glow effects for each founder */
+.founder-square.karan:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #A3C585; /* New color for Karan: Light Green */
+    box-shadow: 0 0 15px 5px rgba(163, 197, 133, 0.6); /* Light green glow */
+}
+
+.founder-square.suchi:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #74b3ce; /* New color for Suchi: Blue */
+    box-shadow: 0 0 15px 5px rgba(116, 179, 206, 0.6); /* Blue glow */
+}
+
+.founder-square.alyssa:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #FF69B4; /* Hot pink */
+    box-shadow: 0 0 15px 5px rgba(255, 105, 180, 0.6);
+}
+
+.founder-square.jasmyn:hover {
+    background: linear-gradient(135deg, #D1D5DB, #E5E7EB);
+    border-color: #9370DB; /* Medium purple */
+    box-shadow: 0 0 15px 5px rgba(147, 112, 219, 0.6);
+}
+
+/* About us box styling */
 .about-us {
-  width: 45%;
-  padding: 30px;
-  background: #FFFFFF;
-  border: 1px solid #D1D5DB;
-  border-radius: 12px;
-  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
-  text-align: center;
-  font-size: 18px;
-  color: #374151;
-  transition: transform 0.3s;
-  position: relative;
-  overflow: hidden;
-  font-family: 'Noto Serif Display', serif;
+    width: 45%;
+    padding: 30px;
+    background: #FFFFFF;
+    border: 1px solid #D1D5DB;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    font-size: 18px;
+    color: #374151;
+    transition: transform 0.3s;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Noto Serif Display', serif; /* Applying the font to About Us box */
 }
 
 .about-us:hover {
@@ -92,11 +117,11 @@ body {
 }
 
 .about-us p {
-  font-size: 16px;
-  line-height: 1.8;
-  margin: 20px 0;
-  color: #6B7280;
-  letter-spacing: 1.5px;
+    font-size: 16px;  /* Adjust font size as needed */
+    line-height: 1.8;  /* Increase line height for better readability */
+    margin: 20px 0;  /* Add more space above and below the paragraph */
+    color: #6B7280;
+    letter-spacing: 1.5px;  /* Slightly reduce letter-spacing for readability */
 }
 
 .designation {
@@ -104,7 +129,7 @@ body {
   color: #6B7280;
 }
 
-/* Link styles */
+/* Link styling for LinkedIn, Email, and GitHub */
 .linkedin-link, .email-link, .github-link {
   font-size: 14px;
   color: #FFFFFF;
@@ -132,7 +157,7 @@ body {
   background-color: #25a2eb;
 }
 
-/* Hover effects for links */
+/* Hover effect for all links */
 .linkedin-link::before, .email-link::before, .github-link::before {
   content: "";
   position: absolute;
@@ -198,7 +223,6 @@ body {
   background-color: #1d8dc9;
 }
 
-/* Fun effects for header text */
 h2, h1 {
   transition: text-shadow 0.3s;
 }
