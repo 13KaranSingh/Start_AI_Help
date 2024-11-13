@@ -1,26 +1,88 @@
+/* Light mode (default) */
 .results-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 80vh;
+  background-color: #ffffff;
+  color: #000000;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.loading-animation {
-  border: 16px solid #f3f3f3; /* Light grey */
-  border-top: 16px solid #3498db; /* Blue */
-  border-radius: 50%;
-  width: 120px;
-  height: 120px;
-  animation: spin 2s linear infinite;
+.result-box {
+  width: 100%;
+  max-width: 500px;
+  margin: 10px 0;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  cursor: pointer;
+  overflow: hidden;
+  transition: background-color 0.3s ease;
+}
+
+.result-box:hover {
+  background-color: lightslategrey;
+}
+
+.result-title {
+  font-weight: bold;
+  font-size: large;
+  color: #333;
+}
+
+.result-content {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transform: scaleY(0.95);
+  transition: max-height 0.4s ease, opacity 0.4s ease, transform 0.4s ease;
+}
+
+.result-box:hover .result-content {
+  max-height: 100px;
+  opacity: 1;
+  transform: scaleY(1);
+  padding-top: 10px;
+}
+
+/* Dark mode */
+.dark .results-container {
+  background-color: #333;
+  color: #ffffff;
+}
+
+.dark .result-box {
+  background-color: #444;
+  border-color: #666;
+}
+
+.dark .result-box:hover {
+  background-color: #555;
+}
+
+.dark .result-title {
+  color: #ccc;
+}
+
+.dark .result-content {
+  color: #ddd;
+}
+
+/* Button styles for dark mode toggle */
+.toggle-button {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
   margin-bottom: 20px;
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
+.toggle-button:hover {
+  background-color: #0056b3;
 }

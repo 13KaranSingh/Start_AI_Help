@@ -1,41 +1,208 @@
+/* Import Noto Serif Display font */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Display&display=swap');
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition */
+}
+
+/* Light mode styles */
+.about-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  gap: 20px;
+}
+
+.founder-box {
+  width: 45%;
+  padding: 30px;
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  color: #374151;
+  transition: transform 0.3s, box-shadow 0.3s;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.founder-box:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+}
+
+.founder-box h2 {
+  margin-bottom: 16px;
+  font-size: 28px;
+  color: #4B5563;
+}
+
+.founder-box:hover h2 {
+  color: #3B82F6;
+}
+
+.founder-square {
+  background: linear-gradient(135deg, #E5E7EB, #F3F4F6);
+  border: 2px solid transparent;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 12px 0;
+  color: #374151;
+  font-size: 18px;
+  position: relative;
+  transition: background 0.3s, transform 0.3s, border-color 0.3s, box-shadow 0.3s;
+}
+
+.founder-square strong {
+  font-family: 'Noto Serif Display', serif;
+  font-weight: bold;
+  font-size: 20px;
+}
+
 .about-us {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-    font-family: 'Arial', sans-serif;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for contrast */
-    border-radius: 8px; /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  width: 45%;
+  padding: 30px;
+  background: #FFFFFF;
+  border: 1px solid #D1D5DB;
+  border-radius: 12px;
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  font-size: 18px;
+  color: #374151;
+  transition: transform 0.3s;
+  position: relative;
+  overflow: hidden;
+  font-family: 'Noto Serif Display', serif;
 }
 
-h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-    color: #4CAF50; /* Primary color */
+.about-us:hover {
+  transform: translateY(-6px);
 }
 
-h2 {
-    font-size: 1.5rem;
-    margin: 20px 0 10px;
-    color: #333;
+.about-us h1 {
+  font-size: 34px;
+  color: #4B5563;
 }
 
-p {
-    line-height: 1.6; /* Improve readability */
-    margin-bottom: 20px;
+.about-us p {
+  font-size: 16px;
+  line-height: 1.8;
+  margin: 20px 0;
+  color: #6B7280;
+  letter-spacing: 1.5px;
 }
 
-.founders-list {
-    list-style-type: none; /* Remove default bullet points */
-    padding: 0;
+.designation {
+  font-size: 15px;
+  color: #6B7280;
 }
 
-.founders-list li {
-    padding: 10px 0;
-    border-bottom: 1px solid #ddd; /* Divider between founders */
+/* Link styles */
+.linkedin-link, .email-link, .github-link {
+  font-size: 14px;
+  color: #FFFFFF;
+  text-decoration: none;
+  margin: 0 6px;
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 8px;
+  transition: background-color 0.3s, transform 0.3s;
 }
 
-.founders-list li:last-child {
-    border-bottom: none; /* Remove divider for last item */
+.linkedin-link, .github-link {
+  background-color: #333333;
+}
+
+.linkedin-link:hover, .github-link:hover {
+  background-color: #000000;
+}
+
+.email-link {
+  background-color: #6ab7e4;
+}
+
+.email-link:hover {
+  background-color: #25a2eb;
+}
+
+/* Hover effects for links */
+.linkedin-link::before, .email-link::before, .github-link::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease;
+}
+
+.linkedin-link:hover::before, .email-link:hover::before, .github-link:hover::before {
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* Dark mode styles */
+.dark .about-container {
+  background-color: #333;
+  color: white;
+}
+
+.dark .founder-box {
+  background: #444;
+  border-color: #555;
+  color: white;
+}
+
+.dark .founder-box h2 {
+  color: #ffffff;
+}
+
+.dark .founder-square {
+  background: linear-gradient(135deg, #555, #444);
+  border-color: #777;
+  color: white;
+}
+
+.dark .about-us {
+  background: #444;
+  border-color: #555;
+  color: white;
+}
+
+.dark .about-us h1 {
+  color: #ffffff;
+}
+
+.dark .about-us p {
+  color: #aaa;
+}
+
+.dark .linkedin-link, .dark .email-link, .dark .github-link {
+  background-color: #333;
+}
+
+.dark .linkedin-link:hover, .dark .github-link:hover {
+  background-color: #222;
+}
+
+.dark .email-link:hover {
+  background-color: #1d8dc9;
+}
+
+/* Fun effects for header text */
+h2, h1 {
+  transition: text-shadow 0.3s;
+}
+
+h2:hover, h1:hover {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2), 0 0 12px rgba(59, 130, 246, 0.5);
 }

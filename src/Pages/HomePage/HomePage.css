@@ -1,49 +1,108 @@
-/* Centering content and styling the hero */
+/* Hero Section */
 .hero {
   text-align: center;
   padding: 50px;
-  background-color: #f4f4f4;
+  background-color: #f4f4f4; /* Light mode background */
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-.logo {
+.hero .logo {
   font-size: 3em;
   margin-bottom: 10px;
+  color: #333; /* Light mode text color */
+  transition: color 0.3s ease;
 }
 
-.tagline {
+.hero .tagline {
   font-size: 1.5em;
   margin-bottom: 20px;
+  color: #555; /* Light mode tagline color */
+  transition: color 0.3s ease;
 }
 
-.cta-button {
-  padding: 10px 20px;
-  background-color: #3498db;
-  color: #fff;
+/* Cards Section */
+.cards-section {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 40px 20px;
+  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+}
+
+/* Card Styles */
+.card {
+  flex: 1;
+  min-width: 300px;
+  max-width: 500px;
+  padding: 30px;
+  background-color: #ffffff; /* Light mode card background */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px; /* Add margin for spacing in wrap mode */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.card h2 {
+  font-size: 1.8em;
+  margin-bottom: 15px;
+  color: #333; /* Light mode heading color */
+}
+
+.card p {
+  font-size: 1.1em;
+  color: #666; /* Light mode text color */
+  margin-bottom: 25px;
+}
+
+.card-button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: #3498db; /* Light mode button background */
+  color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
-  font-size: 1.2em;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Styling introduction and steps */
-.introduction,
-.how-it-works {
-  padding: 40px;
-  text-align: center;
+.card-button:hover {
+  background-color: #2980b9; /* Light mode button hover color */
 }
 
-.steps {
-  display: flex;
-  justify-content: space-around;
-  padding: 20px;
+/* Dark Mode Styles */
+body.dark-mode .hero {
+  background-color: #333; /* Dark mode background */
 }
 
-.step {
-  width: 30%;
-  background-color: #e0e0e0;
-  padding: 10px;
-  border-radius: 8px;
+body.dark-mode .hero .logo {
+  color: #f1f1f1; /* Dark mode logo color */
 }
 
-.step h3 {
-  margin-top: 0;
+body.dark-mode .hero .tagline {
+  color: #ccc; /* Dark mode tagline color */
+}
+
+body.dark-mode .card {
+  background-color: #444; /* Dark mode card background */
+  color: #e0e0e0; /* Light text for dark mode */
+  border: 1px solid #555; /* Darker border for dark mode */
+}
+
+body.dark-mode .card h2 {
+  color: #f1f1f1; /* Light color for headings in dark mode */
+}
+
+body.dark-mode .card p {
+  color: #bbb; /* Light text for paragraphs in dark mode */
+}
+
+body.dark-mode .card-button {
+  background-color: #66b2ff; /* Light blue button background for dark mode */
+  color: #333; /* Dark text color for contrast */
+}
+
+body.dark-mode .card-button:hover {
+  background-color: #3399ff; /* Darker blue on hover for dark mode */
 }
