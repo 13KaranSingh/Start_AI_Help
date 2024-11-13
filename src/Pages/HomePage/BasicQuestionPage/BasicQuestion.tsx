@@ -3,13 +3,13 @@ import "./BasicQuestion.css";
 import { useNavigate } from "react-router-dom";
 
 const questions = [
-  "I find purpose in creating something new and innovative.",
-  "I feel motivated when solving complex problems.",
-  "I am drawn to careers where I can make a positive impact on society.",
-  "I enjoy tasks that require attention to detail and precision.",
-  "I am excited by opportunities to lead and influence others.",
-  "I thrive in environments that challenge me to adapt and think on my feet.",
-  "I prefer work that allows me to see tangible results from my efforts.",
+  "I enjoy solving complex problems.",
+  "I like a fast-paced work environment.",
+  "I am comfortable taking risks.",
+  "I seek stability in my career.",
+  "I am motivated by innovation.",
+  "I prefer a structured work environment.",
+  "I value work-life balance highly.",
 ];
 
 const BasicQuestion = () => {
@@ -44,7 +44,7 @@ const BasicQuestion = () => {
 
   return (
     <div className="basic-questions-container">
-      <h1 className="page-title">Simple Questions</h1>
+      <h1 className="page-title">Basic Questions</h1>
       <p className="rating-description">
         Please rate each statement on a scale of 1 to 5, where:
         <strong> 1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
@@ -57,19 +57,20 @@ const BasicQuestion = () => {
 
       <div className="question-item">
         <p className="question-text">{questions[currentQuestion]}</p>
-        <div className="rating-options">
-          {[1, 2, 3, 4, 5].map((num) => (
-            <label key={num} className={`option-label ${answers[currentQuestion] === num ? "selected" : ""}`}>
-              <input
-                type="radio"
-                name={`question-${currentQuestion}`}
-                value={num}
-                checked={answers[currentQuestion] === num}
-                onChange={() => handleAnswerChange(currentQuestion, num)}
-              />
-              {num}
-            </label>
-          ))}
+        <input
+          type="range"
+          min="1"
+          max="5"
+          value={answers[currentQuestion]}
+          onChange={(e) => handleAnswerChange(currentQuestion, parseInt(e.target.value))}
+          className="slider"
+        />
+        <div className="slider-labels">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
         </div>
       </div>
 
@@ -78,11 +79,11 @@ const BasicQuestion = () => {
           Back
         </button>
         {currentQuestion < questions.length - 1 ? (
-          <button type="button" onClick={handleNext} disabled={!answers[currentQuestion]}>
+          <button type="button" onClick={handleNext} disabled={answers[currentQuestion] === 0}>
             Next
           </button>
         ) : (
-          <button type="button" onClick={handleSubmit} className="submit-button" disabled={!answers[currentQuestion]}>
+          <button type="button" onClick={handleSubmit} className="submit-button" disabled={answers[currentQuestion] === 0}>
             Submit Answers
           </button>
         )}

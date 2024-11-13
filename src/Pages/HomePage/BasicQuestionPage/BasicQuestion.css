@@ -1,121 +1,80 @@
-/* Base styling */
 .basic-questions-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
-  background-color: #f4f4f4;
-  border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-title {
-  text-align: center;
-  font-size: 2em;
-  font-weight: 700;
-  color: #007bff;
-  margin-bottom: 20px;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .rating-description {
-  font-size: 1.1em;
-  text-align: center;
-  margin: 20px 0;
-  color: #333;
+  font-size: 1rem;
+  margin-bottom: 1rem;
 }
 
 .progress-bar-container {
-  width: 100%;
+  width: 80%;
+  height: 10px;
   background-color: #e0e0e0;
   border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 20px;
+  margin-bottom: 1rem;
 }
 
 .progress-bar {
-  height: 15px;
-  background-color: #007bff;
-  transition: width 0.3s ease;
-  animation: pulse 2s infinite ease-in-out;
-}
-
-@keyframes pulse {
-  0% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
-  50% { box-shadow: 0 0 20px rgba(0, 123, 255, 0.7); }
-  100% { box-shadow: 0 0 10px rgba(0, 123, 255, 0.5); }
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
 }
 
 .question-item {
-  margin: 20px 0;
-  font-size: 1.2em;
+  margin-bottom: 1rem;
+  text-align: center;
 }
 
-.rating-options {
+.question-text {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.slider {
+  width: 100%; /* Make the slider as wide as the container */
+  max-width: 600px; /* Limit the slider's maximum width */
+  margin: 1rem 0;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-labels {
   display: flex;
-  justify-content: space-between;
-  margin-top: 15px;
+  justify-content: space-between; /* Align labels under each value */
+  width: 100%;
+  max-width: 600px; /* Match the slider’s width */
+  margin-top: 0.5rem;
 }
 
-.option-label {
-  background-color: #f9f9f9;
-  padding: 10px 15px;
-  border-radius: 8px;
-  font-size: 1em;
-  cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease-in-out, color 0.3s ease;
-}
-
-.option-label:hover {
-  background-color: #f1f1f1;
-  transform: translateY(-5px);
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
-}
-
-.option-label.selected {
-  background-color: #dbeafe;
-  border: 2px solid #007bff;
-  transform: scale(1.05);
-}
-
-.submit-button {
-  background-color: #007bff;
-  color: white;
-  padding: 12px 25px;
-  border: none;
-  border-radius: 50px;
-  cursor: pointer;
-  font-size: 1.2em;
-  align-self: center;
-  transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-  transform: translateY(-3px) scale(1.05);
-  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
+.slider-labels span {
+  font-size: 1rem;
 }
 
 .navigation-buttons {
   display: flex;
-  justify-content: space-between;
-  margin-top: 20px;
+  gap: 10px;
 }
 
-.navigation-buttons button {
-  padding: 10px 20px;
-  background-color: #007bff;
+.submit-button {
+  background-color: #4caf50;
   color: white;
   border: none;
-  border-radius: 8px;
+  padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-}
-
-.navigation-buttons button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
-.navigation-buttons button:hover:not(:disabled) {
-  background-color: #0056b3;
 }
