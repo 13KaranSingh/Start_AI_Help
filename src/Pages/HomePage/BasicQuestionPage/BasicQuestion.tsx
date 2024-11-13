@@ -44,7 +44,7 @@ const BasicQuestion = () => {
 
   return (
     <div className="basic-questions-container">
-      <h1 className="page-title">Career Reflection Questions</h1>
+      <h1 className="page-title">Simple Questions</h1>
       <p className="rating-description">
         Please rate each statement on a scale of 1 to 5, where:
         <strong> 1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
