@@ -3,7 +3,7 @@
   max-width: 800px;
   margin: auto;
   padding: 20px;
-  background-color: #f4f4f4; /* Light mode background */
+  background-color: #f4f4f4;
   border-radius: 10px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   transition: background-color 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
@@ -14,7 +14,7 @@
   margin-bottom: 30px;
   font-size: 2em;
   font-weight: 700;
-  color: #007bff; /* Light mode text color */
+  color: #007bff;
   transition: color 0.3s ease;
 }
 
@@ -27,7 +27,7 @@
   display: flex;
   align-items: center;
   font-size: 1.1em;
-  color: #333; /* Light mode text color */
+  color: #333;
   transition: color 0.3s ease;
 }
 
@@ -40,17 +40,17 @@
 
 .hint-text {
   font-size: 0.9em;
-  color: #666; /* Light mode hint text color */
+  color: #666;
   margin: 8px 0;
   padding: 8px;
-  background-color: #f9f9f9; /* Light mode hint background */
+  background-color: #f9f9f9;
   border-left: 3px solid #007bff;
   transition: background 0.3s ease, color 0.3s ease;
 }
 
 .progress-bar-container {
   width: 100%;
-  background-color: #e0e0e0; /* Light mode progress bar background */
+  background-color: #e0e0e0;
   border-radius: 5px;
   overflow: hidden;
   margin-bottom: 20px;
@@ -61,6 +61,23 @@
   height: 15px;
   background-color: #007bff;
   transition: width 0.3s ease;
+  animation: pulse 2s infinite ease-in-out;
+}
+
+/* Pulse animation applied to the progress bar */
+@keyframes pulse {
+  0% {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
+  50% {
+    transform: scaleX(1.05);
+    box-shadow: 0 0 20px rgba(0, 123, 255, 0.7);
+  }
+  100% {
+    transform: scaleX(1);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+  }
 }
 
 .options-list {
@@ -72,11 +89,18 @@
   display: block;
   margin: 8px 0;
   padding: 12px 20px;
-  background-color: #f9f9f9; /* Light mode option background */
+  background-color: #f9f9f9;
   border-radius: 8px;
   font-size: 1em;
-  transition: background 0.3s ease, transform 0.2s ease-in-out, color 0.3s ease;
+  transition: background 0.3s ease, transform 0.2s ease-in-out, color 0.3s ease, box-shadow 0.2s ease;
   cursor: pointer;
+}
+
+/* Move option labels slightly when hovered */
+.option-label:hover {
+  background-color: #f1f1f1;
+  transform: translateY(-5px); /* Moves the option up */
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
 }
 
 .option-label.selected {
@@ -86,8 +110,10 @@
   transform: scale(1.05);
 }
 
-.option-label:hover {
-  background-color: #f1f1f1; /* Light mode hover background */
+/* Add slight bounce animation on click */
+.option-label:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
 }
 
 .submit-button {
@@ -97,52 +123,54 @@
   border: none;
   border-radius: 50px;
   cursor: pointer;
-  transition: background 0.3s ease, transform 0.2s ease-in-out;
+  transition: background 0.3s ease, transform 0.2s ease-in-out, box-shadow 0.2s ease;
   align-self: center;
   font-size: 1.2em;
 }
 
+/* Add scaling and shadow effect on hover */
 .submit-button:hover {
   background-color: #0056b3;
-  transform: translateY(-3px);
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 4px 15px rgba(0, 123, 255, 0.5);
 }
 
 /* Dark mode styles */
 body.dark .detailed-questions-container {
-  background-color: #222 !important; /* Dark mode background for container */
-  color: #fff; /* Light text for dark mode */
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Darker shadow for better contrast */
+  background-color: #222 !important;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
 }
 
 body.dark .page-title {
-  color: #f1f1f1; /* Dark mode text color */
+  color: #f1f1f1;
 }
 
 body.dark .question-header {
-  color: #f1f1f1; /* Dark mode text color for headers */
+  color: #f1f1f1;
 }
 
 body.dark .hint-text {
-  background-color: #444; /* Dark mode hint background */
-  color: #ddd; /* Light text for dark mode hints */
+  background-color: #444;
+  color: #ddd;
 }
 
 body.dark .progress-bar-container {
-  background-color: #666; /* Dark mode progress bar background */
+  background-color: #666;
 }
 
 body.dark .option-label {
-  background-color: #555; /* Dark mode option background */
-  color: #fff; /* Light text for dark mode options */
+  background-color: #555;
+  color: #fff;
 }
 
 body.dark .option-label.selected {
-  background-color: #2d74d0; /* Dark mode selected option background */
+  background-color: #2d74d0;
   box-shadow: 0px 0px 10px rgba(0, 123, 255, 0.5);
 }
 
 body.dark .option-label:hover {
-  background-color: #666; /* Dark mode hover background */
+  background-color: #666;
 }
 
 body.dark .submit-button {
