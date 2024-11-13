@@ -7,7 +7,7 @@ const HomePage = () => {
     <main className="container">
       {/* Hero Section */}
       <header className="hero">
-        <h1 className="logo">The Career Helper AI</h1>
+        <img src="/Images" alt="Logo" width="200px"/>
         <p className="tagline">Discover Your Ideal Career Path!</p>
         <Link to="/BasicQuestions" className="cta-button">
           Start Your Quiz
