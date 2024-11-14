@@ -1,6 +1,8 @@
+/* Navbar Styles */
 .navbar {
-  background-color: #333;
+  background-color: #333; /* Light mode navbar background */
   padding: 10px;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .navbar-list {
@@ -11,13 +13,61 @@
 }
 
 .navbar-item a {
-  color: #fff;
+  color: #fff; /* Light mode link color */
   text-decoration: none;
   font-weight: bold;
   padding: 10px 15px;
-  transition: background-color 0.3s ease;
+  transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 .navbar-item a:hover {
-  background-color: #555;
+  background-color: #666; /* Light mode hover color */
+}
+
+/* Dark Mode Styles */
+body.dark-mode .navbar {
+  background-color: #222; /* Dark mode navbar background */
+}
+
+body.dark-mode .navbar-item a {
+  color: #e0e0e0; /* Dark mode link color */
+}
+
+body.dark-mode .navbar-item a:hover {
+  background-color: #444; /* Dark mode hover color */
+}
+
+/* Global Dark Mode Styles */
+body.dark-mode {
+  background-color: #1c1c1c; /* Darker gray background for dark mode */
+  color: #e0e0e0; /* Light gray text for readability */
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  margin-left: auto;
+  padding: 10px 15px;
+  background-color: #666; /* Softer background color for the button */
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  background-color: #555; /* Adjusted hover color for consistency */
+  transform: scale(1.05);
+}
+
+/* Dark mode theme toggle */
+body.dark-mode .theme-toggle {
+  background-color: #444; /* Dark mode button background */
+}
+
+/* Smooth transitions for link color changes */
+.navbar-item a, 
+body.dark-mode .navbar-item a {
+  transition: color 0.3s ease, background-color 0.3s ease;
 }

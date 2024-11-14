@@ -1,78 +1,80 @@
-.detailed-questions-container {
-  max-width: 800px;
-  margin: auto;
-  padding: 20px;
+.basic-questions-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .page-title {
-  text-align: center;
-  margin-bottom: 20px;
-}
-
-.questions-form {
-  display: flex;
-  flex-direction: column;
-}
-
-.question-item {
-  margin-bottom: 20px;
-}
-
-.rating {
-  display: flex;
-  justify-content: space-around;
-  margin-top: 10px;
-}
-
-.rating input[type="radio"] {
-  display: none;
-}
-
-.rating label {
-  background: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-}
-
-.rating input[type="radio"]:checked + label {
-  background: #007bff;
-  color: white;
-}
-
-.submit-button {
-  background-color: #007bff;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background 0.3s ease;
-  align-self: center;
-}
-
-.submit-button:hover {
-  background-color: #0056b3;
-}
-
-.progress-bar-container {
-  width: 100%;
-  background-color: #e0e0e0;
-  border-radius: 5px;
-  overflow: hidden;
-  margin-bottom: 15px;
-}
-
-.progress-bar {
-  height: 10px;
-  background-color: #007bff;
-  transition: width 0.3s ease;
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
 .rating-description {
-  font-size: 1.1em;
-  margin: 10px 0 20px;
-  color: #333; 
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.progress-bar-container {
+  width: 80%;
+  height: 10px;
+  background-color: #e0e0e0;
+  border-radius: 5px;
+  margin-bottom: 1rem;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #4caf50;
+  border-radius: 5px;
+}
+
+.question-item {
+  margin-bottom: 1rem;
   text-align: center;
+}
+
+.question-text {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.slider {
+  width: 100%; /* Make the slider as wide as the container */
+  max-width: 600px; /* Limit the slider's maximum width */
+  margin: 1rem 0;
+  appearance: none;
+}
+
+.slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  background-color: #4caf50;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.slider-labels {
+  display: flex;
+  justify-content: space-between; /* Align labels under each value */
+  width: 100%;
+  max-width: 600px; /* Match the slider’s width */
+  margin-top: 0.5rem;
+}
+
+.slider-labels span {
+  font-size: 1rem;
+}
+
+.navigation-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.submit-button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }

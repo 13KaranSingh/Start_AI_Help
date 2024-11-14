@@ -7,46 +7,32 @@ const HomePage = () => {
     <main className="container">
       {/* Hero Section */}
       <header className="hero">
-        <h1 className="logo">The Career Helper AI</h1>
+        <h1 className="logo">PathFinder Pro</h1>
         <p className="tagline">Discover Your Ideal Career Path!</p>
-        <Link to="/BasicQuestions" className="cta-button">
-          Start Your Quiz
-        </Link>
       </header>
 
-      {/* Introduction Section */}
-      <section className="introduction">
-        <h2>What is The Career Helper AI?</h2>
-        <p>
-          Our quiz analyzes your skills, preferences, and interests to suggest
-          the best career paths for you. Whether you're a student, a
-          professional seeking a career change, or just curious, we can help you
-          find your perfect fit.
-        </p>
-      </section>
+      {/* Cards Section */}
+      <section className="cards-section">
+        <div className="card">
+          <h2>Detailed Questions</h2>
+          <p>
+            Dive deeper into your preferences, skills, and experiences to
+            receive tailored career advice and insights.
+          </p>
+          <Link to="/DetailedQuestions" className="card-button">
+            Go to Detailed Questions
+          </Link>
+        </div>
 
-      {/* How It Works Section */}
-      <section className="how-it-works">
-        <h2>How It Works</h2>
-        <div className="steps">
-          <div className="step">
-            <h3>Step 1</h3>
-            <p>
-              Answer a few simple questions about your preferences and skills.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Step 2</h3>
-            <p>
-              Our AI analyzes your responses to match you with suitable careers.
-            </p>
-          </div>
-          <div className="step">
-            <h3>Step 3</h3>
-            <p>
-              Get a personalized report with career suggestions and resources.
-            </p>
-          </div>
+        <div className="card">
+          <h2>Basic Questions</h2>
+          <p>
+            Answer quick and simple questions to receive general career
+            suggestions based on your preferences.
+          </p>
+          <Link to="/BasicQuestions" className="card-button">
+            Go to Basic Questions
+          </Link>
         </div>
       </section>
     </main>
