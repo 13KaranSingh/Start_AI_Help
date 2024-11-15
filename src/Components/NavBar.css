@@ -1,73 +1,113 @@
-/* Navbar Styles */
-.navbar {
-  background-color: #333; /* Light mode navbar background */
-  padding: 10px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Import Modern Font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
+
+/* Base font styling */
+body {
+  font-family: 'Inter', sans-serif;
 }
 
+/* Navbar Section Styles */
+.navbar-section {
+  padding: 30px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f4f8;
+  transition: background-color 0.3s ease;
+}
+
+/* Updated Modern Navbar with Soft Gradient */
+.navbar {
+  background: linear-gradient(135deg, #4a90e2, #56c8d8);
+  backdrop-filter: blur(10px);
+  padding: 10px 40px;
+  border-radius: 25px;
+  display: flex;
+  align-items: center;
+  max-width: 800px;
+  width: 100%;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Navbar List Styles */
 .navbar-list {
   list-style: none;
   display: flex;
-  justify-content: space-around;
-  align-items: center;
+  gap: 30px;
+  margin: 0;
+  padding: 0;
+  flex-grow: 1;
 }
 
 .navbar-item a {
-  color: #fff; /* Light mode link color */
+  color: #ffffff;
   text-decoration: none;
-  font-weight: bold;
-  padding: 10px 15px;
-  transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-.navbar-item a:hover {
-  background-color: #666; /* Light mode hover color */
-}
-
-/* Dark Mode Styles */
-body.dark-mode .navbar {
-  background-color: #222; /* Dark mode navbar background */
-}
-
-body.dark-mode .navbar-item a {
-  color: #e0e0e0; /* Dark mode link color */
-}
-
-body.dark-mode .navbar-item a:hover {
-  background-color: #444; /* Dark mode hover color */
-}
-
-/* Global Dark Mode Styles */
-body.dark-mode {
-  background-color: #1c1c1c; /* Darker gray background for dark mode */
-  color: #e0e0e0; /* Light gray text for readability */
+  font-weight: 500;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 15px;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Theme Toggle Button */
+.navbar-item a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #333;
+}
+
+/* Enhanced Theme Toggle Button with Modern Colors */
 .theme-toggle {
-  margin-left: auto;
-  padding: 10px 15px;
-  background-color: #666; /* Softer background color for the button */
-  color: white;
+  position: absolute;
+  top: 28px;
+  right: 20px;
+  padding: 8px 16px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 15px;
   border: none;
-  border-radius: 5px;
+  border-radius: 20px;
   cursor: pointer;
-  transition: background-color 0.3s ease, transform 0.2s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
 }
 
 .theme-toggle:hover {
-  background-color: #555; /* Adjusted hover color for consistency */
+  background: linear-gradient(135deg, #5a67d8, #6b46c1);
   transform: scale(1.05);
 }
 
-/* Dark mode theme toggle */
-body.dark-mode .theme-toggle {
-  background-color: #444; /* Dark mode button background */
+.theme-toggle:active {
+  background: linear-gradient(135deg, #4c51bf, #553c9a);
+  transform: scale(0.95);
 }
 
-/* Smooth transitions for link color changes */
-.navbar-item a, 
-body.dark-mode .navbar-item a {
-  transition: color 0.3s ease, background-color 0.3s ease;
+/* Dark Mode Styles */
+body.dark .navbar {
+  background: linear-gradient(135deg, #1f2a38, #2d3b4c);
+}
+
+body.dark .navbar-item a {
+  color: #d1d9e0;
+}
+
+body.dark .navbar-item a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+}
+
+/* Dark Mode Theme Toggle Button */
+body.dark .theme-toggle {
+  background: linear-gradient(135deg, #4c51bf, #553c9a);
+  color: #ffffff;
+}
+
+body.dark .theme-toggle:hover {
+  background: linear-gradient(135deg, #3c4185, #453073);
+}
+
+body.dark .theme-toggle:active {
+  background: linear-gradient(135deg, #2d2e6b, #372861);
+  transform: scale(0.95);
 }
