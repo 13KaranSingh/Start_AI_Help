@@ -1,108 +1,213 @@
-/* Hero Section */
-.hero {
-  text-align: center;
-  padding: 50px;
-  background-color: #f4f4f4; /* Light mode background */
-  transition: background-color 0.3s ease, color 0.3s ease;
+/* Vertical Split Container */
+.vertical-split {
+  display: flex;
+  flex-direction: row;
+  gap: 40px;
+  padding: 60px 20px;
+  justify-content: center;
+  align-items: stretch;
 }
 
+@media (max-width: 900px) {
+  .vertical-split {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* Left Section (Hero) */
+.split-left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background-color: #f2f2f2;
+  background-image: linear-gradient(to bottom, #f2f2f2, #e0e0e0);
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* Typing Effect for PathfinderPro */
 .hero .logo {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #333; /* Light mode text color */
-  transition: color 0.3s ease;
+  font-family: 'Pacifico', cursive;
+  font-size: 6.5em;
+  margin-bottom: 15px;
+  color: #333;
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  animation: typing 3.5s steps(60) 1s forwards, glow 1.5s ease-in-out infinite alternate;
+  transform: scale(1.05);
 }
 
+/* Keyframes for typing effect */
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
+}
+
+/* Glowing effect for logo */
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 5px #0091ff, 0 0 10px #0091ff, 0 0 15px #0091ff;
+  }
+  100% {
+    text-shadow: 0 0 20px #0091ff, 0 0 30px #0091ff, 0 0 40px #0091ff;
+  }
+}
+
+/* Tagline */
 .hero .tagline {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #555; /* Light mode tagline color */
-  transition: color 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2em;
+  margin-bottom: 25px;
+  color: #666;
+  opacity: 0;
+  animation: fadeIn 1s forwards 2s;
+  transform: translateY(20px);
+}
+
+/* Fade-in effect for tagline */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Right Section (Cards) */
+.split-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
 }
 
 /* Cards Section */
 .cards-section {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+  gap: 30px;
+  padding: 60px 20px;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s ease-in-out;
 }
 
 /* Card Styles */
 .card {
   flex: 1;
-  min-width: 300px;
+  min-width: 320px;
   max-width: 500px;
-  padding: 30px;
-  background-color: #ffffff; /* Light mode card background */
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
   text-align: center;
-  margin: 10px; /* Add margin for spacing in wrap mode */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  margin: 20px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  overflow: hidden;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: fadeInUp 1s ease-in-out forwards 1.5s;
 }
 
+/* Fade-in effect for cards */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Card Titles */
 .card h2 {
-  font-size: 1.8em;
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2em;
   margin-bottom: 15px;
-  color: #333; /* Light mode heading color */
+  color: #333;
+  transition: color 0.3s ease;
 }
 
 .card p {
+  font-family: 'Poppins', sans-serif;
   font-size: 1.1em;
-  color: #666; /* Light mode text color */
+  color: #666;
   margin-bottom: 25px;
+  transition: color 0.3s ease;
 }
 
+/* Button */
 .card-button {
   display: inline-block;
   padding: 12px 20px;
-  background-color: #3498db; /* Light mode button background */
+  background-color: #5e5e5e;
   color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
   font-size: 1.1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .card-button:hover {
-  background-color: #2980b9; /* Light mode button hover color */
+  background-color: #333;
+  transform: scale(1.05);
 }
 
 /* Dark Mode Styles */
 body.dark-mode .hero {
-  background-color: #333; /* Dark mode background */
+  background-color: #2c2c2c;
+  background-image: linear-gradient(to bottom, #2c2c2c, #1a1a1a);
 }
 
 body.dark-mode .hero .logo {
-  color: #f1f1f1; /* Dark mode logo color */
+  color: #f1f1f1;
 }
 
 body.dark-mode .hero .tagline {
-  color: #ccc; /* Dark mode tagline color */
+  color: #ccc;
 }
 
 body.dark-mode .card {
-  background-color: #444; /* Dark mode card background */
-  color: #e0e0e0; /* Light text for dark mode */
-  border: 1px solid #555; /* Darker border for dark mode */
+  background-color: #444;
+  color: #e0e0e0;
+  border: 1px solid #555;
 }
 
 body.dark-mode .card h2 {
-  color: #f1f1f1; /* Light color for headings in dark mode */
+  color: #f1f1f1;
 }
 
 body.dark-mode .card p {
-  color: #bbb; /* Light text for paragraphs in dark mode */
+  color: #bbb;
 }
 
 body.dark-mode .card-button {
-  background-color: #66b2ff; /* Light blue button background for dark mode */
-  color: #333; /* Dark text color for contrast */
+  background-color: #888;
+  color: #f1f1f1;
 }
 
 body.dark-mode .card-button:hover {
-  background-color: #3399ff; /* Darker blue on hover for dark mode */
+  background-color: #555;
 }
