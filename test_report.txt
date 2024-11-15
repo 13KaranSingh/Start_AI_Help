@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (103 ms)
+  ✕ renders learn react link (108 ms)
 
   ● renders learn react link
 
@@ -105,64 +105,68 @@ FAIL src/App.test.tsx
     Ignored nodes: comments, script, style
     [36m<body>[39m
       [36m<div>[39m
-        [36m<nav[39m
-          [33mclass[39m=[32m"navbar"[39m
+        [36m<section[39m
+          [33mclass[39m=[32m"navbar-section"[39m
         [36m>[39m
-          [36m<ul[39m
-            [33mclass[39m=[32m"navbar-list"[39m
+          [36m<nav[39m
+            [33mclass[39m=[32m"navbar"[39m
           [36m>[39m
-            [36m<li[39m
-              [33mclass[39m=[32m"navbar-item"[39m
+            [36m<ul[39m
+              [33mclass[39m=[32m"navbar-list"[39m
             [36m>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/"[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"navbar-item"[39m
               [36m>[39m
-                [0mHome[0m
-              [36m</a>[39m
-            [36m</li>[39m
-            [36m<li[39m
-              [33mclass[39m=[32m"navbar-item"[39m
-            [36m>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/DetailedQuestions"[39m
+                [36m<a[39m
+                  [33mhref[39m=[32m"#/"[39m
+                [36m>[39m
+                  [0mHome[0m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"navbar-item"[39m
               [36m>[39m
-                [0mDetailed Questions[0m
-              [36m</a>[39m
-            [36m</li>[39m
-            [36m<li[39m
-              [33mclass[39m=[32m"navbar-item"[39m
-            [36m>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/BasicQuestions"[39m
+                [36m<a[39m
+                  [33mhref[39m=[32m"#/DetailedQuestions"[39m
+                [36m>[39m
+                  [0mDetailed Questions[0m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"navbar-item"[39m
               [36m>[39m
-                [0mBasic Questions[0m
-              [36m</a>[39m
-            [36m</li>[39m
-            [36m<li[39m
-              [33mclass[39m=[32m"navbar-item"[39m
-            [36m>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/AboutMe"[39m
+                [36m<a[39m
+                  [33mhref[39m=[32m"#/BasicQuestions"[39m
+                [36m>[39m
+                  [0mBasic Questions[0m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"navbar-item"[39m
               [36m>[39m
-                [0mAbout Us[0m
-              [36m</a>[39m
-            [36m</li>[39m
-            [36m<li[39m
-              [33mclass[39m=[32m"navbar-item"[39m
-            [36m>[39m
-              [36m<a[39m
-                [33mhref[39m=[32m"#/Results"[39m
+                [36m<a[39m
+                  [33mhref[39m=[32m"#/AboutMe"[39m
+                [36m>[39m
+                  [0mAbout Us[0m
+                [36m</a>[39m
+              [36m</li>[39m
+              [36m<li[39m
+                [33mclass[39m=[32m"navbar-item"[39m
               [36m>[39m
-                [0mResults[0m
-              [36m</a>[39m
-            [36m</li>[39m
-          [36m</ul>[39m
+                [36m<a[39m
+                  [33mhref[39m=[32m"#/Results"[39m
+                [36m>[39m
+                  [0mResults[0m
+                [36m</a>[39m
+              [36m</li>[39m
+            [36m</ul>[39m
+          [36m</nav>[39m
           [36m<button[39m
             [33mclass[39m=[32m"theme-toggle"[39m
           [36m>[39m
             [0m🌜 Dark Mode[0m
           [36m</button>[39m
-        [36m</nav>[39m
+        [36m</section>[39m
         [36m<div[39m
           [33mclass[39m=[32m"App"[39m
         [36m>[39m
@@ -304,7 +308,7 @@ All files                                |   20.15 |     6.81 |   15.38 |   20.9
   reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
  src/Components                          |   53.33 |    33.33 |      60 |   53.33 |                   
   Footer.tsx                             |     100 |      100 |     100 |     100 |                   
-  NavBar.tsx                             |   46.15 |    33.33 |      50 |   46.15 | 13-21,28          
+  NavBar.tsx                             |   46.15 |    33.33 |      50 |   46.15 | 12-19,25          
  src/Pages/HomePage                      |     100 |      100 |     100 |     100 |                   
   HomePage.tsx                           |     100 |      100 |     100 |     100 |                   
  src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
@@ -319,7 +323,7 @@ All files                                |   20.15 |     6.81 |   15.38 |   20.9
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.194 s
+Time:        3.268 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
