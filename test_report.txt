@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (108 ms)
+  ✕ renders learn react link (117 ms)
 
   ● renders learn react link
 
@@ -174,58 +174,66 @@ FAIL src/App.test.tsx
             [33mclass[39m=[32m"App-header"[39m
           [36m>[39m
             [36m<main[39m
-              [33mclass[39m=[32m"container"[39m
+              [33mclass[39m=[32m"vertical-split"[39m
             [36m>[39m
-              [36m<header[39m
-                [33mclass[39m=[32m"hero"[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"split-left"[39m
               [36m>[39m
-                [36m<h1[39m
-                  [33mclass[39m=[32m"logo"[39m
+                [36m<header[39m
+                  [33mclass[39m=[32m"hero"[39m
                 [36m>[39m
-                  [0mPathFinder Pro[0m
-                [36m</h1>[39m
-                [36m<p[39m
-                  [33mclass[39m=[32m"tagline"[39m
-                [36m>[39m
-                  [0mDiscover Your Ideal Career Path![0m
-                [36m</p>[39m
-              [36m</header>[39m
-              [36m<section[39m
-                [33mclass[39m=[32m"cards-section"[39m
+                  [36m<h1[39m
+                    [33mclass[39m=[32m"logo"[39m
+                  [36m>[39m
+                    [0mPathFinderPro[0m
+                  [36m</h1>[39m
+                  [36m<p[39m
+                    [33mclass[39m=[32m"tagline"[39m
+                  [36m>[39m
+                    [0mDiscover Your Ideal Career Path![0m
+                  [36m</p>[39m
+                [36m</header>[39m
+              [36m</div>[39m
+              [36m<div[39m
+                [33mclass[39m=[32m"split-right"[39m
               [36m>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"card"[39m
+                [36m<section[39m
+                  [33mclass[39m=[32m"cards-section"[39m
                 [36m>[39m
-                  [36m<h2>[39m
-                    [0mDetailed Questions[0m
-                  [36m</h2>[39m
-                  [36m<p>[39m
-                    [0mDive deeper into your preferences, skills, and experiences to receive tailored career advice and insights.[0m
-                  [36m</p>[39m
-                  [36m<a[39m
-                    [33mclass[39m=[32m"card-button"[39m
-                    [33mhref[39m=[32m"#/DetailedQuestions"[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"card"[39m
                   [36m>[39m
-                    [0mGo to Detailed Questions[0m
-                  [36m</a>[39m
-                [36m</div>[39m
-                [36m<div[39m
-                  [33mclass[39m=[32m"card"[39m
-                [36m>[39m
-                  [36m<h2>[39m
-                    [0mBasic Questions[0m
-                  [36m</h2>[39m
-                  [36m<p>[39m
-                    [0mAnswer quick and simple questions to receive general career suggestions based on your preferences.[0m
-                  [36m</p>[39m
-                  [36m<a[39m
-                    [33mclass[39m=[32m"card-button"[39m
-                    [33mhref[39m=[32m"#/BasicQuestions"[39m
+                    [36m<h2>[39m
+                      [0mDetailed Questions[0m
+                    [36m</h2>[39m
+                    [36m<p>[39m
+                      [0mDive deeper into your preferences, skills, and experiences to receive tailored career advice and insights.[0m
+                    [36m</p>[39m
+                    [36m<a[39m
+                      [33mclass[39m=[32m"card-button"[39m
+                      [33mhref[39m=[32m"#/DetailedQuestions"[39m
+                    [36m>[39m
+                      [0mGo to Detailed Questions[0m
+                    [36m</a>[39m
+                  [36m</div>[39m
+                  [36m<div[39m
+                    [33mclass[39m=[32m"card"[39m
                   [36m>[39m
-                    [0mGo to Basic Questions[0m
-                  [36m</a>[39m
-                [36m</div>[39m
-              [36m</section>[39m
+                    [36m<h2>[39m
+                      [0mBasic Questions[0m
+                    [36m</h2>[39m
+                    [36m<p>[39m
+                      [0mAnswer quick and simple questions to receive general career suggestions based on your preferences.[0m
+                    [36m</p>[39m
+                    [36m<a[39m
+                      [33mclass[39m=[32m"card-button"[39m
+                      [33mhref[39m=[32m"#/BasicQuestions"[39m
+                    [36m>[39m
+                      [0mGo to Basic Questions[0m
+                    [36m</a>[39m
+                  [36m</div>[39m
+                [36m</section>[39m
+              [36m</div>[39m
             [36m</main>[39m
           [36m</header>[39m
           [36m<form[39m
@@ -323,7 +331,7 @@ All files                                |   20.15 |     6.81 |   15.38 |   20.9
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.268 s
+Time:        3.314 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
