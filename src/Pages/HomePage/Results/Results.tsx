@@ -2,8 +2,18 @@ import React, { useEffect, useState } from "react";
 import "./Results.css";
 import { OpenAI } from "openai";
 
+interface CareerSuggestion {
+  careerPath: string;
+  careerDescription: string;
+  schoolingRequired: string;
+  timeToQualify: string;
+  salaryInfo: string;
+  jobDemand: string;
+  reasonForSuitability: string;
+}
+
 const ResultsPage = () => {
-  const [resultData, setResultData] = useState<any | null>(null);
+  const [resultData, setResultData] = useState<CareerSuggestion | null>(null);
   const [isLoading, setIsLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
@@ -61,7 +71,7 @@ Format your response as a JSON object like this:
         const messageContent = completion.choices[0]?.message?.content;
 
         if (messageContent) {
-          const parsedData = JSON.parse(messageContent);
+          const parsedData: CareerSuggestion = JSON.parse(messageContent);
           setResultData(parsedData);
         } else {
           throw new Error("Unexpected response format from OpenAI.");
