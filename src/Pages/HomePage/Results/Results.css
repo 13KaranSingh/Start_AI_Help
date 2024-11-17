@@ -1,35 +1,40 @@
-/* Light mode (default) */
+/* Light Mode (Default) */
 .results-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  height: 100vh;
   background-color: #ffffff;
   color: #000000;
+  padding: 20px;
+  box-sizing: border-box;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .result-box {
   width: 100%;
   max-width: 500px;
-  margin: 10px 0;
-  padding: 15px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
+  margin: 15px 0;
+  padding: 20px;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
   background-color: #f9f9f9;
   cursor: pointer;
   overflow: hidden;
-  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
 }
 
 .result-box:hover {
-  background-color: lightslategrey;
+  background-color: #e0e0e0;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 }
 
 .result-title {
   font-weight: bold;
-  font-size: large;
+  font-size: 1.2rem;
   color: #333;
 }
 
@@ -42,47 +47,80 @@
 }
 
 .result-box:hover .result-content {
-  max-height: 100px;
+  max-height: 200px;
   opacity: 1;
   transform: scaleY(1);
   padding-top: 10px;
 }
 
-/* Dark mode */
+.result-content p {
+  margin: 0;
+  line-height: 1.5;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+/* Dark Mode */
 .dark .results-container {
-  background-color: #333;
+  background-color: #2c2c2c;
   color: #ffffff;
 }
 
 .dark .result-box {
-  background-color: #444;
-  border-color: #666;
+  background-color: #3a3a3a;
+  border-color: #555555;
 }
 
 .dark .result-box:hover {
-  background-color: #555;
+  background-color: #484848;
 }
 
 .dark .result-title {
-  color: #ccc;
+  color: #e0e0e0;
 }
 
 .dark .result-content {
-  color: #ddd;
+  color: #cccccc;
 }
 
 /* Button styles for dark mode toggle */
 .toggle-button {
   background-color: #007bff;
-  color: white;
-  padding: 10px;
+  color: #ffffff;
+  padding: 10px 20px;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 0.95rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
   margin-bottom: 20px;
 }
 
 .toggle-button:hover {
   background-color: #0056b3;
+  transform: translateY(-2px);
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+  .results-container {
+    padding: 15px;
+  }
+
+  .result-box {
+    padding: 15px;
+  }
+
+  .result-title {
+    font-size: 1rem;
+  }
+
+  .result-content p {
+    font-size: 0.9rem;
+  }
+
+  .toggle-button {
+    font-size: 0.85rem;
+    padding: 8px 16px;
+  }
 }

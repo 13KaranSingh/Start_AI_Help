@@ -1,108 +1,214 @@
-/* Hero Section */
+/* Vertical Split Container */
+.vertical-split {
+  display: flex;
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+  padding: 60px 20px;
+  justify-content: center;
+  align-items: stretch;
+  background: #f4f4f4;
+}
+
+/* Split Sections */
+.split-left,
+.split-right {
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 20px;
+  transition: all 0.3s ease-in-out;
+}
+
+.split-left {
+  left: 0;
+  background-color: #1e2a3a; /* Dark color for left */
+}
+
+.split-right {
+  right: 0;
+  background-color: #f2f5f7; /* Light color for right */
+}
+
+/* Dark Mode Styles for Both Sections */
+body.dark-mode .split-left {
+  background-color: #333; /* Darker background for left in dark mode */
+  background-image: linear-gradient(to bottom, #333, #222); /* Dark gradient */
+}
+
+body.dark-mode .split-right {
+  background-color: #222; /* Dark color for right in dark mode */
+}
+
+body.dark-mode .hero .logo {
+  color: #FFD100; /* Gold color for logo in dark mode */
+  text-shadow: 0 0 5px #FFD100, 0 0 10px #FFD100, 0 0 15px #FFD100; /* Glow effect */
+}
+
+body.dark-mode .hero .tagline {
+  color: #ccc; /* Lighter text color for tagline */
+}
+
+body.dark-mode .hero .pathfinder-pro {
+  color: #FFD100; /* Gold color for "PathfinderPro" */
+}
+
+/* Left Section (Hero) */
 .hero {
   text-align: center;
-  padding: 50px;
-  background-color: #f4f4f4; /* Light mode background */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 0;
 }
 
 .hero .logo {
-  font-size: 3em;
-  margin-bottom: 10px;
-  color: #333; /* Light mode text color */
-  transition: color 0.3s ease;
+  font-family: 'Pacifico', cursive;
+  font-size: 5.5em;
+  color: #FFD100; /* Gold color for the logo */
+  white-space: nowrap;
+  overflow: hidden;
+  display: inline-block;
+  width: 0;
+  animation: typing 3.5s steps(25) 1s forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
+  }
+  to {
+    width: 100%;
+  }
 }
 
 .hero .tagline {
-  font-size: 1.5em;
-  margin-bottom: 20px;
-  color: #555; /* Light mode tagline color */
-  transition: color 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  color: #ffffff;
+  margin-top: 15px;
+  font-weight: bold;
 }
 
-/* Cards Section */
+.hero .pathfinder-pro {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2em;
+  color: #FFD100; /* Gold color for PathfinderPro */
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+/* Right Section (Cards) */
 .cards-section {
   display: flex;
   justify-content: center;
-  gap: 20px;
-  padding: 40px 20px;
-  flex-wrap: wrap; /* Allows cards to stack on smaller screens */
+  gap: 30px;
+  padding: 40px;
+  flex-wrap: wrap;
 }
 
-/* Card Styles */
 .card {
-  flex: 1;
-  min-width: 300px;
-  max-width: 500px;
-  padding: 30px;
-  background-color: #ffffff; /* Light mode card background */
+  width: 320px;
+  padding: 25px;
+  background-color: #ffffff;
   border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
   text-align: center;
-  margin: 10px; /* Add margin for spacing in wrap mode */
-  transition: background-color 0.3s ease, color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-12px) rotate(-2deg); /* Slight rotation for fun */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
+  background-color: #f0f8ff; /* Light blue hover color */
 }
 
 .card h2 {
-  font-size: 1.8em;
-  margin-bottom: 15px;
-  color: #333; /* Light mode heading color */
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.6em;
+  color: #333;
+  margin-bottom: 12px;
 }
 
 .card p {
-  font-size: 1.1em;
-  color: #666; /* Light mode text color */
-  margin-bottom: 25px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1em;
+  color: #666;
 }
 
 .card-button {
   display: inline-block;
-  padding: 12px 20px;
-  background-color: #3498db; /* Light mode button background */
-  color: #ffffff;
+  padding: 12px 18px;
+  background-color: #4a90e2;
+  color: #fff;
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 1.1em;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 4px;
+  margin-top: 12px;
+  transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .card-button:hover {
-  background-color: #2980b9; /* Light mode button hover color */
+  background-color: #357ab7;
+  transform: translateY(-5px); /* Lift the button on hover */
 }
 
-/* Dark Mode Styles */
-body.dark-mode .hero {
-  background-color: #333; /* Dark mode background */
+/* Question Boxes Styles */
+.question-box {
+  padding: 20px;
+  margin: 20px 0;
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease-in-out;
+  animation: bubbleUp 0.8s ease-out forwards;
 }
 
-body.dark-mode .hero .logo {
-  color: #f1f1f1; /* Dark mode logo color */
+.question-box:hover {
+  transform: translateY(-8px) scale(1.05); /* Playful scaling and movement */
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+  background-color: #f7f7f7;
 }
 
-body.dark-mode .hero .tagline {
-  color: #ccc; /* Dark mode tagline color */
+@keyframes bubbleUp {
+  0% {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(-5px);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
-body.dark-mode .card {
-  background-color: #444; /* Dark mode card background */
-  color: #e0e0e0; /* Light text for dark mode */
-  border: 1px solid #555; /* Darker border for dark mode */
+/* Dark Mode with Fun Effects */
+body.dark-mode .basic-question {
+  background-color: #333;
+  border-color: #444;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-body.dark-mode .card h2 {
-  color: #f1f1f1; /* Light color for headings in dark mode */
+body.dark-mode .basic-question:hover {
+  transform: scale(1.05) rotate(3deg);
+  background-color: #f5a623; /* Gold in dark mode */
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
 }
 
-body.dark-mode .card p {
-  color: #bbb; /* Light text for paragraphs in dark mode */
+body.dark-mode .detailed-question {
+  background-color: #555;
+  border-color: #666;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
-body.dark-mode .card-button {
-  background-color: #66b2ff; /* Light blue button background for dark mode */
-  color: #333; /* Dark text color for contrast */
-}
-
-body.dark-mode .card-button:hover {
-  background-color: #3399ff; /* Darker blue on hover for dark mode */
+body.dark-mode .detailed-question:hover {
+  transform: scale(1.05) rotate(3deg);
+  background-color: #666;
+  box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
 }
