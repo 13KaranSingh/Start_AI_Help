@@ -28,12 +28,35 @@
 
 .split-left {
   left: 0;
-  background-color: #1e2a3a;
+  background-color: #1e2a3a; /* Dark color for left */
 }
 
 .split-right {
   right: 0;
-  background-color: #f2f5f7;
+  background-color: #f2f5f7; /* Light color for right */
+}
+
+/* Dark Mode Styles for Both Sections */
+body.dark-mode .split-left {
+  background-color: #333; /* Darker background for left in dark mode */
+  background-image: linear-gradient(to bottom, #333, #222); /* Dark gradient */
+}
+
+body.dark-mode .split-right {
+  background-color: #222; /* Dark color for right in dark mode */
+}
+
+body.dark-mode .hero .logo {
+  color: #FFD100; /* Gold color for logo in dark mode */
+  text-shadow: 0 0 5px #FFD100, 0 0 10px #FFD100, 0 0 15px #FFD100; /* Glow effect */
+}
+
+body.dark-mode .hero .tagline {
+  color: #ccc; /* Lighter text color for tagline */
+}
+
+body.dark-mode .hero .pathfinder-pro {
+  color: #FFD100; /* Gold color for "PathfinderPro" */
 }
 
 /* Left Section (Hero) */
@@ -45,7 +68,7 @@
 .hero .logo {
   font-family: 'Pacifico', cursive;
   font-size: 5.5em;
-  color: #FFD100;
+  color: #FFD100; /* Gold color for the logo */
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -73,7 +96,7 @@
 .hero .pathfinder-pro {
   font-family: 'Roboto', sans-serif;
   font-size: 2em;
-  color: #f5a623;
+  color: #FFD100; /* Gold color for PathfinderPro */
   margin-top: 10px;
   font-weight: bold;
 }
@@ -163,57 +186,6 @@
     transform: translateY(0);
     opacity: 1;
   }
-}
-
-/* Basic Question Box with Fun Hover */
-.basic-question {
-  background-color: #fff;
-  border: 1px solid #ccc;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  position: relative;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.basic-question:hover {
-  transform: scale(1.05) rotate(3deg); /* Fun rotation on hover */
-  background-color: #ffeb3b;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
-}
-
-@keyframes bounceInBasic {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  60% {
-    opacity: 1;
-    transform: translateY(-10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-/* Detailed Question Box */
-.detailed-question {
-  background-color: #f0f0f0;
-  border: 1px solid #bbb;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
-  position: relative;
-  padding: 20px;
-  margin: 20px 0;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.detailed-question:hover {
-  transform: scale(1.05) rotate(3deg); /* Rotation with scale for more playfulness */
-  background-color: #e2e2e2;
-  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 /* Dark Mode with Fun Effects */
