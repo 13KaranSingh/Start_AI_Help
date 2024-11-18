@@ -32,19 +32,19 @@ const NavBar: React.FC<NavBarProps> = ({ darkTheme, setDarkTheme }) => {
     <section className="navbar-section">
       <nav className="navbar">
         <ul className="navbar-list">
-          <li className="navbar-item">
+          <li className="navbar-item left-side">
             <Link to="/">Home</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item left-side">
             <Link to="/DetailedQuestions">Detailed Questions</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item left-side">
             <Link to="/BasicQuestions">Basic Questions</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item right-side">
             <Link to="/AboutMe">About Us</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item right-side">
             <Link to="/Results">Results</Link>
           </li>
         </ul>
