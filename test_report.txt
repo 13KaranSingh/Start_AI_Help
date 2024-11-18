@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (108 ms)
+  ✕ renders learn react link (106 ms)
 
   ● renders learn react link
 
@@ -115,7 +115,7 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"navbar-list"[39m
             [36m>[39m
               [36m<li[39m
-                [33mclass[39m=[32m"navbar-item"[39m
+                [33mclass[39m=[32m"navbar-item left-side"[39m
               [36m>[39m
                 [36m<a[39m
                   [33mhref[39m=[32m"#/"[39m
@@ -124,7 +124,7 @@ FAIL src/App.test.tsx
                 [36m</a>[39m
               [36m</li>[39m
               [36m<li[39m
-                [33mclass[39m=[32m"navbar-item"[39m
+                [33mclass[39m=[32m"navbar-item left-side"[39m
               [36m>[39m
                 [36m<a[39m
                   [33mhref[39m=[32m"#/DetailedQuestions"[39m
@@ -133,7 +133,7 @@ FAIL src/App.test.tsx
                 [36m</a>[39m
               [36m</li>[39m
               [36m<li[39m
-                [33mclass[39m=[32m"navbar-item"[39m
+                [33mclass[39m=[32m"navbar-item left-side"[39m
               [36m>[39m
                 [36m<a[39m
                   [33mhref[39m=[32m"#/BasicQuestions"[39m
@@ -142,7 +142,7 @@ FAIL src/App.test.tsx
                 [36m</a>[39m
               [36m</li>[39m
               [36m<li[39m
-                [33mclass[39m=[32m"navbar-item"[39m
+                [33mclass[39m=[32m"navbar-item right-side"[39m
               [36m>[39m
                 [36m<a[39m
                   [33mhref[39m=[32m"#/AboutMe"[39m
@@ -151,7 +151,7 @@ FAIL src/App.test.tsx
                 [36m</a>[39m
               [36m</li>[39m
               [36m<li[39m
-                [33mclass[39m=[32m"navbar-item"[39m
+                [33mclass[39m=[32m"navbar-item right-side"[39m
               [36m>[39m
                 [36m<a[39m
                   [33mhref[39m=[32m"#/Results"[39m
@@ -331,7 +331,7 @@ All files                                |   20.31 |     6.52 |   15.38 |   21.1
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.208 s
+Time:        3.152 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
