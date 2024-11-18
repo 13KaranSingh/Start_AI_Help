@@ -1,34 +1,21 @@
-/* Import Modern Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
-/* Base font styling */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff; /* Default light mode background */
-  color: #333; /* Default light mode text color */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 /* Navbar Section Styles */
 .navbar-section {
-  padding: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f4f8;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 30px 0;
+  background: linear-gradient(to right, #1e2a3a 50%, #f2f5f7 50%); /* Navy and white split */
+  transition: background 0.3s ease;
 }
 
+/* Dark Mode Navbar Section */
 body.dark .navbar-section {
-  background-color: #121a26; /* Dark mode background for navbar section */
+  background: linear-gradient(to right, #333 50%, #222 50%); /* Dark split for left and right sides */
 }
 
-/* Modern Navbar with Soft Gradient */
+/* Navbar Styles */
 .navbar {
-  background: linear-gradient(135deg, #4a90e2, #56c8d8);
-  backdrop-filter: blur(10px);
   padding: 10px 40px;
   border-radius: 25px;
   display: flex;
@@ -36,12 +23,14 @@ body.dark .navbar-section {
   max-width: 800px;
   width: 100%;
   transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  background: transparent; /* Navbar inherits split background */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+/* Dark Mode Navbar */
 body.dark .navbar {
-  background: linear-gradient(135deg, #1f2a38, #2d3b4c); /* Dark mode gradient for navbar */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for dark mode */
+  background: transparent; /* Ensure it inherits the dark split from the navbar-section */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 /* Navbar List Styles */
@@ -51,37 +40,48 @@ body.dark .navbar {
   gap: 30px;
   margin: 0;
   padding: 0;
-  flex-grow: 1;
 }
 
+/* Navbar Item Styles - Adjust text color based on background */
 .navbar-item a {
-  color: #ffffff; /* Light text for links */
   text-decoration: none;
   font-weight: 500;
   font-size: 16px;
   padding: 8px 16px;
   border-radius: 15px;
   transition: background-color 0.3s ease, color 0.3s ease;
+  display: block;
 }
 
+/* Left side of navbar */
+.navbar-item.left-side a {
+  color: #FFD100; /* Gold text on dark navy (#333 in dark mode) */
+}
+
+/* Right side of navbar */
+.navbar-item.right-side a {
+  color: #FFD100; /* Gold text on darker gray (#222 in dark mode) */
+}
+
+/* Hover effect */
 .navbar-item a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #333; /* Darker text for hover in light mode */
+  color: #333;
 }
 
 body.dark .navbar-item a {
-  color: #d1d9e0; /* Softer text for dark mode links */
+  color: #FFD100; /* Gold text in dark mode */
 }
 
 body.dark .navbar-item a:hover {
   background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff; /* Brighter text on hover in dark mode */
+  color: #FFD100; /* Gold text on hover */
 }
 
-/* Enhanced Theme Toggle Button */
+/* Theme toggle button styles remain the same */
 .theme-toggle {
-  position: absolute;
-  top: 28px;
+  position: fixed;
+  top: 20px;
   right: 20px;
   padding: 8px 16px;
   background: linear-gradient(135deg, #667eea, #764ba2);
@@ -118,14 +118,4 @@ body.dark .theme-toggle:hover {
 body.dark .theme-toggle:active {
   background: linear-gradient(135deg, #2d2e6b, #372861);
   transform: scale(0.95);
-}
-
-/* General Dark Mode Styles */
-body.dark {
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text for dark mode */
-}
-
-body.dark .navbar-section {
-  background-color: #121a26; /* Darker background for navbar section in dark mode */
 }
