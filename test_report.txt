@@ -106,7 +106,7 @@ FAIL src/App.test.tsx
     [36m<body>[39m
       [36m<div>[39m
         [36m<section[39m
-          [33mclass[39m=[32m"navbar-section"[39m
+          [33mclass[39m=[32m"navbar-section homepage"[39m
         [36m>[39m
           [36m<nav[39m
             [33mclass[39m=[32m"navbar"[39m
@@ -309,14 +309,14 @@ FAIL src/App.test.tsx
 -----------------------------------------|---------|----------|---------|---------|-------------------
 File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |   20.31 |     6.52 |   15.38 |   21.13 |                   
+All files                                |   21.53 |     8.33 |   15.38 |    22.4 |                   
  src                                     |    37.5 |    16.66 |   33.33 |    37.5 |                   
   App.tsx                                |   69.23 |       50 |      50 |   69.23 | 21,30-36          
   index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
   reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
- src/Components                          |   53.33 |    33.33 |      60 |   53.33 |                   
+ src/Components                          |   58.82 |     37.5 |      60 |   58.82 |                   
   Footer.tsx                             |     100 |      100 |     100 |     100 |                   
-  NavBar.tsx                             |   46.15 |    33.33 |      50 |   46.15 | 12-19,25          
+  NavBar.tsx                             |   53.33 |     37.5 |      50 |   53.33 | 14-21,27          
  src/Pages/HomePage                      |     100 |      100 |     100 |     100 |                   
   HomePage.tsx                           |     100 |      100 |     100 |     100 |                   
  src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
@@ -331,7 +331,7 @@ All files                                |   20.31 |     6.52 |   15.38 |   21.1
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.152 s
+Time:        3.236 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
