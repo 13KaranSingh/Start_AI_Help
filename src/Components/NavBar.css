@@ -1,98 +1,108 @@
-/* Import Modern Font */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
-
-/* Base font styling */
-body {
-  font-family: 'Inter', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #ffffff; /* Default light mode background */
-  color: #333; /* Default light mode text color */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
-
 /* Navbar Section Styles */
 .navbar-section {
-  padding: 30px 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #f0f4f8;
-  transition: background-color 0.3s ease;
+  width: 100%;
+  padding: 20px 0; /* Reduced padding for a smaller navbar */
+  background: #1e2a3a; /* Default solid navy background */
+  transition: background 0.3s ease;
+  z-index: 10;
 }
 
+/* Homepage-specific split background */
+.navbar-section.homepage {
+  background: linear-gradient(to right, #1e2a3a 50%, #f2f5f7 50%);
+}
+
+/* Dark Mode Navbar Section */
 body.dark .navbar-section {
-  background-color: #121a26; /* Dark mode background for navbar section */
+  background: #333; /* Default dark mode background */
 }
 
-/* Modern Navbar with Soft Gradient */
+body.dark .navbar-section.homepage {
+  background: linear-gradient(to right, #333 50%, #222 50%);
+}
+
+/* Navbar Styles */
 .navbar {
-  background: linear-gradient(135deg, #4a90e2, #56c8d8);
-  backdrop-filter: blur(10px);
-  padding: 10px 40px;
-  border-radius: 25px;
+  padding: 15px 40px; /* Reduced padding for a smaller height */
+  border-radius: 25px; /* Slightly smaller border radius */
   display: flex;
   align-items: center;
-  max-width: 800px;
+  max-width: 850px;
   width: 100%;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  background: #f2f5f7; /* Light background for visibility */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
+  border: 3px solid rgba(255, 209, 0, 1); /* Gold border */
 }
 
+/* Dark Mode Navbar */
 body.dark .navbar {
-  background: linear-gradient(135deg, #1f2a38, #2d3b4c); /* Dark mode gradient for navbar */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5); /* Stronger shadow for dark mode */
+  background: #222; /* Dark background */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+  border: 3px solid rgba(255, 209, 0, 0.8); /* Maintain bold gold border */
 }
 
 /* Navbar List Styles */
 .navbar-list {
   list-style: none;
   display: flex;
-  gap: 30px;
+  justify-content: space-between; /* Ensures proper spacing between items */
+  gap: 30px; /* Reduced gap for a compact design */
   margin: 0;
   padding: 0;
-  flex-grow: 1;
 }
 
+/* Navbar Item Styles */
 .navbar-item a {
-  color: #ffffff; /* Light text for links */
   text-decoration: none;
-  font-weight: 500;
-  font-size: 16px;
-  padding: 8px 16px;
-  border-radius: 15px;
-  transition: background-color 0.3s ease, color 0.3s ease;
+  font-weight: 600; /* Slightly bold font */
+  font-size: 16px; /* Reduced font size for compactness */
+  padding: 8px 16px; /* Compact padding for button-like effect */
+  border-radius: 15px; /* Rounded edges for clean look */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  display: block;
+  white-space: nowrap; /* Prevents text wrapping */
+  color: #FFD100; /* Gold text */
 }
 
+/* Hover effect */
 .navbar-item a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #333; /* Darker text for hover in light mode */
+  background-color: rgba(255, 209, 0, 0.3); /* Highlight with gold tint */
+  color: #1e2a3a; /* Navy text for contrast */
+  transform: scale(1.05); /* Subtle scale for emphasis */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
+/* Dark mode text and hover */
 body.dark .navbar-item a {
-  color: #d1d9e0; /* Softer text for dark mode links */
+  color: #FFD100; /* Maintain gold color */
 }
 
 body.dark .navbar-item a:hover {
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #ffffff; /* Brighter text on hover in dark mode */
+  background-color: rgba(255, 209, 0, 0.3);
+  color: #FFD100;
+  transform: scale(1.05);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
 }
 
-/* Enhanced Theme Toggle Button */
+/* Theme Toggle Button */
 .theme-toggle {
-  position: absolute;
-  top: 28px;
+  position: fixed;
+  top: 20px;
   right: 20px;
-  padding: 8px 16px;
+  padding: 10px 20px; /* Adjusted padding for smaller button */
   background: linear-gradient(135deg, #667eea, #764ba2);
   color: #ffffff;
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: 500; /* Reduced font weight for compactness */
+  font-size: 15px; /* Slightly smaller font */
   border: none;
-  border-radius: 20px;
+  border-radius: 20px; /* Smooth pill-shaped toggle */
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow for depth */
   z-index: 1000;
 }
 
@@ -104,7 +114,7 @@ body.dark .navbar-item a:hover {
 .theme-toggle:active {
   background: linear-gradient(135deg, #4c51bf, #553c9a);
   transform: scale(0.95);
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
 }
 
 body.dark .theme-toggle {
@@ -120,12 +130,8 @@ body.dark .theme-toggle:active {
   transform: scale(0.95);
 }
 
-/* General Dark Mode Styles */
-body.dark {
-  background-color: #121212; /* Dark background */
-  color: #e0e0e0; /* Light text for dark mode */
-}
-
-body.dark .navbar-section {
-  background-color: #121a26; /* Darker background for navbar section in dark mode */
+/* Results and other items fix */
+.navbar-item.results a {
+  text-align: center;
+  white-space: nowrap; /* Ensures "Results" doesn't break onto a new line */
 }

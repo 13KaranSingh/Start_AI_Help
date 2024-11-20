@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import "./NavBar.css";
 
 interface NavBarProps {
@@ -8,6 +8,8 @@ interface NavBarProps {
 }
 
 const NavBar: React.FC<NavBarProps> = ({ darkTheme, setDarkTheme }) => {
+  const location = useLocation(); // Get the current route
+
   const toggleTheme = (): void => {
     setDarkTheme((prevTheme) => {
       const newTheme = !prevTheme;
@@ -28,23 +30,26 @@ const NavBar: React.FC<NavBarProps> = ({ darkTheme, setDarkTheme }) => {
     }
   }, [darkTheme]);
 
+  // Determine if the current page is the homepage
+  const isHomepage = location.pathname === "/";
+
   return (
-    <section className="navbar-section">
+    <section className={`navbar-section ${isHomepage ? "homepage" : ""}`}>
       <nav className="navbar">
         <ul className="navbar-list">
-          <li className="navbar-item">
+          <li className="navbar-item left-side">
             <Link to="/">Home</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item left-side">
             <Link to="/DetailedQuestions">Detailed Questions</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item left-side">
             <Link to="/BasicQuestions">Basic Questions</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item right-side">
             <Link to="/AboutMe">About Us</Link>
           </li>
-          <li className="navbar-item">
+          <li className="navbar-item right-side">
             <Link to="/Results">Results</Link>
           </li>
         </ul>

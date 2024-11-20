@@ -28,35 +28,22 @@
 
 .split-left {
   left: 0;
-  background-color: #1e2a3a; /* Dark color for left */
+  background-color: #1e2a3a; /* Navy left section */
 }
 
 .split-right {
   right: 0;
-  background-color: #f2f5f7; /* Light color for right */
+  background-color: #f2f5f7; /* Light right section */
 }
 
-/* Dark Mode Styles for Both Sections */
+/* Dark Mode Styles for Split Sections */
 body.dark-mode .split-left {
-  background-color: #333; /* Darker background for left in dark mode */
-  background-image: linear-gradient(to bottom, #333, #222); /* Dark gradient */
+  background-color: #333; /* Darker left section */
+  background-image: linear-gradient(to bottom, #333, #222); /* Subtle gradient */
 }
 
 body.dark-mode .split-right {
-  background-color: #222; /* Dark color for right in dark mode */
-}
-
-body.dark-mode .hero .logo {
-  color: #FFD100; /* Gold color for logo in dark mode */
-  text-shadow: 0 0 5px #FFD100, 0 0 10px #FFD100, 0 0 15px #FFD100; /* Glow effect */
-}
-
-body.dark-mode .hero .tagline {
-  color: #ccc; /* Lighter text color for tagline */
-}
-
-body.dark-mode .hero .pathfinder-pro {
-  color: #FFD100; /* Gold color for "PathfinderPro" */
+  background-color: #222; /* Darker right section */
 }
 
 /* Left Section (Hero) */
@@ -68,7 +55,7 @@ body.dark-mode .hero .pathfinder-pro {
 .hero .logo {
   font-family: 'Pacifico', cursive;
   font-size: 5.5em;
-  color: #FFD100; /* Gold color for the logo */
+  color: #FFD100; /* Gold logo text */
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
@@ -96,9 +83,14 @@ body.dark-mode .hero .pathfinder-pro {
 .hero .pathfinder-pro {
   font-family: 'Roboto', sans-serif;
   font-size: 2em;
-  color: #FFD100; /* Gold color for PathfinderPro */
+  color: #FFD100; /* Gold for PathfinderPro */
   margin-top: 10px;
   font-weight: bold;
+}
+
+/* Remove Glow in Dark Mode */
+body.dark-mode .hero .pathfinder-pro {
+  text-shadow: none; /* No glow for PathfinderPro in dark mode */
 }
 
 /* Right Section (Cards) */
@@ -118,13 +110,13 @@ body.dark-mode .hero .pathfinder-pro {
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 .card:hover {
-  transform: translateY(-12px) rotate(-2deg); /* Slight rotation for fun */
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* More intense shadow on hover */
-  background-color: #f0f8ff; /* Light blue hover color */
+  transform: translateY(-12px) rotate(-2deg); /* Slight playful rotation */
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  background-color: #f0f8ff; /* Light blue on hover */
 }
 
 .card h2 {
@@ -153,22 +145,22 @@ body.dark-mode .hero .pathfinder-pro {
 
 .card-button:hover {
   background-color: #357ab7;
-  transform: translateY(-5px); /* Lift the button on hover */
+  transform: translateY(-5px); /* Lift button on hover */
 }
 
-/* Question Boxes Styles */
+/* Question Boxes */
 .question-box {
   padding: 20px;
   margin: 20px 0;
   background-color: #ffffff;
   border: 1px solid #ddd;
   border-radius: 8px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, transform 0.3s ease-in-out;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   animation: bubbleUp 0.8s ease-out forwards;
 }
 
 .question-box:hover {
-  transform: translateY(-8px) scale(1.05); /* Playful scaling and movement */
+  transform: translateY(-8px) scale(1.05); /* Playful movement */
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
   background-color: #f7f7f7;
 }
@@ -188,7 +180,7 @@ body.dark-mode .hero .pathfinder-pro {
   }
 }
 
-/* Dark Mode with Fun Effects */
+/* Dark Mode Enhancements */
 body.dark-mode .basic-question {
   background-color: #333;
   border-color: #444;
@@ -197,14 +189,13 @@ body.dark-mode .basic-question {
 
 body.dark-mode .basic-question:hover {
   transform: scale(1.05) rotate(3deg);
-  background-color: #f5a623; /* Gold in dark mode */
+  background-color: #f5a623; /* Gold hover effect */
   box-shadow: 0 8px 16px rgba(255, 255, 255, 0.3);
 }
 
 body.dark-mode .detailed-question {
   background-color: #555;
   border-color: #666;
-  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
 }
 
 body.dark-mode .detailed-question:hover {
