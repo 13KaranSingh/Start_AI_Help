@@ -78,7 +78,7 @@ Format your response as a JSON object like this:
         }
       } catch (error) {
         console.error("OpenAI API Error:", error);
-        setError("Failed to load results. Please try again.");
+        setError("Failed to load results. Please check your internet connection or try again later.");
       } finally {
         setIsLoading(false);
       }
@@ -100,7 +100,7 @@ Format your response as a JSON object like this:
           <p>{error}</p>
         </div>
       ) : resultData ? (
-        <div className="results-section">
+        <div className="results-section" aria-live="polite">
           <h2>Your Career Suggestion</h2>
           {[
             {
