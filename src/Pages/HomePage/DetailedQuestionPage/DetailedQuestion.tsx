@@ -37,11 +37,9 @@ const DetailedQuestions = () => {
   const navigate = useNavigate();
 
   const handleAnswerChange = (value: string) => {
-    setAnswers((prevAnswers) => {
-      const newAnswers = [...prevAnswers];
-      newAnswers[currentQuestion] = value;
-      return newAnswers;
-    });
+    const newAnswers = [...answers];
+    newAnswers[currentQuestion] = value;
+    setAnswers(newAnswers);
   };
 
   useEffect(() => {
@@ -76,6 +74,17 @@ const DetailedQuestions = () => {
 
   return (
     <div className="detailed-questions-container">
+      <div className="bubbles">
+        {/* Bubbles will be added here by the CSS */}
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+      </div>
+
       {showConfetti && <Confetti className="confetti" />}
       <h1 className="page-title">Detailed Questions</h1>
       <p className="rating-description">Select one answer for each question.</p>
@@ -134,7 +143,7 @@ const DetailedQuestions = () => {
               className="submit-button"
               disabled={!answers[currentQuestion]}  // Disabled if no answer selected
             >
-              Get Answer
+              Submit
             </button>
           )}
         </div>
