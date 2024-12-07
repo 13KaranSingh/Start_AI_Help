@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (111 ms)
+  ✕ renders learn react link (109 ms)
 
   ● renders learn react link
 
@@ -309,7 +309,7 @@ FAIL src/App.test.tsx
 -----------------------------------------|---------|----------|---------|---------|-------------------
 File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |   21.53 |     8.33 |   15.38 |    22.4 |                   
+All files                                |    21.7 |     8.33 |   15.78 |   22.58 |                   
  src                                     |    37.5 |    16.66 |   33.33 |    37.5 |                   
   App.tsx                                |   69.23 |       50 |      50 |   69.23 | 21,30-36          
   index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
@@ -323,15 +323,15 @@ All files                                |   21.53 |     8.33 |   15.38 |    22.
   AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
  src/Pages/HomePage/BasicQuestionPage    |    9.52 |        0 |       0 |    9.52 |                   
   BasicQuestion.tsx                      |    9.52 |        0 |       0 |    9.52 | 16-65             
- src/Pages/HomePage/DetailedQuestionPage |    7.14 |        0 |       0 |     8.1 |                   
-  DetailedQuestion.tsx                   |    7.14 |        0 |       0 |     8.1 | 32-110            
+ src/Pages/HomePage/DetailedQuestionPage |    7.31 |        0 |       0 |    8.33 |                   
+  DetailedQuestion.tsx                   |    7.31 |        0 |       0 |    8.33 | 32-119            
  src/Pages/HomePage/Results              |    4.54 |        0 |       0 |    4.54 |                   
   Results.tsx                            |    4.54 |        0 |       0 |    4.54 | 16-126            
 -----------------------------------------|---------|----------|---------|---------|-------------------
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.138 s
+Time:        3.193 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
