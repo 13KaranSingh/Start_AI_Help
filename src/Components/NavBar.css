@@ -5,23 +5,23 @@
   align-items: center;
   width: 100%;
   padding: 20px 0; /* Reduced padding for a smaller navbar */
-  background: #1e2a3a; /* Default solid navy background */
+  background: transparent; /* Changed to transparent to remove navy background */
   transition: background 0.3s ease;
   z-index: 10;
 }
 
-/* Homepage-specific split background */
+/* Removed homepage-specific split background */
 .navbar-section.homepage {
-  background: linear-gradient(to right, #1e2a3a 50%, #f2f5f7 50%);
+  background: transparent; /* Set to transparent for a consistent look */
 }
 
 /* Dark Mode Navbar Section */
 body.dark .navbar-section {
-  background: #333; /* Default dark mode background */
+  background: transparent; /* Set to transparent in dark mode as well */
 }
 
 body.dark .navbar-section.homepage {
-  background: linear-gradient(to right, #333 50%, #222 50%);
+  background: transparent; /* Set to transparent for dark mode homepage */
 }
 
 /* Navbar Styles */
