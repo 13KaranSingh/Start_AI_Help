@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (109 ms)
+  ✕ renders learn react link (142 ms)
 
   ● renders learn react link
 
@@ -177,6 +177,54 @@ FAIL src/App.test.tsx
               [33mclass[39m=[32m"vertical-split"[39m
             [36m>[39m
               [36m<div[39m
+                [33mclass[39m=[32m"bubbles"[39m
+              [36m>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 317px; top: 558px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 722px; top: 31px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 584px; top: 32px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 887px; top: 435px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 403px; top: 334px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 402px; top: 706px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble large"[39m
+                  [33mstyle[39m=[32m"left: 197px; top: 667px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble medium"[39m
+                  [33mstyle[39m=[32m"left: 151px; top: 606px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble medium"[39m
+                  [33mstyle[39m=[32m"left: 183px; top: 280px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble medium"[39m
+                  [33mstyle[39m=[32m"left: 210px; top: 15px;"[39m
+                [36m/>[39m
+                [36m<div[39m
+                  [33mclass[39m=[32m"bubble medium"[39m
+                  [33mstyle[39m=[32m"left: 237px; top: 593px;"[39m
+                [36m/>[39m
+              [36m</div>[39m
+              [36m<div[39m
                 [33mclass[39m=[32m"split-left"[39m
               [36m>[39m
                 [36m<header[39m
@@ -210,6 +258,7 @@ FAIL src/App.test.tsx
                       [0mDive deeper into your preferences, skills, and experiences to receive tailored career advice and insights.[0m
                     [36m</p>[39m
                     [36m<a[39m
+                      [33maria-label[39m=[32m"Navigate to Detailed Questions"[39m
                       [33mclass[39m=[32m"card-button"[39m
                       [33mhref[39m=[32m"#/DetailedQuestions"[39m
                     [36m>[39m
@@ -226,6 +275,7 @@ FAIL src/App.test.tsx
                       [0mAnswer quick and simple questions to receive general career suggestions based on your preferences.[0m
                     [36m</p>[39m
                     [36m<a[39m
+                      [33maria-label[39m=[32m"Navigate to Basic Questions"[39m
                       [33mclass[39m=[32m"card-button"[39m
                       [33mhref[39m=[32m"#/BasicQuestions"[39m
                     [36m>[39m
@@ -309,7 +359,7 @@ FAIL src/App.test.tsx
 -----------------------------------------|---------|----------|---------|---------|-------------------
 File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |    21.7 |     8.33 |   15.78 |   22.58 |                   
+All files                                |   28.87 |    13.46 |   17.94 |   29.41 |                   
  src                                     |    37.5 |    16.66 |   33.33 |    37.5 |                   
   App.tsx                                |   69.23 |       50 |      50 |   69.23 | 21,30-36          
   index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
@@ -317,8 +367,8 @@ All files                                |    21.7 |     8.33 |   15.78 |   22.5
  src/Components                          |   58.82 |     37.5 |      60 |   58.82 |                   
   Footer.tsx                             |     100 |      100 |     100 |     100 |                   
   NavBar.tsx                             |   53.33 |     37.5 |      50 |   53.33 | 14-21,27          
- src/Pages/HomePage                      |     100 |      100 |     100 |     100 |                   
-  HomePage.tsx                           |     100 |      100 |     100 |     100 |                   
+ src/Pages/HomePage                      |     100 |       75 |     100 |     100 |                   
+  HomePage.tsx                           |     100 |       75 |     100 |     100 | 8                 
  src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
   AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
  src/Pages/HomePage/BasicQuestionPage    |    9.52 |        0 |       0 |    9.52 |                   
@@ -331,7 +381,7 @@ All files                                |    21.7 |     8.33 |   15.78 |   22.5
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.193 s
+Time:        3.202 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
