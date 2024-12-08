@@ -4,53 +4,60 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  padding: 20px 0; /* Reduced padding for a smaller navbar */
-  background: transparent; /* Changed to transparent to remove navy background */
+  padding: 0;
+  background: transparent; 
   transition: background 0.3s ease;
   z-index: 10;
+  border: none;
+  box-shadow: none; 
+  overflow: hidden; 
+  position: relative; 
 }
 
-/* Removed homepage-specific split background */
+/* Navbar Section on Homepage */
 .navbar-section.homepage {
-  background: transparent; /* Set to transparent for a consistent look */
+  background: transparent;
+  border: none;
+  box-shadow: none; 
+  overflow: hidden;
 }
 
 /* Dark Mode Navbar Section */
 body.dark .navbar-section {
-  background: transparent; /* Set to transparent in dark mode as well */
-}
-
-body.dark .navbar-section.homepage {
-  background: transparent; /* Set to transparent for dark mode homepage */
+  background: transparent;
+  border: none; 
+  box-shadow: none; 
+  overflow: hidden;
 }
 
 /* Navbar Styles */
 .navbar {
-  padding: 15px 40px; /* Reduced padding for a smaller height */
-  border-radius: 25px; /* Slightly smaller border radius */
+  padding: 15px 40px;
+  border-radius: 25px;
   display: flex;
   align-items: center;
+  justify-content: center; /* Ensure everything is centered */
   max-width: 850px;
   width: 100%;
-  transition: background-color 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
-  background: #f2f5f7; /* Light background for visibility */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2); /* Shadow for depth */
-  border: 3px solid rgba(255, 209, 0, 1); /* Gold border */
+  transition: box-shadow 0.3s ease, border 0.3s ease;
+  background: #f2f5f7; /* Light background */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  border: 3px solid rgba(118, 75, 162, 1); /* Updated border color */
 }
 
 /* Dark Mode Navbar */
 body.dark .navbar {
-  background: #222; /* Dark background */
+  background: #222; /* Dark mode background */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
-  border: 3px solid rgba(255, 209, 0, 0.8); /* Maintain bold gold border */
+  border: 3px solid rgba(118, 75, 162, 0.8); /* Subtle darker border in dark mode */
 }
 
 /* Navbar List Styles */
 .navbar-list {
   list-style: none;
   display: flex;
-  justify-content: space-between; /* Ensures proper spacing between items */
-  gap: 30px; /* Reduced gap for a compact design */
+  justify-content: center; /* Center all items */
+  gap: 30px;
   margin: 0;
   padding: 0;
 }
@@ -58,35 +65,38 @@ body.dark .navbar {
 /* Navbar Item Styles */
 .navbar-item a {
   text-decoration: none;
-  font-weight: 600; /* Slightly bold font */
-  font-size: 16px; /* Reduced font size for compactness */
-  padding: 8px 16px; /* Compact padding for button-like effect */
-  border-radius: 15px; /* Rounded edges for clean look */
+  font-weight: 600;
+  font-size: 16px;
+  padding: 8px 16px;
+  border-radius: 15px;
   transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
   display: block;
-  white-space: nowrap; /* Prevents text wrapping */
-  color: #FFD100; /* Gold text */
+  white-space: nowrap; /* Prevent text wrapping */
+  color: #764ba2; /* Updated text color */
+  border: 2px solid #764ba2; /* Border to match text color */
 }
 
 /* Hover effect */
 .navbar-item a:hover {
-  background-color: rgba(255, 209, 0, 0.3); /* Highlight with gold tint */
-  color: #1e2a3a; /* Navy text for contrast */
-  transform: scale(1.05); /* Subtle scale for emphasis */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+  background-color: rgba(118, 75, 162, 0.1); /* Subtle highlight */
+  color: #5a67d8; /* Slightly lighter purple on hover */
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
 }
 
 /* Dark mode text and hover */
 body.dark .navbar-item a {
-  color: #FFD100; /* Maintain gold color */
+  color: #764ba2; /* Purple text for dark mode */
+  border: 2px solid #764ba2; /* Maintain border */
 }
 
 body.dark .navbar-item a:hover {
-  background-color: rgba(255, 209, 0, 0.3);
-  color: #FFD100;
+  background-color: rgba(118, 75, 162, 0.1);
+  color: #5a67d8;
   transform: scale(1.05);
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
 }
+
 
 /* Theme Toggle Button */
 .theme-toggle {
