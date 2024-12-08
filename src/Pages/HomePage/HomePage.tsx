@@ -1,16 +1,29 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./HomePage.css";
 
 const HomePage = () => {
+  const [isDarkMode, setIsDarkMode] = useState(false);
+
   useEffect(() => {
+    // Check if dark mode is preferred
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Set initial mode based on system preference
+    setIsDarkMode(mediaQuery.matches);
+
+    // Listen for changes in the system theme preference
+    mediaQuery.addEventListener("change", (e) => {
+      setIsDarkMode(e.matches);
+    });
+
     const bubblesContainer = document.querySelector('.bubbles');
-    if (bubblesContainer) {  // Add null check to ensure it exists
+    if (bubblesContainer) {  
       // Create a total of 11 bubbles (7 large, 4 medium)
-      for (let i = 0; i < 11; i++) { // Total number of bubbles (7 large, 4 medium)
+      for (let i = 0; i < 11; i++) {
         const bubble = document.createElement('div');
         // Assign 7 bubbles as 'large' and 4 as 'medium'
-        const sizeClass = i < 7 ? 'large' : 'medium'; // 7 large, 4 medium
+        const sizeClass = i < 7 ? 'large' : 'medium'; 
         const positionX = Math.floor(Math.random() * window.innerWidth);
         const positionY = Math.floor(Math.random() * window.innerHeight);
         bubble.classList.add('bubble', sizeClass);
@@ -22,9 +35,9 @@ const HomePage = () => {
   }, []);
 
   return (
-    <main className="vertical-split">
+    <main className={`vertical-split ${isDarkMode ? "dark-mode" : ""}`}>
       {/* Background Bubbles */}
-      <div className="bubbles"></div>
+      <div className={`bubbles ${isDarkMode ? "dark-mode" : ""}`}></div>
 
       {/* Left Section (Hero) */}
       <div className="split-left">
