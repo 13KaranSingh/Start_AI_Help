@@ -125,14 +125,17 @@ body {
 
 /* Hero Section */
 .hero .logo {
-  font-family: 'Pacifico', cursive;
-  font-size: 5.5em;
-  color: #FFD100; /* Gold logo text */
+  font-family: 'Pacifico', cursive; /* Elegant and unique font */
+  font-size: 5.5em; /* Large, prominent logo text */
+  background: linear-gradient(135deg, #667eea, #764ba2); /* Gradient matching theme */
+  -webkit-background-clip: text; /* Gradient applies to text only */
+  -webkit-text-fill-color: transparent; /* Makes background gradient visible */
+  color: #764ba2; /* Fallback for non-supporting browsers */
   white-space: nowrap;
   overflow: hidden;
   display: inline-block;
   width: 0;
-  animation: typing 3.5s steps(25) 1s forwards;
+  animation: typing 3.5s steps(25) 1s forwards, gradient-fade 5s infinite; /* Typing and gradient animation */
 }
 
 @keyframes typing {
@@ -147,7 +150,7 @@ body {
 .hero .tagline {
   font-family: 'Roboto', sans-serif;
   font-size: 2em;
-  color: #ffffff;
+  color: black;
   margin-top: 15px;
   font-weight: bold;
 }
@@ -184,4 +187,30 @@ body {
   transform: translateY(-12px) rotate(-2deg);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3); /* Complete box-shadow property */
   background-color: #f0f8ff; /* Light blue on hover */
+}
+
+
+.card-button {
+  display: inline-block;
+  background: linear-gradient(135deg, #667eea, #764ba2); /* Matching gradient */
+  color: #ffffff; /* White text for contrast */
+  font-weight: 500; /* Balanced font weight */
+  font-size: 15px; /* Compact font size */
+  padding: 10px 20px; /* Consistent padding */
+  border: none; /* No border */
+  border-radius: 20px; /* Pill-shaped button */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease; /* Smooth interactions */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Depth with shadow */
+}
+
+.card-button:hover {
+  background: linear-gradient(135deg, #5a67d8, #6b46c1); /* Slightly brighter gradient */
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.card-button:active {
+  background: linear-gradient(135deg, #4c51bf, #553c9a); /* Darker gradient for click */
+  transform: scale(0.95); /* Shrinking effect on click */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Adjusted shadow */
 }
