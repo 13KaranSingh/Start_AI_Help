@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (142 ms)
+  ✕ renders learn react link (143 ms)
 
   ● renders learn react link
 
@@ -181,47 +181,47 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 317px; top: 558px;"[39m
+                  [33mstyle[39m=[32m"left: 65px; top: 316px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 722px; top: 31px;"[39m
+                  [33mstyle[39m=[32m"left: 192px; top: 521px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 584px; top: 32px;"[39m
+                  [33mstyle[39m=[32m"left: 374px; top: 534px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 887px; top: 435px;"[39m
+                  [33mstyle[39m=[32m"left: 333px; top: 667px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 403px; top: 334px;"[39m
+                  [33mstyle[39m=[32m"left: 201px; top: 60px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 402px; top: 706px;"[39m
+                  [33mstyle[39m=[32m"left: 497px; top: 145px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 197px; top: 667px;"[39m
+                  [33mstyle[39m=[32m"left: 120px; top: 8px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 151px; top: 606px;"[39m
+                  [33mstyle[39m=[32m"left: 488px; top: 175px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 183px; top: 280px;"[39m
+                  [33mstyle[39m=[32m"left: 317px; top: 141px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 210px; top: 15px;"[39m
+                  [33mstyle[39m=[32m"left: 16px; top: 647px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 237px; top: 593px;"[39m
+                  [33mstyle[39m=[32m"left: 163px; top: 664px;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
@@ -372,7 +372,7 @@ All files                                |   28.87 |    13.46 |   17.94 |   29.4
  src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
   AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
  src/Pages/HomePage/BasicQuestionPage    |    9.52 |        0 |       0 |    9.52 |                   
-  BasicQuestion.tsx                      |    9.52 |        0 |       0 |    9.52 | 16-65             
+  BasicQuestion.tsx                      |    9.52 |        0 |       0 |    9.52 | 17-67             
  src/Pages/HomePage/DetailedQuestionPage |    7.31 |        0 |       0 |    8.33 |                   
   DetailedQuestion.tsx                   |    7.31 |        0 |       0 |    8.33 | 32-119            
  src/Pages/HomePage/Results              |    4.54 |        0 |       0 |    4.54 |                   
@@ -381,7 +381,7 @@ All files                                |   28.87 |    13.46 |   17.94 |   29.4
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.202 s
+Time:        3.272 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
