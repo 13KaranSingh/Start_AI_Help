@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import "./BasicQuestion.css";
 import { useNavigate } from "react-router-dom";
 
-// Define the questions
 const questions = [
   "I enjoy solving complex problems.",
   "I like a fast-paced work environment.",
@@ -13,8 +12,8 @@ const questions = [
   "I value work-life balance highly.",
 ];
 
-const BasicQuestion = () => {
-  const [answers, setAnswers] = useState<number[]>(Array(questions.length).fill(1)); // Default value set to 1
+const BasicQuestion: React.FC = () => {
+  const [answers, setAnswers] = useState<number[]>(Array(questions.length).fill(0));
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const navigate = useNavigate();
 
@@ -37,6 +36,10 @@ const BasicQuestion = () => {
   };
 
   const handleSubmit = () => {
+    if (answers.includes(0)) {
+      alert("Please answer all questions before submitting.");
+      return;
+    }
     localStorage.setItem("basicAnswers", JSON.stringify(answers));
     navigate("/Results");
   };
@@ -44,52 +47,62 @@ const BasicQuestion = () => {
   const progressPercentage = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="box-container"> {/* Wrap everything inside the box container */}
-      <div className="basic-questions-container">
-        <h1 className="page-title">Basic Questions</h1>
-        <p className="rating-description">
-          Please rate each statement on a scale of 1 to 5, where:
-          <strong> 1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
-        </p>
+    <div className="basic-questions-container">
+      <h1 className="page-title">Basic Questions</h1>
+      <p className="rating-description">
+        Please rate each statement on a scale of 1 to 5, where:
+        <strong> 1 = Least Likely</strong> and <strong>5 = Most Likely</strong>
+      </p>
 
-        <div className="progress-bar-container">
-          <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
+      {/* Progress bar */}
+      <div className="progress-bar-container">
+        <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
+      </div>
+      <p>{currentQuestion + 1} out of {questions.length} questions completed</p>
+
+      {/* Question and slider */}
+      <div className="question-item">
+        <p className="question-text">{questions[currentQuestion]}</p>
+        <input
+          type="range"
+          min="1"
+          max="5"
+          value={answers[currentQuestion]}
+          onChange={(e) => handleAnswerChange(currentQuestion, parseInt(e.target.value))}
+          className="slider"
+        />
+        <div className="slider-labels">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
         </div>
-        <p>{currentQuestion + 1} out of {questions.length} questions completed</p>
+      </div>
 
-        <div className="question-item">
-          <p className="question-text">{questions[currentQuestion]}</p>
-          <input
-            type="range"
-            min="1"
-            max="5"
-            value={answers[currentQuestion]}
-            onChange={(e) => handleAnswerChange(currentQuestion, parseInt(e.target.value))}
-            className="slider"
-          />
-          <div className="slider-labels">
-            <span>1</span>
-            <span>2</span>
-            <span>3</span>
-            <span>4</span>
-            <span>5</span>
-          </div>
-        </div>
-
-        <div className="navigation-buttons">
-          <button type="button" onClick={handleBack} disabled={currentQuestion === 0}>
-            Back
+      {/* Navigation buttons */}
+      <div className="navigation-buttons">
+        <button type="button" onClick={handleBack} disabled={currentQuestion === 0}>
+          Back
+        </button>
+        {currentQuestion < questions.length - 1 ? (
+          <button
+            type="button"
+            onClick={handleNext}
+            disabled={answers[currentQuestion] === 0}
+          >
+            Next
           </button>
-          {currentQuestion < questions.length - 1 ? (
-            <button type="button" onClick={handleNext} disabled={answers[currentQuestion] === 1}>
-              Next
-            </button>
-          ) : (
-            <button type="button" onClick={handleSubmit} className="submit-button" disabled={answers[currentQuestion] === 1}>
-              Submit Answers
-            </button>
-          )}
-        </div>
+        ) : (
+          <button
+            type="button"
+            onClick={handleSubmit}
+            className="submit-button"
+            disabled={answers[currentQuestion] === 0}
+          >
+            Submit Answers
+          </button>
+        )}
       </div>
     </div>
   );
