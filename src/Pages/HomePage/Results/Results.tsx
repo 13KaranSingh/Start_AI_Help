@@ -89,6 +89,16 @@ Format your response as a JSON object like this:
 
   return (
     <div className="results-container">
+      <div className="bubbles">
+        {/* Bubbles will be added here by the CSS */}
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+      </div>
       {isLoading ? (
         <div className="loading-section">
           <div className="loading-animation"></div>
