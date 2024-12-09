@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <li>Phone: (123) 456-7890</li>
           <li>Address: 123 Career Helper St, Quizville</li>
         </ul>
-        <p>&copy; 2024 The Career Helper AI. All rights reserved.</p>
+        <p>&copy; 2024 Float To Success . All rights reserved.</p>
       </div>
     </footer>
   );

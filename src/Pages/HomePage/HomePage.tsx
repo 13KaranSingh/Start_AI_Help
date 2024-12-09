@@ -29,7 +29,7 @@ const HomePage = () => {
       {/* Left Section (Hero) */}
       <div className="split-left">
         <header className="hero">
-          <h1 className="logo">PathFinderPro</h1>
+          <h1 className="logo">Float To Success</h1>
           <p className="tagline">Discover Your Ideal Career Path!</p>
         </header>
       </div>

@@ -128,15 +128,15 @@ const AboutMe = () => {
       <div className="about-us">
         <h1>About Us</h1>
         <p>
-          <strong>PathFinderPro</strong>
+          <strong>Float To Success </strong>
         </p>
         <p>
-          At PathFinderPro, we’re dedicated to helping individuals discover
+          At Float To Success , we’re dedicated to helping individuals discover
           their best career paths through a blend of AI-driven insights and
           personalized quizzes. Our mission is to guide users of all
           backgrounds—whether new to the workforce, seeking growth, or exploring
           a career change—by offering tailored career matches and actionable
-          advice. With PathFinderPro, you’re not just taking a quiz; you’re
+          advice. With Float to success , you’re not just taking a quiz; you’re
           stepping into a journey of professional self-discovery and future
           planning, designed to align your strengths, interests, and goals with
           a fulfilling career path.
