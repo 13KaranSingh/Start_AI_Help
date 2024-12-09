@@ -236,3 +236,165 @@ body {
 h2, h1 {
   transition: text-shadow 0.3s ease;
 }
+
+/* Bubble Animation */
+.bubbles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw; /* Full viewport width */
+  height: 100vh; /* Full viewport height */
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  background: linear-gradient(135deg, rgba(173, 216, 230, 0.7), rgba(255, 182, 193, 0.6), rgba(240, 248, 255, 0.5)); /* Pastel gradients */
+  animation: floatBubbles 4s infinite ease-in-out; /* Shorter duration for faster bubbles */
+  opacity: 0.5;
+  will-change: transform, opacity, left, top;
+}
+
+/* Bubble sizes and animation adjustments for faster, more frequent bubbles */
+.bubble:nth-child(1) {
+  width: 70px;
+  height: 70px;
+  top: 100%;
+  left: 20%;
+  animation-duration: 4s;
+  animation-delay: -1s;
+  opacity: 0.4;
+}
+
+.bubble:nth-child(2) {
+  width: 90px;
+  height: 90px;
+  top: 80%;
+  left: 5%;
+  animation-duration: 5s;
+  animation-delay: -0.5s;
+  opacity: 0.5;
+}
+
+.bubble:nth-child(3) {
+  width: 120px;
+  height: 120px;
+  top: 70%;
+  left: 75%;
+  animation-duration: 4s;
+  animation-delay: -1.5s;
+  opacity: 0.55;
+}
+
+.bubble:nth-child(4) {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  left: 50%;
+  animation-duration: 4s;
+  animation-delay: -1s;
+  opacity: 0.6;
+}
+
+.bubble:nth-child(5) {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 80%;
+  animation-duration: 6s;
+  animation-delay: -2s;
+  opacity: 0.45;
+}
+
+.bubble:nth-child(6) {
+  width: 110px;
+  height: 110px;
+  top: 40%;
+  left: 25%;
+  animation-duration: 5s;
+  animation-delay: -2.5s;
+  opacity: 0.55;
+}
+
+.bubble:nth-child(7) {
+  width: 95px;
+  height: 95px;
+  top: 10%;
+  left: 60%;
+  animation-duration: 4s;
+  animation-delay: -0.5s;
+  opacity: 0.5;
+}
+
+.bubble:nth-child(8) {
+  width: 105px;
+  height: 105px;
+  top: 20%;
+  left: 30%;
+  animation-duration: 6s;
+  animation-delay: -3s;
+  opacity: 0.6;
+}
+
+/* Add more bubbles for density */
+.bubble:nth-child(9) {
+  width: 110px;
+  height: 110px;
+  top: 90%;
+  left: 10%;
+  animation-duration: 5s;
+  animation-delay: -1.8s;
+  opacity: 0.55;
+}
+
+.bubble:nth-child(10) {
+  width: 80px;
+  height: 80px;
+  top: 60%;
+  left: 65%;
+  animation-duration: 5s;
+  animation-delay: -1.2s;
+  opacity: 0.5;
+}
+
+.bubble:nth-child(11) {
+  width: 90px;
+  height: 90px;
+  top: 20%;
+  left: 45%;
+  animation-duration: 5s;
+  animation-delay: -0.7s;
+  opacity: 0.45;
+}
+
+.bubble:nth-child(12) {
+  width: 75px;
+  height: 75px;
+  top: 50%;
+  left: 80%;
+  animation-duration: 4.5s;
+  animation-delay: -2.3s;
+  opacity: 0.6;
+}
+
+/* Keyframes with faster movement and subtle color shift */
+@keyframes floatBubbles {
+  0% {
+    transform: translateY(0) scale(1) rotate(0deg);
+    opacity: 0.5;
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.7), rgba(255, 182, 193, 0.6), rgba(240, 248, 255, 0.5));
+  }
+  50% {
+    transform: translateY(-50vh) scale(1.2) rotate(90deg);
+    opacity: 0.6;
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.8), rgba(240, 182, 220, 0.7), rgba(255, 248, 220, 0.6));
+  }
+  100% {
+    transform: translateY(-100vh) scale(1.5) rotate(180deg);
+    opacity: 0;
+    background: linear-gradient(135deg, rgba(173, 216, 230, 0.6), rgba(255, 182, 193, 0.5), rgba(240, 248, 255, 0.4));
+  }
+}
