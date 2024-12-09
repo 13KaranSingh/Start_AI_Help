@@ -415,6 +415,12 @@ input[type="checkbox"]:hover {
     transition: width 3.5s steps(25) 1s; /* Typing effect */
     transform: translateX(-50%); /* Keep it centered */
   }
+  .page-title span {
+    display: inline-block;
+    position: relative;
+    transform: translateX(-50%); /* Keep it centered */
+    animation: typing 3.5s steps(25) 1s forwards; /* Typing animation */
+  } 
   
   .page-title:hover {
     text-shadow: 0 2px 5px rgba(173, 216, 230, 0.8); /* Increase shadow on hover */
