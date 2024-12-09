@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (148 ms)
+  ✕ renders learn react link (153 ms)
 
   ● renders learn react link
 
@@ -181,47 +181,47 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 707px; top: 658px;"[39m
+                  [33mstyle[39m=[32m"left: 624px; top: 325px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 645px; top: 222px;"[39m
+                  [33mstyle[39m=[32m"left: 320px; top: 331px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 285px; top: 719px;"[39m
+                  [33mstyle[39m=[32m"left: 125px; top: 200px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 266px; top: 500px;"[39m
+                  [33mstyle[39m=[32m"left: 62px; top: 170px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 749px; top: 203px;"[39m
+                  [33mstyle[39m=[32m"left: 756px; top: 372px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 605px; top: 754px;"[39m
+                  [33mstyle[39m=[32m"left: 395px; top: 128px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 389px; top: 395px;"[39m
+                  [33mstyle[39m=[32m"left: 432px; top: 680px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 497px; top: 144px;"[39m
+                  [33mstyle[39m=[32m"left: 935px; top: 752px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 385px; top: 420px;"[39m
+                  [33mstyle[39m=[32m"left: 76px; top: 541px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 747px; top: 397px;"[39m
+                  [33mstyle[39m=[32m"left: 195px; top: 340px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 873px; top: 235px;"[39m
+                  [33mstyle[39m=[32m"left: 59px; top: 90px;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
@@ -393,5 +393,5 @@ All files                                |   28.27 |    12.96 |   17.94 |   28.7
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.321 s
+Time:        3.291 s
 Ran all test suites.
