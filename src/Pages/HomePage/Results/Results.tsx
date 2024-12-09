@@ -80,7 +80,7 @@ Format your response as a JSON object like this:
         console.error("OpenAI API Error:", error);
         setError("Failed to load results. Please check your internet connection or try again later.");
       } finally {
-        setIsLoading(false);
+        setIsLoading(false); // Spinner disappears here
       }
     }
 
@@ -89,16 +89,8 @@ Format your response as a JSON object like this:
 
   return (
     <div className="results-container">
-      <div className="bubbles">
-        {/* Bubbles will be added here by the CSS */}
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-      </div>
+      {/* Loading spinner visible while loading */}
+      {isLoading && <div className="loading-spinner"></div>}
       {isLoading ? (
         <div className="loading-section">
           <div className="loading-animation"></div>
