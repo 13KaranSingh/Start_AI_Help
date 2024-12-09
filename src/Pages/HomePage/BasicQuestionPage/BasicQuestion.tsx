@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "./BasicQuestion.css";
+import "./BasicQuestion.css"; // Import Basic Question styles
 import { useNavigate } from "react-router-dom";
 
 const questions = [
@@ -13,7 +13,9 @@ const questions = [
 ];
 
 const BasicQuestion: React.FC = () => {
-  const [answers, setAnswers] = useState<number[]>(Array(questions.length).fill(0));
+  const [answers, setAnswers] = useState<number[]>(
+    Array(questions.length).fill(0)
+  );
   const [currentQuestion, setCurrentQuestion] = useState(0);
   const navigate = useNavigate();
 
@@ -48,6 +50,16 @@ const BasicQuestion: React.FC = () => {
 
   return (
     <div className="basic-questions-container">
+      <div className="bubbles">
+        {/* Bubbles will be added here by the CSS */}
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+        <div className="bubble"></div>
+      </div>
       <h1 className="page-title">Basic Questions</h1>
       <p className="rating-description">
         Please rate each statement on a scale of 1 to 5, where:
@@ -56,9 +68,14 @@ const BasicQuestion: React.FC = () => {
 
       {/* Progress bar */}
       <div className="progress-bar-container">
-        <div className="progress-bar" style={{ width: `${progressPercentage}%` }}></div>
+        <div
+          className="progress-bar"
+          style={{ width: `${progressPercentage}%` }}
+        ></div>
       </div>
-      <p>{currentQuestion + 1} out of {questions.length} questions completed</p>
+      <p>
+        {currentQuestion + 1} out of {questions.length} questions completed
+      </p>
 
       {/* Question and slider */}
       <div className="question-item">
@@ -68,7 +85,9 @@ const BasicQuestion: React.FC = () => {
           min="1"
           max="5"
           value={answers[currentQuestion]}
-          onChange={(e) => handleAnswerChange(currentQuestion, parseInt(e.target.value))}
+          onChange={(e) =>
+            handleAnswerChange(currentQuestion, parseInt(e.target.value))
+          }
           className="slider"
         />
         <div className="slider-labels">
@@ -82,7 +101,11 @@ const BasicQuestion: React.FC = () => {
 
       {/* Navigation buttons */}
       <div className="navigation-buttons">
-        <button type="button" onClick={handleBack} disabled={currentQuestion === 0}>
+        <button
+          type="button"
+          onClick={handleBack}
+          disabled={currentQuestion === 0}
+        >
           Back
         </button>
         {currentQuestion < questions.length - 1 ? (
