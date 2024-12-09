@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (131 ms)
+  ✕ renders learn react link (128 ms)
 
   ● renders learn react link
 
@@ -181,47 +181,47 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 605px; top: 537px;"[39m
+                  [33mstyle[39m=[32m"left: 605px; top: 695px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 149px; top: 752px;"[39m
+                  [33mstyle[39m=[32m"left: 150px; top: 248px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 143px; top: 41px;"[39m
+                  [33mstyle[39m=[32m"left: 396px; top: 722px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 247px; top: 56px;"[39m
+                  [33mstyle[39m=[32m"left: 787px; top: 292px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 843px; top: 642px;"[39m
+                  [33mstyle[39m=[32m"left: 439px; top: 443px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 220px; top: 223px;"[39m
+                  [33mstyle[39m=[32m"left: 15px; top: 648px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 86px; top: 345px;"[39m
+                  [33mstyle[39m=[32m"left: 204px; top: 549px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 958px; top: 727px;"[39m
+                  [33mstyle[39m=[32m"left: 466px; top: 4px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 767px; top: 663px;"[39m
+                  [33mstyle[39m=[32m"left: 939px; top: 496px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 912px; top: 597px;"[39m
+                  [33mstyle[39m=[32m"left: 743px; top: 50px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 375px; top: 51px;"[39m
+                  [33mstyle[39m=[32m"left: 73px; top: 137px;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
@@ -233,7 +233,7 @@ FAIL src/App.test.tsx
                   [36m<h1[39m
                     [33mclass[39m=[32m"logo"[39m
                   [36m>[39m
-                    [0mPathFinderPro[0m
+                    [0mFloat To Success[0m
                   [36m</h1>[39m
                   [36m<p[39m
                     [33mclass[39m=[32m"tagline"[39m
@@ -331,7 +331,7 @@ FAIL src/App.test.tsx
               [36m</li>[39m
             [36m</ul>[39m
             [36m<p>[39m
-              [0m© 2024 The Career Helper AI. All rights reserved.[0m
+              [0m© 2024 Float To Success . All rights reserved.[0m
             [36m</p>[39m
           [36m</div>[39m
         [36m</footer>[39m
@@ -381,7 +381,7 @@ All files                                |   28.08 |    12.96 |    17.5 |   28.5
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.271 s
+Time:        3.297 s
 Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
