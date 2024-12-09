@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (153 ms)
+  ✕ renders learn react link (143 ms)
 
   ● renders learn react link
 
@@ -181,47 +181,47 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 624px; top: 325px;"[39m
+                  [33mstyle[39m=[32m"left: 471px; top: 67px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 320px; top: 331px;"[39m
+                  [33mstyle[39m=[32m"left: 509px; top: 592px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 125px; top: 200px;"[39m
+                  [33mstyle[39m=[32m"left: 614px; top: 451px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 62px; top: 170px;"[39m
+                  [33mstyle[39m=[32m"left: 359px; top: 718px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 756px; top: 372px;"[39m
+                  [33mstyle[39m=[32m"left: 831px; top: 487px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 395px; top: 128px;"[39m
+                  [33mstyle[39m=[32m"left: 460px; top: 20px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 432px; top: 680px;"[39m
+                  [33mstyle[39m=[32m"left: 677px; top: 328px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 935px; top: 752px;"[39m
+                  [33mstyle[39m=[32m"left: 276px; top: 701px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 76px; top: 541px;"[39m
+                  [33mstyle[39m=[32m"left: 862px; top: 361px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 195px; top: 340px;"[39m
+                  [33mstyle[39m=[32m"left: 659px; top: 225px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 59px; top: 90px;"[39m
+                  [33mstyle[39m=[32m"left: 248px; top: 499px;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
@@ -356,18 +356,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
-[0;33mOne of your dependencies, babel-preset-react-app, is importing the
-"@babel/plugin-proposal-private-property-in-object" package without
-declaring it in its dependencies. This is currently working because
-"@babel/plugin-proposal-private-property-in-object" is already in your
-node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
-
-babel-preset-react-app is part of the create-react-app project, [1mwhich
-is not maintianed anymore[0;33m. It is thus unlikely that this bug will
-ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
-your devDependencies to work around this error. This will make this message
-go away.[0m
-  
 -----------------------------------------|---------|----------|---------|---------|-------------------
 File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
 -----------------------------------------|---------|----------|---------|---------|-------------------
@@ -384,7 +372,7 @@ All files                                |   28.27 |    12.96 |   17.94 |   28.7
  src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
   AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
  src/Pages/HomePage/BasicQuestionPage    |    8.33 |        0 |       0 |    8.33 |                   
-  BasicQuestion.tsx                      |    8.33 |        0 |       0 |    8.33 | 16-71             
+  BasicQuestion.tsx                      |    8.33 |        0 |       0 |    8.33 | 16-89             
  src/Pages/HomePage/DetailedQuestionPage |    7.31 |        0 |       0 |    8.33 |                   
   DetailedQuestion.tsx                   |    7.31 |        0 |       0 |    8.33 | 32-119            
  src/Pages/HomePage/Results              |    4.54 |        0 |       0 |    4.54 |                   
@@ -393,5 +381,17 @@ All files                                |   28.27 |    12.96 |   17.94 |   28.7
 Test Suites: 1 failed, 1 total
 Tests:       1 failed, 1 total
 Snapshots:   0 total
-Time:        3.291 s
+Time:        3.27 s
 Ran all test suites.
+[0;33mOne of your dependencies, babel-preset-react-app, is importing the
+"@babel/plugin-proposal-private-property-in-object" package without
+declaring it in its dependencies. This is currently working because
+"@babel/plugin-proposal-private-property-in-object" is already in your
+node_modules folder for unrelated reasons, but it [1mmay break at any time[0;33m.
+
+babel-preset-react-app is part of the create-react-app project, [1mwhich
+is not maintianed anymore[0;33m. It is thus unlikely that this bug will
+ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
+your devDependencies to work around this error. This will make this message
+go away.[0m
+  
