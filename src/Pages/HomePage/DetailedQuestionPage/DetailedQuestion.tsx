@@ -75,15 +75,11 @@ const DetailedQuestions = () => {
   return (
     <div className="detailed-questions-container">
       <div className="bubbles">
-        {/* Bubbles will be added here by the CSS */}
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
+        {Array.from({ length: 23 }, (_, index) => (
+          <div key={index} className="bubble"></div>
+        ))}
       </div>
+
 
       {showConfetti && <Confetti className="confetti" />}
       <h1 className="page-title">Detailed Questions</h1>
