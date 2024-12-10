@@ -96,7 +96,7 @@
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
 FAIL src/App.test.tsx
-  ✕ renders learn react link (134 ms)
+  ✕ renders learn react link (119 ms)
 
   ● renders learn react link
 
@@ -181,47 +181,47 @@ FAIL src/App.test.tsx
               [36m>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 391px; top: 373px;"[39m
+                  [33mstyle[39m=[32m"left: 551px; top: 27px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 493px; top: 12px;"[39m
+                  [33mstyle[39m=[32m"left: 136px; top: 608px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 81px; top: 169px;"[39m
+                  [33mstyle[39m=[32m"left: 791px; top: 154px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 721px; top: 372px;"[39m
+                  [33mstyle[39m=[32m"left: 78px; top: 362px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 30px; top: 62px;"[39m
+                  [33mstyle[39m=[32m"left: 172px; top: 441px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 272px; top: 592px;"[39m
+                  [33mstyle[39m=[32m"left: 33px; top: 245px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble large"[39m
-                  [33mstyle[39m=[32m"left: 184px; top: 571px;"[39m
+                  [33mstyle[39m=[32m"left: 242px; top: 485px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 307px; top: 525px;"[39m
+                  [33mstyle[39m=[32m"left: 659px; top: 468px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 355px; top: 488px;"[39m
+                  [33mstyle[39m=[32m"left: 606px; top: 296px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 342px; top: 2px;"[39m
+                  [33mstyle[39m=[32m"left: 802px; top: 468px;"[39m
                 [36m/>[39m
                 [36m<div[39m
                   [33mclass[39m=[32m"bubble medium"[39m
-                  [33mstyle[39m=[32m"left: 252px; top: 47px;"[39m
+                  [33mstyle[39m=[32m"left: 527px; top: 85px;"[39m
                 [36m/>[39m
               [36m</div>[39m
               [36m<div[39m
@@ -356,33 +356,6 @@ FAIL src/App.test.tsx
       at _run10000 (node_modules/@jest/core/build/cli/index.js:320:7)
       at runCLI (node_modules/@jest/core/build/cli/index.js:173:3)
 
------------------------------------------|---------|----------|---------|---------|-------------------
-File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
------------------------------------------|---------|----------|---------|---------|-------------------
-All files                                |   28.08 |     12.5 |    17.5 |   28.57 |                   
- src                                     |    37.5 |    16.66 |   33.33 |    37.5 |                   
-  App.tsx                                |   69.23 |       50 |      50 |   69.23 | 21,30-36          
-  index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
-  reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
- src/Components                          |   58.82 |     37.5 |      60 |   58.82 |                   
-  Footer.tsx                             |     100 |      100 |     100 |     100 |                   
-  NavBar.tsx                             |   53.33 |     37.5 |      50 |   53.33 | 14-21,27          
- src/Pages/HomePage                      |     100 |       75 |     100 |     100 |                   
-  HomePage.tsx                           |     100 |       75 |     100 |     100 | 8                 
- src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
-  AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
- src/Pages/HomePage/BasicQuestionPage    |    8.33 |        0 |       0 |    8.33 |                   
-  BasicQuestion.tsx                      |    8.33 |        0 |       0 |    8.33 | 16-89             
- src/Pages/HomePage/DetailedQuestionPage |    7.14 |        0 |       0 |     8.1 |                   
-  DetailedQuestion.tsx                   |    7.14 |        0 |       0 |     8.1 | 32-115            
- src/Pages/HomePage/Results              |    4.54 |        0 |       0 |    4.54 |                   
-  Results.tsx                            |    4.54 |        0 |       0 |    4.54 | 16-128            
------------------------------------------|---------|----------|---------|---------|-------------------
-Test Suites: 1 failed, 1 total
-Tests:       1 failed, 1 total
-Snapshots:   0 total
-Time:        3.287 s
-Ran all test suites.
 [0;33mOne of your dependencies, babel-preset-react-app, is importing the
 "@babel/plugin-proposal-private-property-in-object" package without
 declaring it in its dependencies. This is currently working because
@@ -395,3 +368,30 @@ ever be fixed. Add "@babel/plugin-proposal-private-property-in-object" to
 your devDependencies to work around this error. This will make this message
 go away.[0m
   
+-----------------------------------------|---------|----------|---------|---------|-------------------
+File                                     | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s 
+-----------------------------------------|---------|----------|---------|---------|-------------------
+All files                                |   25.94 |    11.29 |   15.55 |   26.84 |                   
+ src                                     |    37.5 |    16.66 |   33.33 |    37.5 |                   
+  App.tsx                                |   69.23 |       50 |      50 |   69.23 | 21,30-36          
+  index.tsx                              |       0 |      100 |     100 |       0 | 7-19              
+  reportWebVitals.ts                     |       0 |        0 |       0 |       0 | 3-10              
+ src/Components                          |   58.82 |     37.5 |      60 |   58.82 |                   
+  Footer.tsx                             |     100 |      100 |     100 |     100 |                   
+  NavBar.tsx                             |   53.33 |     37.5 |      50 |   53.33 | 14-21,27          
+ src/Pages/HomePage                      |     100 |       75 |     100 |     100 |                   
+  HomePage.tsx                           |     100 |       75 |     100 |     100 | 8                 
+ src/Pages/HomePage/AboutMe              |      50 |      100 |       0 |      50 |                   
+  AboutMe.tsx                            |      50 |      100 |       0 |      50 | 5                 
+ src/Pages/HomePage/BasicQuestionPage    |    5.55 |        0 |       0 |    6.06 |                   
+  BasicQuestion.tsx                      |    5.55 |        0 |       0 |    6.06 | 19-98             
+ src/Pages/HomePage/DetailedQuestionPage |    7.14 |        0 |       0 |     8.1 |                   
+  DetailedQuestion.tsx                   |    7.14 |        0 |       0 |     8.1 | 32-115            
+ src/Pages/HomePage/Results              |    4.54 |        0 |       0 |    4.54 |                   
+  Results.tsx                            |    4.54 |        0 |       0 |    4.54 | 16-128            
+-----------------------------------------|---------|----------|---------|---------|-------------------
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 1 total
+Snapshots:   0 total
+Time:        3.354 s
+Ran all test suites.
