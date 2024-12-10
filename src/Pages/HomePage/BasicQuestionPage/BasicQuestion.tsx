@@ -1,22 +1,25 @@
-import React, { useState } from "react";
+/* Updated BasicQuestion.tsx */
+
+import React, { useState, useEffect } from "react";
 import "./BasicQuestion.css"; // Import Basic Question styles
 import { useNavigate } from "react-router-dom";
+import Confetti from "react-confetti";
 
 const questions = [
-  "I enjoy solving complex problems.",
-  "I like a fast-paced work environment.",
-  "I am comfortable taking risks.",
-  "I seek stability in my career.",
-  "I am motivated by innovation.",
-  "I prefer a structured work environment.",
-  "I value work-life balance highly.",
+  { text: "I enjoy solving complex problems." },
+  { text: "I like a fast-paced work environment." },
+  { text: "I am comfortable taking risks." },
+  { text: "I seek stability in my career." },
+  { text: "I am motivated by innovation." },
+  { text: "I prefer a structured work environment." },
+  { text: "I value work-life balance highly." },
 ];
 
 const BasicQuestion: React.FC = () => {
-  const [answers, setAnswers] = useState<number[]>(
-    Array(questions.length).fill(0)
-  );
+  const [answers, setAnswers] = useState<number[]>(Array(questions.length).fill(0));
   const [currentQuestion, setCurrentQuestion] = useState(0);
+  const [showConfetti, setShowConfetti] = useState(false);
+  const [hasShownConfetti, setHasShownConfetti] = useState(false);
   const navigate = useNavigate();
 
   const handleAnswerChange = (index: number, value: number) => {
@@ -24,6 +27,15 @@ const BasicQuestion: React.FC = () => {
     newAnswers[index] = value;
     setAnswers(newAnswers);
   };
+
+  useEffect(() => {
+    if (answers.every((answer) => answer !== 0) && !hasShownConfetti) {
+      setShowConfetti(true);
+      setHasShownConfetti(true);
+      const timer = setTimeout(() => setShowConfetti(false), 2000);
+      return () => clearTimeout(timer);
+    }
+  }, [answers, hasShownConfetti]);
 
   const handleNext = () => {
     if (currentQuestion < questions.length - 1) {
@@ -49,17 +61,14 @@ const BasicQuestion: React.FC = () => {
   const progressPercentage = ((currentQuestion + 1) / questions.length) * 100;
 
   return (
-    <div className="basic-questions-container">
+    <div className="basic-questions-container solid-background">
       <div className="bubbles">
-        {/* Bubbles will be added here by the CSS */}
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
-        <div className="bubble"></div>
+        {Array.from({ length: 23 }, (_, index) => (
+          <div key={index} className="bubble"></div>
+        ))}
       </div>
+
+      {showConfetti && <Confetti className="confetti" />}
       <h1 className="page-title">Basic Questions</h1>
       <p className="rating-description">
         Please rate each statement on a scale of 1 to 5, where:
@@ -79,7 +88,7 @@ const BasicQuestion: React.FC = () => {
 
       {/* Question and slider */}
       <div className="question-item">
-        <p className="question-text">{questions[currentQuestion]}</p>
+        <p className="question-text">{questions[currentQuestion].text}</p>
         <input
           type="range"
           min="1"
