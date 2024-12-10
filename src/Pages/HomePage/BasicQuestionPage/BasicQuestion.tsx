@@ -1,5 +1,3 @@
-/* Updated BasicQuestion.tsx */
-
 import React, { useState, useEffect } from "react";
 import "./BasicQuestion.css"; // Import Basic Question styles
 import { useNavigate } from "react-router-dom";

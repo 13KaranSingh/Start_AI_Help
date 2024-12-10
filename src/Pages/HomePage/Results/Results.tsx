@@ -29,18 +29,8 @@ const ResultsPage = () => {
       });
 
       const userPrompt = `
-You are a career selection assistant. Based on the user's preferences, suggest a suitable career path.
+You are a career selection assistant. Based on the user's preferences, suggest a suitable career path in the following JSON format:
 
-Include:
-- Suggested career path
-- Short description of the career
-- Required education
-- Estimated time to qualify
-- Salary information
-- Job demand
-- Reason why this job suits the user
-
-Format your response as a JSON object like this:
 {
   "careerPath": "Career name",
   "careerDescription": "Brief description of the career.",
@@ -50,6 +40,8 @@ Format your response as a JSON object like this:
   "jobDemand": "Demand info",
   "reasonForSuitability": "Why it suits the user"
 }
+
+Please provide only the JSON object, nothing else.
 `;
 
       try {
@@ -70,11 +62,16 @@ Format your response as a JSON object like this:
 
         const messageContent = completion.choices[0]?.message?.content;
 
-        if (messageContent) {
-          const parsedData: CareerSuggestion = JSON.parse(messageContent);
-          setResultData(parsedData);
+        // Check if the response starts with '{' to ensure it's a JSON object
+        if (messageContent && messageContent.trim().startsWith("{")) {
+          try {
+            const parsedData: CareerSuggestion = JSON.parse(messageContent);
+            setResultData(parsedData);
+          } catch (error) {
+            throw new Error("Error parsing JSON response.");
+          }
         } else {
-          throw new Error("Unexpected response format from OpenAI.");
+          throw new Error("Invalid response format. Expected a JSON object.");
         }
       } catch (error) {
         console.error("OpenAI API Error:", error);
